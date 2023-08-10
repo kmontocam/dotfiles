@@ -17,14 +17,7 @@ mason.setup()
 
 mason_lspconfig.setup({
 	ensure_installed = {
-		"pyright",
-		"sqlls",
 		"bashls",
-		"clangd",
-		"html",
-		"cssls",
-		"tsserver",
-		"rust_analyzer",
 		"lua_ls",
 		"emmet_ls",
 		"dockerls",
@@ -35,11 +28,8 @@ mason_lspconfig.setup({
 
 mason_null_ls.setup({
 	ensure_installed = {
-		"autopep8",
-		"sql-formatter",
 		"stylua",
 		"markdownlint",
-		"prettier",
 	},
 	automatic_installation = true,
 })

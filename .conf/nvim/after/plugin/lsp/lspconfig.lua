@@ -33,66 +33,11 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
-lspconfig["pyright"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
 lspconfig["bashls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "sh", "zsh" },
 })
-
-lspconfig["sqlls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig["r_language_server"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig["clangd"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig["docker_compose_language_service"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig["dockerls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig["html"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig["tsserver"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig["cssls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig["rust_analyzer"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- lspconfig["nginx-language-server"].setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- })
 
 lspconfig["lua_ls"].setup({
 	capabilities = capabilities,

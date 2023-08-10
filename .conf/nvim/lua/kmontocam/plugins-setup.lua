@@ -67,10 +67,7 @@ return packer.startup(function(use)
 		end,
 	})
 	use("mechatroner/rainbow_csv")
-
 	use("windwp/nvim-autopairs")
-	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
-
 	use("lewis6991/gitsigns.nvim")
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -82,8 +79,6 @@ return packer.startup(function(use)
 	})
 
 	use({ "jpalardy/vim-slime" }, { ["for"] = "python" })
-
-	-- use("kmontocam/nvim-conda")
 
 	if packer_bootstrap then
 		require("packer").sync()
