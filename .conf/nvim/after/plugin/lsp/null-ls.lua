@@ -10,6 +10,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
 	sources = {
+		formatting.black,
 		formatting.stylua,
 		diagnostics.eslint_d.with({
 			condition = function(utils)
