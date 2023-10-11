@@ -8,6 +8,9 @@ saga.setup({
 	definition = {
 		edit = "<CR>",
 	},
+	lightbulb = {
+		sign = false,
+	},
 	ui = {
 		colors = {
 			normal_bg = "#022746",
