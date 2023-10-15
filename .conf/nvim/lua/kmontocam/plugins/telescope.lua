@@ -5,7 +5,6 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    "debugloop/telescope-undo.nvim",
   },
   config = function()
     local telescope = require("telescope")
@@ -18,10 +17,10 @@ return {
       filepath = vim.fn.expand(filepath)
       vim.loop.fs_stat(filepath, function(_, stat)
         if not stat then
-          return nil
+          return
         end
         if stat.size > 1048576 then
-          return nil
+          return
         else
           previewers.buffer_previewer_maker(filepath, bufnr, opts)
         end
@@ -52,7 +51,6 @@ return {
     })
 
     telescope.load_extension("fzf")
-    telescope.load_extension("undo")
 
     vim.keymap.set(
       "n",
@@ -107,12 +105,6 @@ return {
       "<leader>fk",
       "<cmd>Telescope keymaps<cr>",
       { desc = "[S]earch [R]esume" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>u",
-      "<cmd>Telescope undo<cr>",
-      { desc = "[S]earch [U]ndo" }
     )
   end,
 }
