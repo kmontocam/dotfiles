@@ -4,10 +4,13 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
+    "folke/neodev.nvim",
   },
   config = function()
     local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
+    local neodev = require("neodev")
+    neodev.setup()
 
     local on_attach = function(_, bufnr)
       local nmap = function(keys, func, desc)
