@@ -12,11 +12,7 @@ return {
     mason.setup()
     mason_lspconfig.setup({
       ensure_installed = {
-        "bashls",
         "lua_ls",
-        "emmet_ls",
-        "dockerls",
-        "docker_compose_language_service",
       },
       automatic_installation = true,
     })

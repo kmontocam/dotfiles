@@ -56,55 +56,70 @@ return {
       "n",
       "<leader>?",
       "<cmd>Telescope oldfiles<cr>",
-      { desc = "[?] Find recently opened files" }
+      { desc = "Find recently opened files" }
     )
     vim.keymap.set(
       "n",
       "<leader><space>",
       "<cmd>Telescope buffers<cr>",
-      { desc = "[ ] Find existing buffers" }
+      { desc = "Find existing buffers" }
     )
+    vim.keymap.set("n", "<leader>/", function()
+      require("telescope.builtin").current_buffer_fuzzy_find(
+        require("telescope.themes").get_dropdown({
+          winblend = 16,
+          previewer = false,
+        })
+      )
+    end, { desc = "Fuzzily search in current buffer" })
+
     vim.keymap.set(
       "n",
       "<leader>ff",
       "<cmd>Telescope find_files<cr>",
-      { desc = "[S]earch [F]iles" }
+      { desc = "Search files" }
+    )
+    vim.keymap.set(
+      "n",
+      "<leader>fa",
+      "<cmd>Telescope find_files hidden=true<cr>",
+      { desc = "Search with hidden files" }
     )
     vim.keymap.set(
       "n",
       "<leader>fs",
       "<cmd>Telescope live_grep<cr>",
-      { desc = "[S]earch by [G]rep" }
+      { desc = "Search by grep" }
     )
     vim.keymap.set(
       "n",
       "<leader>fc",
       "<cmd>Telescope grep_string<cr>",
-      { desc = "[S]earch current [W]ord" }
+      { desc = "Search current word" }
     )
     vim.keymap.set(
       "n",
       "<leader>fd",
       "<cmd>Telescope diagnostics<cr>",
-      { desc = "[S]earch [D]iagnostics" }
+      { desc = "Search diagnostics" }
     )
     vim.keymap.set(
       "n",
       "<leader>fh",
       "<cmd>Telescope help_tags<cr>",
-      { desc = "[S]earch [H]elp" }
+      { desc = "Search help" }
     )
     vim.keymap.set(
       "n",
       "<leader>fr",
       "<cmd>Telescope resume<cr>",
-      { desc = "[S]earch [R]esume" }
+      { desc = "Search resume" }
     )
     vim.keymap.set(
       "n",
       "<leader>fk",
       "<cmd>Telescope keymaps<cr>",
-      { desc = "[S]earch [R]esume" }
+      { desc = "Search keyamps" }
     )
   end,
 }

@@ -25,7 +25,6 @@ return {
           "csv",
           "yaml",
           "toml",
-          "css",
           "bash",
           "lua",
           "vim",
