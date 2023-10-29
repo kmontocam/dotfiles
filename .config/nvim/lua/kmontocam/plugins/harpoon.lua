@@ -19,11 +19,6 @@ return {
       "<cmd>lua require('harpoon.ui').nav_prev()<cr>",
       { desc = "Go to previous harpoon mark" }
     )
-    vim.keymap.set(
-      "n",
-      "<C-N>",
-      "<cmd>lua require('harpoon.ui').nav_next()<cr>",
-      { desc = "Go to next harpoon mark" }
-    )
+    vim.keymap.set("n", "<C-N>", "<cmd>lua require('harpoon.ui').nav_next()<cr>", { desc = "Go to next harpoon mark" })
   end,
 }

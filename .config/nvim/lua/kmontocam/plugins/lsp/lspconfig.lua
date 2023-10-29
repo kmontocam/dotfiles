@@ -26,20 +26,12 @@ return {
       nmap("<leader>ca", vim.lsp.buf.code_action, "Code Action")
 
       nmap("gd", "<cmd>Telescope lsp_definitions<cr>", "Goto definition")
-      nmap(
-        "gD",
-        "<cmd>tab split | Telescope lsp_definitions<cr>",
-        "Goto definition in new tab"
-      )
+      nmap("gD", "<cmd>tab split | Telescope lsp_definitions<cr>", "Goto definition in new tab")
       nmap("gr", "<cmd>Telescope lsp_references<cr>", "Goto references")
       nmap("gI", "<cmd>Telescope lsp_implementations<cr>", "Goto implementation")
       nmap("gt", "<cmd>Telescope lsp_type_definitions<cr>", "Type definition")
       nmap("<leader>ds", "<cmd>Telescope lsp_document_symbols<cr>", "Document symbols")
-      nmap(
-        "<leader>ws",
-        "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-        "Workspace symbols"
-      )
+      nmap("<leader>ws", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace symbols")
 
       nmap("K", vim.lsp.buf.hover, "Hover documentation")
       nmap("<C-K>", vim.lsp.buf.signature_help, "Signature documentation")
