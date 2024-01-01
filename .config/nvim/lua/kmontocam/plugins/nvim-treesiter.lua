@@ -10,6 +10,7 @@ return {
     config = function()
       local treesitter = require("nvim-treesitter.configs")
       vim.treesitter.language.register("bash", "zsh")
+      vim.treesitter.language.register("sql", "cqlang")
 
       treesitter.setup({
         build = ":TSUpdate",
