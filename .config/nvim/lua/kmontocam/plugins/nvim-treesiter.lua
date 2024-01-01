@@ -10,6 +10,7 @@ return {
     config = function()
       local treesitter = require("nvim-treesitter.configs")
       vim.treesitter.language.register("bash", "zsh")
+      vim.treesitter.language.register("sql", "cqlang")
 
       treesitter.setup({
         build = ":TSUpdate",
@@ -41,7 +42,7 @@ return {
             init_selection = "<C-space>",
             node_incremental = "<C-space>",
             scope_incremental = "<C-S>",
-            node_decremental = "<bs>",
+            node_decremental = "<BS>",
           },
         },
         context_commentstring = {

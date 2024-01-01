@@ -21,7 +21,7 @@ return {
         vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
       end
 
-      nmap("<leader>lr", ":LspRestart<CR>", "Restart")
+      nmap("<leader>lr", ":LspRestart<cr>", "Restart")
       nmap("<leader>rn", vim.lsp.buf.rename, "Rename")
       nmap("<leader>ca", vim.lsp.buf.code_action, "Code Action")
 
