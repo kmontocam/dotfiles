@@ -35,7 +35,6 @@ return {
           i = {
             ["<C-K>"] = actions.move_selection_previous,
             ["<C-J>"] = actions.move_selection_next,
-            ["<C-Q>"] = actions.send_selected_to_qflist + actions.open_qflist,
           },
         },
       },
@@ -52,74 +51,27 @@ return {
 
     telescope.load_extension("fzf")
 
-    vim.keymap.set(
-      "n",
-      "<leader>?",
-      "<cmd>Telescope oldfiles<cr>",
-      { desc = "Find recently opened files" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader><space>",
-      "<cmd>Telescope buffers<cr>",
-      { desc = "Find existing buffers" }
-    )
+    vim.keymap.set("n", "<leader>?", "<cmd>Telescope oldfiles<cr>", { desc = "Find recently opened files" })
+    vim.keymap.set("n", "<leader><space>", "<cmd>Telescope buffers<cr>", { desc = "Find existing buffers" })
     vim.keymap.set("n", "<leader>/", function()
-      require("telescope.builtin").current_buffer_fuzzy_find(
-        require("telescope.themes").get_dropdown({
-          winblend = 16,
-          previewer = false,
-        })
-      )
+      require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+        winblend = 16,
+        previewer = false,
+      }))
     end, { desc = "Fuzzily search in current buffer" })
 
-    vim.keymap.set(
-      "n",
-      "<leader>ff",
-      "<cmd>Telescope find_files<cr>",
-      { desc = "Search files" }
-    )
+    vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Search files" })
     vim.keymap.set(
       "n",
       "<leader>fa",
       "<cmd>Telescope find_files hidden=true<cr>",
       { desc = "Search with hidden files" }
     )
-    vim.keymap.set(
-      "n",
-      "<leader>fs",
-      "<cmd>Telescope live_grep<cr>",
-      { desc = "Search by grep" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>fc",
-      "<cmd>Telescope grep_string<cr>",
-      { desc = "Search current word" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>fd",
-      "<cmd>Telescope diagnostics<cr>",
-      { desc = "Search diagnostics" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>fh",
-      "<cmd>Telescope help_tags<cr>",
-      { desc = "Search help" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>fr",
-      "<cmd>Telescope resume<cr>",
-      { desc = "Search resume" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>fk",
-      "<cmd>Telescope keymaps<cr>",
-      { desc = "Search keyamps" }
-    )
+    vim.keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Search by grep" })
+    vim.keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Search current word" })
+    vim.keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", { desc = "Search diagnostics" })
+    vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Search help" })
+    vim.keymap.set("n", "<leader>fr", "<cmd>Telescope resume<cr>", { desc = "Search resume" })
+    vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Search keyamps" })
   end,
 }
