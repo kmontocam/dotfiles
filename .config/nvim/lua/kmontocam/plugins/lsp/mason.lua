@@ -21,6 +21,6 @@ return {
         "stylua",
       },
     })
-    vim.keymap.set("n", "<leader>ma", "<cmd>Mason<cr>")
+    vim.keymap.set("n", "<leader>ma", "<cmd>Mason<cr>", { desc = "Toggle Mason" })
   end,
 }
