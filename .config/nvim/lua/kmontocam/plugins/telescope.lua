@@ -30,7 +30,7 @@ return {
     telescope.setup({
       defaults = {
         buffer_previewer_maker = new_maker,
-        path_display = { "truncate " },
+        path_display = { "smart" },
         mappings = {
           i = {
             ["<C-K>"] = actions.move_selection_previous,
