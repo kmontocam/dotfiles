@@ -17,7 +17,7 @@ return {
         },
       },
       view = {
-        width = 35,
+        width = 32,
         relativenumber = true,
       },
     })

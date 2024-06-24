@@ -42,7 +42,7 @@ return {
             init_selection = "<C-space>",
             node_incremental = "<C-space>",
             scope_incremental = "<C-S>",
-            node_decremental = "<BS>",
+            node_decremental = "<C-h>",
           },
         },
         context_commentstring = {
