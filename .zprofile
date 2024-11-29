@@ -1,6 +1,3 @@
-# activate homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # ignore beer emoji pouring brew packaged
 export HOMEBREW_NO_EMOJI=1
 
