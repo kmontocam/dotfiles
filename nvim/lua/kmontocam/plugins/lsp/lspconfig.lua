@@ -63,8 +63,15 @@ return {
     lspconfig["pyright"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      settings = {
+        pyright = {
+          disableOrganizeImports = true,
+        },
+      },
     })
-
+    lspconfig["ruff"].setup({
+      capabilities = capabilities,
+    })
     lspconfig["bashls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
@@ -106,7 +113,7 @@ return {
       on_attach = on_attach,
     })
 
-    lspconfig["tsserver"].setup({
+    lspconfig["ts_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
@@ -118,7 +125,11 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
     })
-
+    lspconfig["groovyls"].setup({
+      capabilities = capabilities,
+      cmd = { vim.fn.stdpath("data") .. "/mason/bin/groovy-language-server" },
+      on_attach = on_attach,
+    })
     lspconfig["lua_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,

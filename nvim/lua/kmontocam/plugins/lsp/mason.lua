@@ -18,7 +18,7 @@ return {
         "clangd",
         "html",
         "cssls",
-        "tsserver",
+        "ts_ls",
         "rust_analyzer",
         "lua_ls",
         "emmet_ls",
@@ -30,9 +30,7 @@ return {
     mason_tool_installer.setup({
       ensure_installed = {
         "stylua",
-        "black",
-        "pylint",
-        "isort",
+        "ruff",
         "sql-formatter",
         "prettier",
         "markdownlint",

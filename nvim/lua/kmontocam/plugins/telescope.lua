@@ -53,14 +53,13 @@ return {
     telescope.load_extension("fzf")
 
     vim.keymap.set("n", "<leader>?", "<cmd>Telescope oldfiles<cr>", { desc = "Find recently opened files" })
-    vim.keymap.set("n", "<leader><space>", "<cmd>Telescope buffers<cr>", { desc = "Find existing buffers" })
     vim.keymap.set("n", "<leader>/", function()
       require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
         winblend = 16,
         previewer = false,
       }))
     end, { desc = "Fuzzily search in current buffer" })
-
+    vim.keymap.set("n", "<leader><space>", "<cmd>Telescope buffers<cr>", { desc = "Find existing buffers" })
     vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Search files" })
     vim.keymap.set(
       "n",

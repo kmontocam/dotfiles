@@ -1,3 +1,4 @@
+---@diagnostic disable: missing-fields
 return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
@@ -8,12 +9,14 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
     "onsails/lspkind.nvim",
+    "zbirenbaum/copilot-cmp",
   },
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
 
+    require("copilot_cmp").setup()
     require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
@@ -36,6 +39,7 @@ return {
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
+        { name = "copilot" },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
@@ -44,8 +48,10 @@ return {
         format = lspkind.cmp_format({
           maxwidth = 50,
           ellipsis_char = "...",
+          symbol_map = { Copilot = "" },
         }),
       },
     })
+    vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
   end,
 }

@@ -10,7 +10,7 @@ return {
     silicon.setup({
       font = "SFMono Nerd Font=34",
       theme = "Visual Studio Dark+",
-      background = "#f7f0d5",
+      background = "#FEFCF7", -- #f7f0d5
       window_title = function()
         return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()), ":t")
       end,
