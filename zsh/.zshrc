@@ -43,6 +43,7 @@ bindkey -M vicmd ' y' vi-yank-xclip
 
 # TODO: bind ' d' to delete inline with copy
 
+export TERM="screen-256color"
 eval "$(zoxide init zsh)"
 
 export WASMTIME_HOME="$HOME/.wasmtime"
