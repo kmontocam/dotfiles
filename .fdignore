@@ -1,0 +1,11 @@
+Documents/
+Library/
+Movies/
+Music/
+Pictures/
+.git/
+.venv/
+node_modules/
+target/
+debug/
+.ipynb_checkpoints/
