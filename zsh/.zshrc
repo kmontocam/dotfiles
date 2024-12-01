@@ -30,6 +30,8 @@ alias tg="terragrunt"
 alias lvenv="source ./.venv/bin/activate"
 alias ku="kubectl"
 alias myip="curl http://ifconfig.io"
+alias hms="home-manager switch --impure"
+alias drs="darwin-rebuild switch --flake ~/.config/nix#kmontocam --impure"
 
 # yank to the system clipboard
 bindkey -v
@@ -44,6 +46,7 @@ bindkey -M vicmd ' y' vi-yank-xclip
 # TODO: bind ' d' to delete inline with copy
 
 export TERM="screen-256color"
+
 eval "$(zoxide init zsh)"
 
 export WASMTIME_HOME="$HOME/.wasmtime"
@@ -52,5 +55,4 @@ export PATH="$WASMTIME_HOME/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 eval "$(starship init zsh)"
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
