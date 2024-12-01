@@ -107,6 +107,9 @@ format = 'on [$symbol($subscription)]($style) '
 symbol = ' '
 style = 'blue bold'
 
+[directory]
+read_only = ''
+
 [docker_context]
 disabled = true
 
