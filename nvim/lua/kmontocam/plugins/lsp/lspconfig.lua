@@ -87,6 +87,10 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    lspconfig["nil_ls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
 
     lspconfig["terraformls"].setup({
       capabilities = capabilities,
@@ -114,10 +118,6 @@ return {
     })
 
     lspconfig["ts_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-    lspconfig["angularls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
