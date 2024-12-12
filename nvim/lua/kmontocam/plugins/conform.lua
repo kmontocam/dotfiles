@@ -19,18 +19,18 @@ return {
       },
 
       formatters_by_ft = {
-        javascript = { "prettier" },
-        typescript = { "prettier" },
         css = { "prettier" },
+        groovy = { "npm-groovy-lint" },
         html = { "prettier" },
+        javascript = { "prettier" },
         json = { "prettier" },
-        yaml = { "prettier" },
         markdown = { "prettier" },
-        sql = { "sql_formatter" },
         lua = { "stylua" },
         rust = { "rustfmt" },
-        groovy = { "npm-groovy-lint" },
+        sql = { "sql_formatter" },
         tex = { "latexindent" },
+        typescript = { "prettier" },
+        yaml = { "prettier" },
         ["*"] = { "injected" },
       },
       format_on_save = {
