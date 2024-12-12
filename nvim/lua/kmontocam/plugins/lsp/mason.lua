@@ -12,29 +12,34 @@ return {
     mason.setup()
     mason_lspconfig.setup({
       ensure_installed = {
-        "pyright",
-        "sqlls",
         "bashls",
         "clangd",
-        "html",
         "cssls",
-        "ts_ls",
-        "rust_analyzer",
-        "lua_ls",
-        "emmet_ls",
-        "dockerls",
         "docker_compose_language_service",
+        "dockerls",
+        "emmet_ls",
+        "groovyls",
+        "nil_ls",
+        "html",
+        "lua_ls",
+        "pyright",
+        "sqlls",
+        "terraformls",
+        "ts_ls",
+        "ruff",
+        "rust_analyzer",
       },
       automatic_installation = true,
     })
     mason_tool_installer.setup({
       ensure_installed = {
+        "markdownlint",
+        "prettier",
         "latexindent",
+        "sql-formatter",
         "stylua",
         "ruff",
-        "sql-formatter",
-        "prettier",
-        "markdownlint",
+        "rustfmt",
       },
     })
     vim.keymap.set("n", "<leader>ma", "<cmd>Mason<cr>", { desc = "Toggle Mason" })
