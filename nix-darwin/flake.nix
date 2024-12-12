@@ -53,6 +53,7 @@
 	  pkgs.tectonic
 	  pkgs.terraform
 	  pkgs.terragrunt
+	  pkgs.tree-sitter
 	  pkgs.typescript
 	  pkgs.ripgrep
 	  pkgs.rustup
