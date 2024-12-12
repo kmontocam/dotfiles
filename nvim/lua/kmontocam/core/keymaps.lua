@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = " v"
 
 vim.keymap.set("n", "<leader>pv", ":Ex<cr>", { desc = "Open file explorer" })
 vim.keymap.set("n", "<leader>nh", ":nohl<cr>", { desc = "Clear search highlight" })

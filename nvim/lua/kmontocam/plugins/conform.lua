@@ -30,6 +30,7 @@ return {
         lua = { "stylua" },
         rust = { "rustfmt" },
         groovy = { "npm-groovy-lint" },
+        tex = { "latexindent" },
         ["*"] = { "injected" },
       },
       format_on_save = {

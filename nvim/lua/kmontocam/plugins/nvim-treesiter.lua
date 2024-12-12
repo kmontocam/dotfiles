@@ -42,6 +42,7 @@ return {
           "gitattributes",
           "gitcommit",
           "gitignore",
+          "latex",
         },
         incremental_selection = {
           enable = true,

@@ -29,6 +29,7 @@ return {
     })
     mason_tool_installer.setup({
       ensure_installed = {
+        "latexindent",
         "stylua",
         "ruff",
         "sql-formatter",

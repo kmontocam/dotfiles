@@ -50,6 +50,7 @@
 	  pkgs.lazygit
 	  pkgs.lazydocker
 	  pkgs.tcptraceroute
+	  pkgs.tectonic
 	  pkgs.terraform
 	  pkgs.terragrunt
 	  pkgs.typescript
