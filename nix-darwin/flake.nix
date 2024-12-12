@@ -27,7 +27,6 @@
       environment.systemPackages =
         [ 
 	  pkgs.azure-cli
-	  pkgs.cargo
 	  pkgs.docker
 	  pkgs.exiftool
 	  pkgs.fd
@@ -56,6 +55,7 @@
 	  pkgs.terragrunt
 	  pkgs.typescript
 	  pkgs.ripgrep
+	  pkgs.rustup
 	  pkgs.silicon
 	  pkgs.starship
 	  pkgs.tmux
