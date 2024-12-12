@@ -27,6 +27,7 @@
       environment.systemPackages =
         [ 
 	  pkgs.azure-cli
+	  pkgs.awscli2
 	  pkgs.exiftool
 	  pkgs.fd
 	  pkgs.fzf
