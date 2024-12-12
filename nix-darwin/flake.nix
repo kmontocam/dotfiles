@@ -27,7 +27,6 @@
       environment.systemPackages =
         [ 
 	  pkgs.azure-cli
-	  pkgs.docker
 	  pkgs.exiftool
 	  pkgs.fd
 	  pkgs.fzf
@@ -72,6 +71,7 @@
 	  "balenaetcher"
 	  "chatgpt"
 	  "discord"
+	  "docker"
 	  "iterm2"
 	  "logi-options+"
 	  "mongodb-compass"
