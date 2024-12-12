@@ -68,6 +68,9 @@
 
       homebrew = {
         enable = true;
+	brews = [
+	  "libpq"  # includes psql
+	];
 	casks = [
 	  "arc"
 	  "balenaetcher"

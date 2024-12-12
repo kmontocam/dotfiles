@@ -53,6 +53,6 @@ export WASMTIME_HOME="$HOME/.wasmtime"
 
 export PATH="$WASMTIME_HOME/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="/opt/homebrew/Cellar/libpq/17.2/bin:$PATH"
 
 eval "$(starship init zsh)"
-
