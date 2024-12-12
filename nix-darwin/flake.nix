@@ -127,8 +127,6 @@
 	dock.wvous-bl-corner = 1;
 	dock.wvous-br-corner = 1;
 	finder.AppleShowAllExtensions = true;
-	# TODO: define and move to only clipboard or directly trash
-	# screencapture.location =
 	# minimum, decrease in UI 
 	NSGlobalDomain.InitialKeyRepeat = 15;
 	NSGlobalDomain.KeyRepeat = 2;
@@ -138,8 +136,9 @@
 	# universalaccess.reduceMotion = true;
 
 	# manual wallpaper setup
-	# manual creation of Desktops with Keyboard Shortcuts
+	# manual creation of Desktops with Keyboard Shortcuts:
 	#   Keyboard > Keyboard Shortcuts > Mission Control > Mission Control
+	#   Desktop & Dock -> Mission Control -> Automatically rearrange spaced based on most recent activity (disable)
 	# Screenshot.app -> Options -> Save To -> Clipboard
       };
 
