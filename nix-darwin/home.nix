@@ -41,6 +41,8 @@
   home.file = {
     ".zprofile".source = ~/git/dotfiles/zsh/.zprofile;
     ".config/starship.toml".source = ~/git/dotfiles/starship/starship.toml;
+    ".config/k9s/skins/transparent.yaml".source = ~/git/dotfiles/k9s/skins/transparent.yaml;
+    ".config/k9s/config.yaml".source = ~/git/dotfiles/k9s/config.yaml;
     ".config/nvim".source = ~/git/dotfiles/nvim;
     ".tmux.conf".source = ~/git/dotfiles/tmux/.tmux.conf;
     ".fdignore".source = ~/git/dotfiles/.fdignore;
