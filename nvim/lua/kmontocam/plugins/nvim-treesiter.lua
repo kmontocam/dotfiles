@@ -13,7 +13,6 @@ return {
       vim.treesitter.language.register("bash", "zsh")
       vim.treesitter.language.register("sql", "cqlang")
 
-      ---@diagnostic disable-next-line: missing-fields
       treesitter.setup({
         build = ":TSUpdate",
         highlight = {
