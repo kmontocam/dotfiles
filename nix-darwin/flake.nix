@@ -42,6 +42,7 @@
 	  pkgs.kubernetes-helm
 	  pkgs.jdk17
 	  pkgs.krew
+	  pkgs.kubebuilder
 	  pkgs.mas
 	  pkgs.mkalias
 	  pkgs.neovim
