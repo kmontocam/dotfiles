@@ -33,9 +33,10 @@ return {
     })
     mason_tool_installer.setup({
       ensure_installed = {
-        "markdownlint",
-        "prettier",
         "latexindent",
+        "markdownlint",
+        "npm-groovy-lint",
+        "prettier",
         "sql-formatter",
         "stylua",
         "ruff",
