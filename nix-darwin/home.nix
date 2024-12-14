@@ -39,15 +39,15 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".zprofile".source = ~/git/dotfiles/zsh/.zprofile;
-    ".config/starship.toml".source = ~/git/dotfiles/starship/starship.toml;
     ".config/k9s/skins/transparent.yaml".source = ~/git/dotfiles/k9s/skins/transparent.yaml;
     ".config/k9s/config.yaml".source = ~/git/dotfiles/k9s/config.yaml;
     ".config/nvim".source = ~/git/dotfiles/nvim;
-    ".tmux.conf".source = ~/git/dotfiles/tmux/.tmux.conf;
-    ".fdignore".source = ~/git/dotfiles/.fdignore;
+    ".config/starship.toml".source = ~/git/dotfiles/starship/starship.toml;
     ".gitconfig".source = ~/git/dotfiles/.gitconfig;
     ".gitignore_global".source = ~/git/dotfiles/.gitignore_global;
+    ".fdignore".source = ~/git/dotfiles/.fdignore;
+    ".tmux.conf".source = ~/git/dotfiles/tmux/.tmux.conf;
+    ".zprofile".source = ~/git/dotfiles/zsh/.zprofile;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
