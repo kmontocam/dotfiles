@@ -46,6 +46,7 @@
     ".config/nvim".source = ~/git/dotfiles/nvim;
     ".tmux.conf".source = ~/git/dotfiles/tmux/.tmux.conf;
     ".fdignore".source = ~/git/dotfiles/.fdignore;
+    ".gitconfig".source = ~/git/dotfiles/.gitconfig;
     ".gitignore_global".source = ~/git/dotfiles/.gitignore_global;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
