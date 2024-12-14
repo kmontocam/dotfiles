@@ -1,0 +1,10 @@
+[user]
+	email = me@kmontocam.com
+	name = Kevin Montoya
+[core]
+	excludesfile = /Users/kmontocam/.gitignore_global
+	editor = nvim
+[http]
+	postBuffer = 524288000
+[init]
+	defaultbranch = main
