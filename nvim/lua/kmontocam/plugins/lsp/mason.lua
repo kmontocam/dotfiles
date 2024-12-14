@@ -18,6 +18,7 @@ return {
         "docker_compose_language_service",
         "dockerls",
         "emmet_ls",
+        "gopls",
         "groovyls",
         "nil_ls",
         "html",
