@@ -48,6 +48,7 @@ return {
           "terraform",
           "toml",
           "vim",
+          "xml",
           "yaml",
         },
         incremental_selection = {
