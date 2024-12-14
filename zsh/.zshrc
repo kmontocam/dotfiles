@@ -15,23 +15,23 @@ set -o vi
 setopt AUTO_CD
 
 # custom aliases
-alias zshconf="nvim ~/.zshrc"
-alias zshsource="source ~/.zshrc"
 alias cd="z"
 alias cl="clear"
-alias vi="nvim"
-alias vim="nvim"
-alias nv="nvim"
-alias lg="lazygit"
-alias ldo="lazydocker"
+alias drs="darwin-rebuild switch --flake ~/.config/nix#kmontocam --impure"
+alias hms="home-manager switch --impure"
 alias ipy="ipython"
-alias tf="terraform"
-alias tg="terragrunt"
-alias lvenv="source ./.venv/bin/activate"
 alias ku="kubectl"
 alias myip="curl http://ifconfig.io"
-alias hms="home-manager switch --impure"
-alias drs="darwin-rebuild switch --flake ~/.config/nix#kmontocam --impure"
+alias nv="nvim"
+alias ldo="lazydocker"
+alias lg="lazygit"
+alias lvenv="source ./.venv/bin/activate"
+alias tf="terraform"
+alias tg="terragrunt"
+alias vi="nvim"
+alias vim="nvim"
+alias zshconf="nvim ~/.zshrc"
+alias zshsource="source ~/.zshrc"
 
 # yank to the system clipboard
 bindkey -v
