@@ -60,54 +60,13 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    lspconfig["pyright"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = {
-        pyright = {
-          disableOrganizeImports = true,
-        },
-      },
-    })
-    lspconfig["ruff"].setup({
-      capabilities = capabilities,
-    })
     lspconfig["bashls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
       filetypes = { "sh", "zsh" },
     })
 
-    lspconfig["sqlls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
     lspconfig["clangd"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-    lspconfig["nil_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["terraformls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["dockerls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["docker_compose_language_service"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["html"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
@@ -117,35 +76,64 @@ return {
       on_attach = on_attach,
     })
 
-    lspconfig["ts_ls"].setup({
+    lspconfig["dockerls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
-    lspconfig["rust_analyzer"].setup({
+
+    lspconfig["html"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
+
+    lspconfig["docker_compose_language_service"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
     lspconfig["groovyls"].setup({
       capabilities = capabilities,
       cmd = { vim.fn.stdpath("data") .. "/mason/bin/groovy-language-server" },
       on_attach = on_attach,
     })
-    lspconfig["lua_ls"].setup({
+
+    lspconfig["nil_ls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig["pyright"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
       settings = {
-        Lua = {
-          diagnostics = {
-            globals = { "vim" },
-          },
-          workspace = {
-            library = {
-              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-              [vim.fn.stdpath("config") .. "/lua"] = true,
-            },
-          },
+        pyright = {
+          disableOrganizeImports = true,
         },
       },
+    })
+
+    lspconfig["ruff"].setup({
+      capabilities = capabilities,
+    })
+
+    lspconfig["rust_analyzer"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig["sqlls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig["terraformls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig["ts_ls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
     })
   end,
 }
