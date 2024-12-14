@@ -33,17 +33,23 @@ alias vim="nvim"
 alias zshconf="nvim ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 
-# yank to the system clipboard
+# yank/cut to the system clipboard
 bindkey -v
 function vi-yank-xclip {
     zle vi-yank
     echo "$CUTBUFFER" | pbcopy -i
 }
+function vi-yank-cut-xclip {
+    zle vi-yank
+    echo "$CUTBUFFER" | pbcopy
+    zle kill-whole-line
+}
 
 zle -N vi-yank-xclip
-bindkey -M vicmd ' y' vi-yank-xclip
+zle -N vi-yank-cut-xclip
 
-# TODO: bind ' d' to delete inline with copy
+bindkey -M vicmd ' y' vi-yank-xclip
+bindkey -M vicmd ' d' vi-yank-cut-xclip
 
 export TERM="screen-256color"
 
