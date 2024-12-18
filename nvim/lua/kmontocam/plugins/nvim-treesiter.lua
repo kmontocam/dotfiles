@@ -32,6 +32,8 @@ return {
           "gitattributes",
           "gitcommit",
           "gitignore",
+          "go",
+          "gosum",
           "groovy",
           "hcl",
           "html",
