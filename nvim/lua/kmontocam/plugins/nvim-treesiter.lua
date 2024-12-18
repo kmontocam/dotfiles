@@ -43,6 +43,7 @@ return {
           "latex",
           "lua",
           "proto",
+          "python",
           "regex",
           "rust",
           "sql",
