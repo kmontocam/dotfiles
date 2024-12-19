@@ -47,6 +47,7 @@ return {
           "regex",
           "rust",
           "sql",
+          "ssh_config",
           "terraform",
           "toml",
           "vim",
