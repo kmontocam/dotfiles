@@ -41,8 +41,8 @@ vim.keymap.set("n", "<leader>du", function()
 
   if vim.diagnostic.is_enabled then
     enabled = vim.diagnostic.is_enabled()
-  elseif vim.diagnostic.is_disabled then
-    enabled = not vim.diagnostic.is_disabled()
+  elseif not vim.diagnostic.is_enabled() then
+    enabled = vim.diagnostic.is_enabled()
   end
 
   enabled = not enabled
@@ -50,6 +50,6 @@ vim.keymap.set("n", "<leader>du", function()
   if enabled then
     vim.diagnostic.enable()
   else
-    vim.diagnostic.disable()
+    vim.diagnostic.enable(false)
   end
 end, { desc = "Toggle diagnostics" })
