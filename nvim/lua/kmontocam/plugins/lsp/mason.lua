@@ -27,7 +27,6 @@ return {
         "sqlls",
         "terraformls",
         "ts_ls",
-        "ruff",
         "rust_analyzer",
       },
       automatic_installation = true,
