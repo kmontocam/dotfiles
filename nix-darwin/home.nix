@@ -102,7 +102,6 @@
     plugins = [
       pkgs.tmuxPlugins.vim-tmux-navigator
       pkgs.tmuxPlugins.resurrect
-      pkgs.tmuxPlugins.tmux-fzf
       {
         plugin = pkgs.tmuxPlugins.mkTmuxPlugin {
           pluginName = "tmux-power";
