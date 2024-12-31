@@ -79,7 +79,7 @@
 	  "chatgpt"
 	  "discord"
 	  "docker"
-	  "iterm2"
+	  "ghostty"
 	  "logi-options+"
 	  "mongodb-compass"
 	  "notion"
@@ -123,7 +123,7 @@
 	  "/System/Applications/Calendar.app"
 	  "/System/Applications/System Settings.app"
 	  "/Applications/Notion.app"
-	  "/Applications/iTerm.app"
+	  "/Applications/Ghostty.app"
 	];
 	dock.wvous-bl-corner = 1;
 	dock.wvous-br-corner = 1;
