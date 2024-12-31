@@ -8,7 +8,7 @@ return {
   config = function()
     local silicon = require("silicon")
     silicon.setup({
-      font = "SFMono Nerd Font=34",
+      font = "JetBrainsMono Nerd Font=34",
       theme = "Visual Studio Dark+",
       background = "#FEFCF7", -- #f7f0d5
       window_title = function()
