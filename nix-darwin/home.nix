@@ -39,7 +39,7 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/ghostty/config".source = ~/git/dotfiles/ghostty/config;
+    ".config/ghostty".source = ~/git/dotfiles/ghostty;
     ".config/k9s/skins/transparent.yaml".source = ~/git/dotfiles/k9s/skins/transparent.yaml;
     ".config/k9s/config.yaml".source = ~/git/dotfiles/k9s/config.yaml;
     ".config/nvim".source = ~/git/dotfiles/nvim;

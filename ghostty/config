@@ -1,4 +1,3 @@
-background = #1C1C1C
 clipboard-read = allow
 clipboard-write = allow
 confirm-close-surface = false
@@ -8,4 +7,4 @@ font-feature = -liga
 font-size = 11
 keybind = cmd+backspace=text:\x15
 mouse-hide-while-typing = true
-theme = xcodedarkhc
+theme = Dark+
