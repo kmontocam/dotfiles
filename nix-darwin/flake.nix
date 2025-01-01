@@ -29,6 +29,7 @@
 	  pkgs.azure-cli
 	  pkgs.awscli2
 	  pkgs.exiftool
+	  pkgs.bat
 	  pkgs.fd
 	  pkgs.fzf
 	  pkgs.go
@@ -55,6 +56,7 @@
 	  pkgs.tectonic
 	  pkgs.terraform
 	  pkgs.terragrunt
+	  pkgs.tree
 	  pkgs.tree-sitter
 	  pkgs.typescript
 	  pkgs.ripgrep
