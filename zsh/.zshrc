@@ -31,7 +31,6 @@ alias tf="terraform"
 alias tg="terragrunt"
 alias vi="nvim"
 alias vim="nvim"
-alias zshconf="nvim ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 
 set_jupyter_venv() {
