@@ -1,0 +1,9 @@
+{
+  "syntax_theme": "native",
+  "syntax_highlighting": true,
+  "color_scheme": "default",
+  "notebook": {
+    "expand": true,
+    "edit_mode": "vi"
+  }
+}

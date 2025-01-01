@@ -19,7 +19,7 @@ alias cd="z"
 alias cl="clear"
 alias drs="darwin-rebuild switch --flake ~/.config/nix#kmontocam --impure"
 alias hms="home-manager switch --impure"
-alias ipy="ipython"
+alias ipy="ipython --TerminalInteractiveShell.editing_mode=vi"
 alias kb="kubebuilder"
 alias ku="kubectl"
 alias myip="curl http://ifconfig.io"
@@ -33,6 +33,16 @@ alias vi="nvim"
 alias vim="nvim"
 alias zshconf="nvim ~/.zshrc"
 alias zshsource="source ~/.zshrc"
+
+set_jupyter_venv() {
+    if ! uv pip install ipykernel; then
+        return 1
+    fi
+    uv run python -m ipykernel install --sys-prefix
+    export JUPYTER_PATH="$PATH:$(pwd)/.venv/share/jupyter"
+}
+
+alias jvenv=set_jupyter_venv
 
 # yank/cut to the system clipboard
 bindkey -v
@@ -61,5 +71,9 @@ export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$WASMTIME_HOME/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="/opt/homebrew/Cellar/libpq/17.2/bin:$PATH"
+export JUPYTER_CONFIG_DIR="$HOME/.config/jupyter"
+export JUPYTER_DATA_DIR="$HOME/.local/share/jupyter/data"
+export JUPYTER_RUNTIME_DIR="$HOME/.local/share/jupyter/runtime"
+
 
 eval "$(starship init zsh)"

@@ -49,6 +49,7 @@
     ".fdignore".source = ~/git/dotfiles/.fdignore;
     ".tmux.conf".source = ~/git/dotfiles/tmux/.tmux.conf;
     ".zprofile".source = ~/git/dotfiles/zsh/.zprofile;
+    "Library/Application Support/euporie".source = ~/git/dotfiles/euporie;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
