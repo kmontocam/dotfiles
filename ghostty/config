@@ -8,3 +8,4 @@ font-size = 11
 keybind = cmd+backspace=text:\x15
 mouse-hide-while-typing = true
 theme = Dark+
+shell-integration-features = no-title
