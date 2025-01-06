@@ -33,6 +33,7 @@
 	  pkgs.fd
 	  pkgs.fzf
 	  pkgs.go
+	  pkgs.gitleaks
 	  pkgs.grpc
 	  pkgs.grpcui
 	  pkgs.grpcurl
@@ -42,6 +43,7 @@
 	  pkgs.kubectl
 	  pkgs.kubernetes-helm
 	  pkgs.jdk17
+	  pkgs.jwt-cli
 	  pkgs.krew
 	  pkgs.kubebuilder
 	  pkgs.mas
