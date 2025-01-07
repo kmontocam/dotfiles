@@ -48,7 +48,9 @@
 	  pkgs.kubebuilder
 	  pkgs.mas
 	  pkgs.mkalias
+	  pkgs.mongosh
 	  pkgs.neovim
+	  pkgs.openssl
 	  pkgs.nerd-fonts.jetbrains-mono
 	  pkgs.nmap
 	  pkgs.nodejs_22
