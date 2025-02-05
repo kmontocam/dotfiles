@@ -51,6 +51,7 @@
 	  pkgs.mongosh
 	  pkgs.neovim
 	  pkgs.openssl
+	  pkgs.pandoc
 	  pkgs.nerd-fonts.jetbrains-mono
 	  pkgs.nmap
 	  pkgs.nodejs_22
@@ -71,6 +72,7 @@
 	  pkgs.tldr
 	  pkgs.uv
 	  pkgs.wget
+	  pkgs.yq-go
 	  pkgs.zoxide
         ];
 
