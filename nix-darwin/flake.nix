@@ -83,6 +83,7 @@
 	  "arc"
 	  "balenaetcher"
 	  "chatgpt"
+	  "hammerspoon"
 	  "discord"
 	  "docker"
 	  "ghostty"

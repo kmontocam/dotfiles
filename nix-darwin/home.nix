@@ -46,6 +46,7 @@
     ".config/starship.toml".source = ~/git/dotfiles/starship/starship.toml;
     ".gitconfig".source = ~/git/dotfiles/.gitconfig;
     ".gitignore_global".source = ~/git/dotfiles/.gitignore_global;
+    ".hammerspoon/init.lua".source = ~/git/dotfiles/hammerspoon/init.lua;
     ".fdignore".source = ~/git/dotfiles/.fdignore;
     ".tmux.conf".source = ~/git/dotfiles/tmux/.tmux.conf;
     ".zprofile".source = ~/git/dotfiles/zsh/.zprofile;
