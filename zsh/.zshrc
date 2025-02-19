@@ -1,32 +1,24 @@
-source <(fzf --zsh)
-
-export FZF_DEFAULT_COMMAND='fd . --type d -H -L -d 3 2> /dev/null'
-export FZF_DEFAULT_OPTS='--tmux'
-export FZF_CTRL_T_COMMAND="fd . $HOME --type d -H -L -d 3 2> /dev/null"
-export FZF_CTRL_T_OPTS="--preview 'tree -C {} | head -128'"
-
 [[ $- =~ i ]] && bindkey -M viins -r '\ec'
 [[ $- =~ i ]] && bindkey -M vicmd -r '\ec'
 [[ $- =~ i ]] && bindkey -M viins '\ef' fzf-cd-widget
 [[ $- =~ i ]] && bindkey -M vicmd '\ef' fzf-cd-widget
 
-# opts
 set -o vi
 setopt AUTO_CD
 
-# custom aliases
 alias cd="z"
 alias cl="clear"
 alias drs="darwin-rebuild switch --flake ~/.config/nix#kmontocam --impure"
+alias g="git"
 alias hms="home-manager switch --impure"
 alias ipy="ipython --TerminalInteractiveShell.editing_mode=vi --TerminalInteractiveShell.emacs_bindings_in_vi_insert_mode=False"
 alias kb="kubebuilder"
 alias ku="kubectl"
-alias myip="curl http://ifconfig.io"
-alias nv="nvim"
 alias ldo="lazydocker"
 alias lg="lazygit"
 alias lvenv="source ./.venv/bin/activate"
+alias myip="curl http://ifconfig.io"
+alias nv="nvim"
 alias tf="terraform"
 alias tg="terragrunt"
 alias vi="nvim"
@@ -61,18 +53,6 @@ zle -N vi-yank-cut-xclip
 bindkey -M vicmd ' y' vi-yank-xclip
 bindkey -M vicmd ' d' vi-yank-cut-xclip
 
-export TERM="screen-256color"
-
+source <(fzf --zsh)
 eval "$(zoxide init zsh)"
-
-export WASMTIME_HOME="$HOME/.wasmtime"
-
-export PATH="$WASMTIME_HOME/bin:$PATH"
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-export JUPYTER_CONFIG_DIR="$HOME/.config/jupyter"
-export JUPYTER_DATA_DIR="$HOME/.local/share/jupyter/data"
-export JUPYTER_RUNTIME_DIR="$HOME/.local/share/jupyter/runtime"
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-
-
 eval "$(starship init zsh)"
