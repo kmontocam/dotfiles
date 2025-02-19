@@ -69,10 +69,10 @@ export WASMTIME_HOME="$HOME/.wasmtime"
 
 export PATH="$WASMTIME_HOME/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-export PATH="/opt/homebrew/Cellar/libpq/17.2/bin:$PATH"
 export JUPYTER_CONFIG_DIR="$HOME/.config/jupyter"
 export JUPYTER_DATA_DIR="$HOME/.local/share/jupyter/data"
 export JUPYTER_RUNTIME_DIR="$HOME/.local/share/jupyter/runtime"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 
 eval "$(starship init zsh)"
