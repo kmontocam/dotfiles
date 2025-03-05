@@ -26,50 +26,51 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ 
-	  pkgs.azure-cli
 	  pkgs.awscli2
-	  pkgs.exiftool
+	  pkgs.azure-cli
 	  pkgs.bat
+	  pkgs.exiftool
 	  pkgs.fd
 	  pkgs.fzf
-	  pkgs.go
 	  pkgs.gitleaks
+	  pkgs.go
 	  pkgs.grpc
 	  pkgs.grpcui
 	  pkgs.grpcurl
 	  pkgs.home-manager
-	  pkgs.jq
-	  pkgs.k9s
-	  pkgs.kubectl
-	  pkgs.kubernetes-helm
 	  pkgs.jdk17
+	  pkgs.jq
 	  pkgs.jwt-cli
+	  pkgs.k9s
 	  pkgs.krew
 	  pkgs.kubebuilder
+	  pkgs.kubectl
+	  pkgs.kubernetes-helm
+	  pkgs.lazydocker
+	  pkgs.lazygit
 	  pkgs.mas
 	  pkgs.mkalias
 	  pkgs.mongosh
 	  pkgs.neovim
-	  pkgs.openssl
-	  pkgs.pandoc
 	  pkgs.nerd-fonts.jetbrains-mono
 	  pkgs.nmap
 	  pkgs.nodejs_22
-	  pkgs.lazygit
-	  pkgs.lazydocker
-	  pkgs.tcptraceroute
-	  pkgs.tectonic
-	  pkgs.terraform
-	  pkgs.terragrunt
-	  pkgs.tree
-	  pkgs.tree-sitter
-	  pkgs.typescript
+	  pkgs.openssl
+	  pkgs.pandoc
 	  pkgs.ripgrep
 	  pkgs.rustup
 	  pkgs.silicon
 	  pkgs.starship
-	  pkgs.tmux
+	  pkgs.tcptraceroute
+	  pkgs.tectonic
+	  pkgs.terraform
+	  pkgs.terragrunt
 	  pkgs.tldr
+	  pkgs.tmux
+	  pkgs.tshark
+	  pkgs.tree
+	  pkgs.tree-sitter
+	  pkgs.typescript
 	  pkgs.uv
 	  pkgs.wget
 	  pkgs.yq-go
@@ -85,19 +86,19 @@
 	  "arc"
 	  "balenaetcher"
 	  "chatgpt"
-	  "hammerspoon"
 	  "discord"
 	  "docker"
 	  "ghostty"
+	  "hammerspoon"
 	  "logi-options+"
 	  "mongodb-compass"
 	  "notion"
+	  "raspberry-pi-imager"
+	  "rectangle"
 	  "setapp"
 	  "slack"
 	  "soundsource"
 	  "spotify"
-	  "rectangle"
-	  "raspberry-pi-imager"
 	  "utm"
 	  "zoom"
 	];
