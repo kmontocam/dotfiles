@@ -155,8 +155,6 @@
 	# Screenshot.app -> Options -> Save To -> Clipboard
       };
 
-      security.pam.enableSudoTouchIdAuth = true;
-
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
 
@@ -168,8 +166,6 @@
       nixpkgs.hostPlatform = "aarch64-darwin";
 
       users.users.kmontocam.home = "/Users/kmontocam";
-      nix.configureBuildUsers = true;
-      nix.useDaemon = true;
     };
   in
   {
