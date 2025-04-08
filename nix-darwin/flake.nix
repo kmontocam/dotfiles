@@ -26,9 +26,11 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ 
+	  pkgs.amass
 	  pkgs.awscli2
 	  pkgs.azure-cli
 	  pkgs.bat
+	  pkgs.cloc
 	  pkgs.exiftool
 	  pkgs.fd
 	  pkgs.fzf
@@ -49,6 +51,7 @@
 	  pkgs.lazydocker
 	  pkgs.lazygit
 	  pkgs.mas
+	  pkgs.mc
 	  pkgs.mdbook
 	  pkgs.mkalias
 	  pkgs.mongosh
@@ -58,6 +61,8 @@
 	  pkgs.nodejs_22
 	  pkgs.openssl
 	  pkgs.pandoc
+	  pkgs.pnpm
+	  pkgs.poetry
 	  pkgs.ripgrep
 	  pkgs.rustup
 	  pkgs.silicon
@@ -73,6 +78,7 @@
 	  pkgs.tree-sitter
 	  pkgs.typescript
 	  pkgs.uv
+	  pkgs.websocat
 	  pkgs.wget
 	  pkgs.yq-go
 	  pkgs.zoxide
@@ -84,7 +90,6 @@
 	  "libpq"  # includes psql
 	];
 	casks = [
-	  "arc"
 	  "balenaetcher"
 	  "chatgpt"
 	  "discord"
