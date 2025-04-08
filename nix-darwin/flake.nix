@@ -73,9 +73,9 @@
 	  pkgs.terragrunt
 	  pkgs.tldr
 	  pkgs.tmux
-	  pkgs.tshark
 	  pkgs.tree
 	  pkgs.tree-sitter
+	  pkgs.tshark
 	  pkgs.typescript
 	  pkgs.uv
 	  pkgs.websocat
