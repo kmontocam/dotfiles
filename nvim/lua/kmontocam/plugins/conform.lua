@@ -27,6 +27,7 @@ return {
         markdown = { "prettier" },
         lua = { "stylua" },
         rust = { "rustfmt" },
+        sh = { "shfmt" },
         sql = { "sql_formatter" },
         tex = { "latexindent" },
         typescript = { "prettier" },
