@@ -19,10 +19,12 @@ return {
       },
 
       formatters_by_ft = {
+        ["*"] = { "injected" },
         css = { "prettier" },
         groovy = { "npm-groovy-lint" },
         html = { "prettier" },
         javascript = { "prettier" },
+        javascriptreact = { "prettier" },
         json = { "prettier" },
         lua = { "stylua" },
         markdown = { "prettier" },
@@ -32,8 +34,8 @@ return {
         sql = { "sql_formatter" },
         tex = { "latexindent" },
         typescript = { "prettier" },
+        typescriptreact = { "prettier" },
         yaml = { "prettier" },
-        ["*"] = { "injected" },
       },
       format_on_save = {
         lsp_fallback = true,
