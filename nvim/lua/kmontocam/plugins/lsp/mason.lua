@@ -28,6 +28,7 @@ return {
         "sqlls",
         "terraformls",
         "ts_ls",
+        "yamlls",
       },
       automatic_installation = true,
     })
@@ -36,9 +37,9 @@ return {
         "eslint_d",
         "latexindent",
         "markdownlint",
-        "shfmt",
         "npm-groovy-lint",
         "prettier",
+        "shfmt",
         "ruff",
         "rustfmt",
         "sql-formatter",
