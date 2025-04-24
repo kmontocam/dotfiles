@@ -31,11 +31,13 @@
 	  pkgs.azure-cli
 	  pkgs.bat
 	  pkgs.cloc
+	  pkgs.esbuild
 	  pkgs.exiftool
 	  pkgs.fd
 	  pkgs.fzf
 	  pkgs.gitleaks
 	  pkgs.go
+	  pkgs.google-cloud-sdk
 	  pkgs.grpc
 	  pkgs.grpcui
 	  pkgs.grpcurl
@@ -60,6 +62,7 @@
 	  pkgs.nmap
 	  pkgs.nodejs_22
 	  pkgs.openssl
+	  pkgs.opentofu
 	  pkgs.pandoc
 	  pkgs.pnpm
 	  pkgs.poetry
@@ -95,6 +98,7 @@
 	  "discord"
 	  "docker"
 	  "ghostty"
+	  "google-chrome"
 	  "hammerspoon"
 	  "logi-options+"
 	  "mongodb-compass"
