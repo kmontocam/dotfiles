@@ -8,7 +8,7 @@ setopt AUTO_CD
 
 alias cd="z"
 alias cl="clear"
-alias drs="darwin-rebuild switch --flake ~/.config/nix#kmontocam --impure"
+alias drs="darwin-rebuild switch --flake $HOME/git/dotfiles/nix-darwin#kmontocam --impure"
 alias g="git"
 alias hms="home-manager switch --impure"
 alias ipy="ipython --TerminalInteractiveShell.editing_mode=vi --TerminalInteractiveShell.emacs_bindings_in_vi_insert_mode=False"
