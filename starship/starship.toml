@@ -131,3 +131,6 @@ style = 'green bold'
 disabled = false
 style = 'cyan bold'	
 format = '[$symbol$context( \($namespace\))]($style) '
+
+[gcloud]
+disabled = true
