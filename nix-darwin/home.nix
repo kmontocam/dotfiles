@@ -39,18 +39,18 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/ghostty".source = ~/git/dotfiles/ghostty;
-    ".config/k9s/skins/transparent.yaml".source = ~/git/dotfiles/k9s/skins/transparent.yaml;
-    ".config/k9s/config.yaml".source = ~/git/dotfiles/k9s/config.yaml;
-    ".config/nvim".source = ~/git/dotfiles/nvim;
-    ".config/starship.toml".source = ~/git/dotfiles/starship/starship.toml;
-    ".gitconfig".source = ~/git/dotfiles/.gitconfig;
-    ".gitignore_global".source = ~/git/dotfiles/.gitignore_global;
-    ".hammerspoon/init.lua".source = ~/git/dotfiles/hammerspoon/init.lua;
-    ".fdignore".source = ~/git/dotfiles/.fdignore;
-    ".tmux.conf".source = ~/git/dotfiles/tmux/.tmux.conf;
-    ".zprofile".source = ~/git/dotfiles/zsh/.zprofile;
-    "Library/Application Support/euporie".source = ~/git/dotfiles/euporie;
+    ".config/ghostty".source = "${config.home.homeDirectory}/git/dotfiles/ghostty";
+    ".config/k9s/skins/transparent.yaml".source = "${config.home.homeDirectory}/git/dotfiles/k9s/skins/transparent.yaml";
+    ".config/k9s/config.yaml".source = "${config.home.homeDirectory}/git/dotfiles/k9s/config.yaml";
+    ".config/nvim".source = "${config.home.homeDirectory}/git/dotfiles/nvim";
+    ".config/starship.toml".source = "${config.home.homeDirectory}/git/dotfiles/starship/starship.toml";
+    ".gitconfig".source = "${config.home.homeDirectory}/git/dotfiles/.gitconfig";
+    ".gitignore_global".source = "${config.home.homeDirectory}/git/dotfiles/.gitignore_global";
+    ".hammerspoon/init.lua".source = "${config.home.homeDirectory}/git/dotfiles/hammerspoon/init.lua";
+    ".fdignore".source = "${config.home.homeDirectory}/git/dotfiles/.fdignore";
+    ".tmux.conf".source = "${config.home.homeDirectory}/git/dotfiles/tmux/.tmux.conf";
+    ".zprofile".source = "${config.home.homeDirectory}/git/dotfiles/zsh/.zprofile";
+    "Library/Application Support/euporie".source = "${config.home.homeDirectory}/git/dotfiles/euporie";
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
