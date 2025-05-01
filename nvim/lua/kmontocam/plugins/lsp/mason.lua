@@ -19,6 +19,7 @@ return {
         "dockerls",
         "emmet_ls",
         "gopls",
+        "tailwindcss",
         "groovyls",
         "html",
         "lua_ls",
