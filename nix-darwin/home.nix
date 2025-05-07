@@ -96,7 +96,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    initContent = ''
+    initExtra = ''
       source $HOME/git/dotfiles/zsh/.zshrc # NOTE: as not defined in home.file
     '';
   };
