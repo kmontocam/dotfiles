@@ -92,11 +92,12 @@ return {
       on_attach = on_attach,
     })
 
-    lspconfig["groovyls"].setup({
-      capabilities = capabilities,
-      cmd = { vim.fn.stdpath("data") .. "/mason/bin/groovy-language-server" },
-      on_attach = on_attach,
-    })
+    -- lspconfig["groovyls"].setup({
+    --   filetypes = { "groovy" },
+    --   capabilities = capabilities,
+    --   cmd = { vim.fn.stdpath("data") .. "/mason/bin/groovy-language-server" },
+    --   on_attach = on_attach,
+    -- })
 
     lspconfig["nil_ls"].setup({
       capabilities = capabilities,

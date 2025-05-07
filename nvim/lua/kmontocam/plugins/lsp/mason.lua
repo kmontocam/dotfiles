@@ -20,7 +20,7 @@ return {
         "emmet_ls",
         "gopls",
         "tailwindcss",
-        "groovyls",
+        -- "groovyls",
         "html",
         "lua_ls",
         "nil_ls",
