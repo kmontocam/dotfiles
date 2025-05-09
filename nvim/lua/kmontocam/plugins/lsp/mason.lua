@@ -26,7 +26,7 @@ return {
         "nil_ls",
         "pyright",
         "rust_analyzer",
-        "sqlls",
+        "sqls",
         "terraformls",
         "ts_ls",
         "yamlls",
