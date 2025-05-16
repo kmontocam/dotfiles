@@ -18,23 +18,22 @@ return {
       end
 
       nmap("<leader>lr", ":LspRestart<cr>", "Restart")
-      nmap("<leader>rn", vim.lsp.buf.rename, "Rename")
-      nmap("<leader>ca", vim.lsp.buf.code_action, "Code Action")
-
-      nmap("gd", "<cmd>Telescope lsp_definitions<cr>", "Goto definition")
-      nmap("gD", "<cmd>tab split | Telescope lsp_definitions<cr>", "Goto definition in new tab")
-      nmap("gW", "<cmd>wincmd v | Telescope lsp_definitions<cr>", "Goto definition in splitted vertical window")
-      nmap("gr", "<cmd>Telescope lsp_references<cr>", "Goto references")
-      nmap("gI", "<cmd>Telescope lsp_implementations<cr>", "Goto implementation")
-      nmap("gt", "<cmd>Telescope lsp_type_definitions<cr>", "Type definition")
-      nmap("<leader>ds", "<cmd>Telescope lsp_document_symbols<cr>", "Document symbols")
+      nmap("<leader>grn", vim.lsp.buf.rename, "Rename")
+      nmap("<leader>gra", vim.lsp.buf.code_action, "Code Action")
+      nmap("grd", "<cmd>Telescope lsp_definitions<cr>", "Goto definition")
+      nmap("grD", "<cmd>tab split | Telescope lsp_definitions<cr>", "Goto definition in new tab")
+      nmap("grW", "<cmd>wincmd v | Telescope lsp_definitions<cr>", "Goto definition in splitted vertical window")
+      nmap("grr", "<cmd>Telescope lsp_references<cr>", "Goto references")
+      nmap("gri", "<cmd>Telescope lsp_implementations<cr>", "Goto implementation")
+      nmap("grt", "<cmd>Telescope lsp_type_definitions<cr>", "Type definition")
+      nmap("<leader>gO", "<cmd>Telescope lsp_document_symbols<cr>", "Document symbols")
       nmap("<leader>ws", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace symbols")
 
       nmap("K", vim.lsp.buf.hover, "Hover documentation")
 
       -- Lesser used LSP functionality
       nmap("<leader>D", "<cmd>Telescope diagnostics bufnr=0<cr>", "Diagnostics")
-      nmap("go", vim.lsp.buf.declaration, "Goto declaration")
+      nmap("gro", vim.lsp.buf.declaration, "Goto declaration")
       nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "Workspace add folder")
       nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "Workspace remove folder")
       nmap("<leader>wl", function()

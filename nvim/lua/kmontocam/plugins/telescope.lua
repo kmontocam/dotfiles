@@ -1,6 +1,5 @@
 return {
   "nvim-telescope/telescope.nvim",
-  branch = "0.1.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
@@ -73,6 +72,7 @@ return {
     vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Search help" })
     vim.keymap.set("n", "<leader>fr", "<cmd>Telescope resume<cr>", { desc = "Search resume" })
     vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Search keymaps" })
+    vim.keymap.set("n", "<leader>fq", "<cmd>Telescope quickfix<cr>", { desc = "Search Quickfix items" })
     vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Search TODO's" })
   end,
 }
