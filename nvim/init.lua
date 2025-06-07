@@ -1,9 +1,9 @@
 ---@diagnostic disable-next-line: duplicate-set-field
 vim.deprecate = function() end
 
-require("kmontocam.core.keymaps")
-require("kmontocam.core.options")
-require("kmontocam.lazy")
+require("core.keymaps")
+require("core.options")
+require("lazy")
 
 vim.diagnostic.config({
   virtual_text = true,
