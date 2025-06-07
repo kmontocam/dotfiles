@@ -4,6 +4,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
+    { "b0o/SchemaStore.nvim" },
   },
   config = function()
     local lspconfig = require("lspconfig")
@@ -31,14 +32,10 @@ return {
 
       nmap("K", vim.lsp.buf.hover, "Hover documentation")
 
-      -- Lesser used LSP functionality
       nmap("<leader>D", "<cmd>Telescope diagnostics bufnr=0<cr>", "Diagnostics")
       nmap("gro", vim.lsp.buf.declaration, "Goto declaration")
       nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "Workspace add folder")
       nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "Workspace remove folder")
-      nmap("<leader>wl", function()
-        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-      end, "Workspace list folders")
 
       -- Create a command `:Format` local to the LSP buffer
       vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
@@ -91,16 +88,28 @@ return {
       on_attach = on_attach,
     })
 
-    -- lspconfig["groovyls"].setup({
-    --   filetypes = { "groovy" },
-    --   capabilities = capabilities,
-    --   cmd = { vim.fn.stdpath("data") .. "/mason/bin/groovy-language-server" },
-    --   on_attach = on_attach,
-    -- })
+    lspconfig["groovyls"].setup({
+      filetypes = { "groovy" },
+      capabilities = capabilities,
+      cmd = { vim.fn.stdpath("data") .. "/mason/bin/groovy-language-server" },
+      on_attach = on_attach,
+    })
 
     lspconfig["nil_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+    })
+
+    lspconfig["jsonls"].setup({
+      server_capabilities = {
+        documentFormattingProvider = false,
+      },
+      settings = {
+        json = {
+          schemas = require("schemastore").json.schemas(),
+          validate = { enable = true },
+        },
+      },
     })
 
     lspconfig["lua_ls"].setup({
