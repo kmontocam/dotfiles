@@ -28,7 +28,7 @@ return {
         json = { "prettier" },
         lua = { "stylua" },
         markdown = { "prettier" },
-        python = { "ruff_fix", "ruff_format" },
+        python = { "ruff_format" },
         rust = { "rustfmt" },
         sh = { "shfmt" },
         sql = { "sql_formatter" },
