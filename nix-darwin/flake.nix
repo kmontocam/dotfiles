@@ -30,7 +30,9 @@
 	  pkgs.awscli2
 	  pkgs.azure-cli
 	  pkgs.bat
+	  pkgs.claude-code
 	  pkgs.cloc
+	  pkgs.cmake
 	  pkgs.esbuild
 	  pkgs.exiftool
 	  pkgs.fd
@@ -42,6 +44,7 @@
 	  pkgs.grpcui
 	  pkgs.grpcurl
 	  pkgs.home-manager
+	  pkgs.iruby
 	  pkgs.jdk17
 	  pkgs.jq
 	  pkgs.jwt-cli
@@ -52,6 +55,7 @@
 	  pkgs.kubernetes-helm
 	  pkgs.lazydocker
 	  pkgs.lazygit
+	  pkgs.libpq
 	  pkgs.mas
 	  pkgs.mc
 	  pkgs.mdbook
