@@ -27,6 +27,7 @@
       environment.systemPackages =
         [ 
 	  pkgs.amass
+	  pkgs.asdf-vm
 	  pkgs.awscli2
 	  pkgs.azure-cli
 	  pkgs.bat
