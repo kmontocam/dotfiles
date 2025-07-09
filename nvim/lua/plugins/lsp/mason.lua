@@ -21,6 +21,7 @@ return {
         "gopls",
         "groovyls",
         "html",
+        "rubocop",
         "jsonls",
         "lua_ls",
         "nil_ls",

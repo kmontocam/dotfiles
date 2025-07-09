@@ -29,6 +29,7 @@ return {
         lua = { "stylua" },
         markdown = { "prettier" },
         python = { "ruff_format" },
+        ruby = { "rubocop" },
         rust = { "rustfmt" },
         sh = { "shfmt" },
         sql = { "sql_formatter" },
