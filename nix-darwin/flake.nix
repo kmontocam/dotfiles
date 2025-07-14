@@ -56,7 +56,6 @@
 	  pkgs.kubernetes-helm
 	  pkgs.lazydocker
 	  pkgs.lazygit
-	  pkgs.libpq
 	  pkgs.mas
 	  pkgs.mc
 	  pkgs.mdbook
@@ -68,6 +67,7 @@
 	  pkgs.nodejs_22
 	  pkgs.openssl
 	  pkgs.opentofu
+	  pkgs.overmind
 	  pkgs.pandoc
 	  pkgs.pnpm
 	  pkgs.poetry
@@ -81,6 +81,7 @@
 	  pkgs.terragrunt
 	  pkgs.tldr
 	  pkgs.tmux
+	  pkgs.tmuxinator
 	  pkgs.tree
 	  pkgs.tree-sitter
 	  pkgs.tshark
@@ -96,6 +97,7 @@
         enable = true;
 	brews = [
 	  "libpq"  # includes psql
+	  "libyaml"
 	];
 	casks = [
 	  "balenaetcher"

@@ -30,3 +30,5 @@ export PATH="$WASMTIME_HOME/bin:$PATH"
 
 export PNPM_HOME="$HOME/.pnpm"
 export PATH="$PNPM_HOME:$PATH"
+
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
