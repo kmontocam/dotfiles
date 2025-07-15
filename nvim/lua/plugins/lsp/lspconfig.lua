@@ -83,7 +83,7 @@ return {
       on_attach = on_attach,
     })
 
-    lspconfig["rubocop"].setup({
+    lspconfig["ruby_lsp"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })

@@ -21,7 +21,7 @@ return {
         "gopls",
         "groovyls",
         "html",
-        "rubocop",
+        "ruby_lsp",
         "jsonls",
         "lua_ls",
         "nil_ls",
@@ -38,12 +38,15 @@ return {
     })
     mason_tool_installer.setup({
       ensure_installed = {
+        "erb-formatter",
+        "erb-lint",
         "eslint_d",
         "latexindent",
         "markdownlint",
         "npm-groovy-lint",
         "prettier",
         "shfmt",
+        "rubocop",
         "ruff",
         "rustfmt",
         "sql-formatter",
