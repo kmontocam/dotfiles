@@ -37,6 +37,7 @@
 	  pkgs.esbuild
 	  pkgs.exiftool
 	  pkgs.fd
+	  pkgs.flyctl
 	  pkgs.fzf
 	  pkgs.gitleaks
 	  pkgs.go
@@ -71,6 +72,7 @@
 	  pkgs.pandoc
 	  pkgs.pnpm
 	  pkgs.poetry
+	  pkgs.redis
 	  pkgs.ripgrep
 	  pkgs.rustup
 	  pkgs.silicon
@@ -107,6 +109,7 @@
 	  "ghostty"
 	  "google-chrome"
 	  "hammerspoon"
+	  "linear-linear"
 	  "logi-options+"
 	  "mongodb-compass"
 	  "notion"
