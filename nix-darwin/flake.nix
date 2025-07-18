@@ -57,8 +57,8 @@
 	  pkgs.lazydocker
 	  pkgs.lazygit
 	  pkgs.mas
-	  pkgs.mc
 	  pkgs.mdbook
+	  pkgs.minio-client
 	  pkgs.mkalias
 	  pkgs.mongosh
 	  pkgs.neovim
