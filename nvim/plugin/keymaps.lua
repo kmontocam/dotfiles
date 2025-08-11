@@ -19,6 +19,11 @@ vim.keymap.set("x", "<leader>p", [["_dp]], { desc = "Paste without copying into 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
 vim.keymap.set({ "n", "v" }, "<leader>d", [["+d]], { desc = "Cut to system clipboard" })
 
+vim.keymap.set("n", "<leader>gg", function()
+  local filepath = vim.fn.expand("%")
+  vim.fn.setreg("+", filepath)
+end, { desc = "Copy relative file path to system clipboard" })
+
 vim.keymap.set("n", "<leader>sv", "<C-W>v", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sh", "<C-W>s", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<leader>sw", "<C-W>x", { desc = "Swap current window with next" })
