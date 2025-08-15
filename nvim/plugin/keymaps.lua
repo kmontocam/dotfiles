@@ -65,3 +65,4 @@ vim.keymap.set("n", "<leader>du", function()
     vim.diagnostic.enable(false)
   end
 end, { desc = "Toggle diagnostics" })
+vim.keymap.set("n", "<leader>r", ":e!<cr>", { desc = "Reload file from disk" })
