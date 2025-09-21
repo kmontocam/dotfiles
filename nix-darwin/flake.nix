@@ -26,6 +26,7 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ 
+	  pkgs.act
 	  pkgs.amass
 	  pkgs.asdf-vm
 	  pkgs.awscli2
@@ -74,6 +75,7 @@
 	  pkgs.poetry
 	  pkgs.redis
 	  pkgs.ripgrep
+	  pkgs.rubocop
 	  pkgs.rustup
 	  pkgs.silicon
 	  pkgs.starship
@@ -91,6 +93,7 @@
 	  pkgs.uv
 	  pkgs.websocat
 	  pkgs.wget
+	  pkgs.yarn
 	  pkgs.yq-go
 	  pkgs.zoxide
         ];
