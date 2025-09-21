@@ -36,13 +36,13 @@ vim.keymap.set("n", "<leader>tp", ":tabp<cr>", { desc = "Go to previous tab" })
 
 vim.keymap.set("n", "[d", function()
   vim.diagnostic.jump({
-    count = 1,
+    count = -1,
     float = true,
   })
 end, { desc = "Go to previous diagnostic message" })
 vim.keymap.set("n", "]d", function()
   vim.diagnostic.jump({
-    count = -1,
+    count = 1,
     float = true,
   })
 end, { desc = "Go to next diagnostic message" })
