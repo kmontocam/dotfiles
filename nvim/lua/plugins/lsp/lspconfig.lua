@@ -27,15 +27,11 @@ return {
       nmap("grr", "<cmd>Telescope lsp_references<cr>", "Goto references")
       nmap("gri", "<cmd>Telescope lsp_implementations<cr>", "Goto implementation")
       nmap("grt", "<cmd>Telescope lsp_type_definitions<cr>", "Type definition")
-      nmap("<leader>gO", "<cmd>Telescope lsp_document_symbols<cr>", "Document symbols")
-      nmap("<leader>ws", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace symbols")
 
       nmap("K", vim.lsp.buf.hover, "Hover documentation")
 
       nmap("<leader>D", "<cmd>Telescope diagnostics bufnr=0<cr>", "Diagnostics")
       nmap("gro", vim.lsp.buf.declaration, "Goto declaration")
-      nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "Workspace add folder")
-      nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "Workspace remove folder")
 
       -- Create a command `:Format` local to the LSP buffer
       vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
