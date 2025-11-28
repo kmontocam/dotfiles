@@ -1,4 +1,3 @@
-
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 export EDITOR="nvim"
@@ -22,7 +21,7 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
-export TERM="screen-256color"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#666666'
 export TLDR_AUTO_UPDATE_DISABLED=1
 
 export WASMTIME_HOME="$HOME/.wasmtime"
