@@ -65,6 +65,7 @@
 	  pkgs.mongosh
 	  pkgs.neovim
 	  pkgs.nerd-fonts.jetbrains-mono
+	  pkgs.ngrok
 	  pkgs.nmap
 	  pkgs.nodejs_22
 	  pkgs.openssl
