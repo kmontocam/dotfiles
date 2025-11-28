@@ -40,14 +40,14 @@
   # plain files is through 'home.file'.
   home.file = {
     ".config/ghostty".source = "${config.home.homeDirectory}/git/dotfiles/ghostty";
-    ".config/k9s/skins/transparent.yaml".source = "${config.home.homeDirectory}/git/dotfiles/k9s/skins/transparent.yaml";
     ".config/k9s/config.yaml".source = "${config.home.homeDirectory}/git/dotfiles/k9s/config.yaml";
+    ".config/k9s/skins/transparent.yaml".source = "${config.home.homeDirectory}/git/dotfiles/k9s/skins/transparent.yaml";
     ".config/nvim".source = "${config.home.homeDirectory}/git/dotfiles/nvim";
     ".config/starship.toml".source = "${config.home.homeDirectory}/git/dotfiles/starship/starship.toml";
+    ".fdignore".source = "${config.home.homeDirectory}/git/dotfiles/.fdignore";
     ".gitconfig".source = "${config.home.homeDirectory}/git/dotfiles/.gitconfig";
     ".gitignore_global".source = "${config.home.homeDirectory}/git/dotfiles/.gitignore_global";
     ".hammerspoon/init.lua".source = "${config.home.homeDirectory}/git/dotfiles/hammerspoon/init.lua";
-    ".fdignore".source = "${config.home.homeDirectory}/git/dotfiles/.fdignore";
     ".tmux.conf".source = "${config.home.homeDirectory}/git/dotfiles/tmux/.tmux.conf";
     ".zprofile".source = "${config.home.homeDirectory}/git/dotfiles/zsh/.zprofile";
     "Library/Application Support/euporie".source = "${config.home.homeDirectory}/git/dotfiles/euporie";
