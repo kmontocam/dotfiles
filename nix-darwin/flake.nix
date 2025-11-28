@@ -114,6 +114,7 @@
 	  "hammerspoon"
 	  "linear-linear"
 	  "logi-options+"
+	  "microsoft-azure-storage-explorer"
 	  "mongodb-compass"
 	  "notion"
 	  "raspberry-pi-imager"
@@ -123,6 +124,7 @@
 	  "soundsource"
 	  "spotify"
 	  "utm"
+	  "zen"
 	  "zoom"
 	];
 	masApps = {
