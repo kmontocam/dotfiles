@@ -16,7 +16,6 @@ return {
     toggle = { enabled = true },
   },
   keys = {
-    -- git
     {
       "<leader>gb",
       function()
@@ -66,7 +65,6 @@ return {
       end,
       desc = "Git Log File",
     },
-    -- -- gh
     {
       "<leader>gi",
       function()
@@ -95,7 +93,6 @@ return {
       end,
       desc = "GitHub Pull Requests (all)",
     },
-    -- -- Other
     {
       "<leader>cR",
       function()
