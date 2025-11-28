@@ -40,6 +40,7 @@
 	  pkgs.fd
 	  pkgs.flyctl
 	  pkgs.fzf
+	  pkgs.gh
 	  pkgs.gitleaks
 	  pkgs.go
 	  pkgs.google-cloud-sdk
