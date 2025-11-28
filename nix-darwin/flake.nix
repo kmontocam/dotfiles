@@ -110,7 +110,7 @@
 	  "balenaetcher"
 	  "chatgpt"
 	  "discord"
-	  "docker"
+	  "docker-desktop"
 	  "ghostty"
 	  "google-chrome"
 	  "hammerspoon"
