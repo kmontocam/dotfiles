@@ -69,6 +69,7 @@
 	  pkgs.ngrok
 	  pkgs.nmap
 	  pkgs.nodejs_22
+	  pkgs.opencode
 	  pkgs.openssl
 	  pkgs.opentofu
 	  pkgs.overmind
