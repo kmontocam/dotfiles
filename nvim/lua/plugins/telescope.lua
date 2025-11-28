@@ -30,13 +30,7 @@ return {
       defaults = {
         buffer_previewer_maker = new_maker,
         path_display = { "truncate" },
-        truncate = 3,
-        mappings = {
-          i = {
-            ["<C-K>"] = actions.move_selection_previous,
-            ["<C-J>"] = actions.move_selection_next,
-          },
-        },
+        truncate = 4,
       },
       extensions = {
         undo = {
