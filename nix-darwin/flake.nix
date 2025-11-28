@@ -103,6 +103,7 @@
 	brews = [
 	  "libpq"  # includes psql
 	  "libyaml"
+	  "poppler"
 	];
 	casks = [
 	  "balenaetcher"
