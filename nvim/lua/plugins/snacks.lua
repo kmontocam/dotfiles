@@ -7,7 +7,7 @@ return {
     bigfile = { enabled = true },
     gh = { enabled = true },
     gitbrowse = { enabled = true },
-    indent = { enabled = true },
+    indent = { enabled = true, animate = { enabled = false } },
     input = { enabled = true },
     keymap = { enabled = true },
     layout = { enabled = true },
