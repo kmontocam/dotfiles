@@ -76,15 +76,6 @@ return {
                 query = "@assignment.inner",
                 desc = "Select inner part of an assignment",
               },
-              ["l="] = {
-                query = "@assignment.lhs",
-                desc = "Select left hand side of an assignment",
-              },
-              ["r="] = {
-                query = "@assignment.rhs",
-                desc = "Select right hand side of an assignment",
-              },
-
               ["a:"] = {
                 query = "@property.outer",
                 desc = "Select outer part of an object property",
