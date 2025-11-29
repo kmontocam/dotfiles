@@ -9,13 +9,23 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
     "onsails/lspkind.nvim",
+    "zbirenbaum/copilot-cmp",
   },
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
+    local copilot_cmp = require("copilot_cmp")
 
     require("luasnip.loaders.from_vscode").lazy_load()
+
+    lspkind.init({
+      symbol_map = {
+        Copilot = "",
+      },
+    })
+
+    copilot_cmp.setup()
 
     cmp.setup({
       completion = {
@@ -34,6 +44,7 @@ return {
         ["<cr>"] = cmp.mapping.confirm({ select = false }),
       }),
       sources = cmp.config.sources({
+        { name = "copilot" },
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
@@ -46,5 +57,7 @@ return {
         }),
       },
     })
+
+    vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
   end,
 }
