@@ -9,8 +9,8 @@ vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 
-vim.keymap.set("n", "<C-D>", "<C-d>zz")
-vim.keymap.set("n", "<C-U>", "<C-u>zz")
+vim.keymap.set("n", "<C-D>", "<C-D>zz")
+vim.keymap.set("n", "<C-U>", "<C-U>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
