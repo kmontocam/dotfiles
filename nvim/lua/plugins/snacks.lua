@@ -103,7 +103,7 @@ return {
     {
       "<leader>gB",
       function()
-        Snacks.itbrowse()
+        Snacks.gitbrowse()
       end,
       desc = "Git Browse",
       mode = { "n", "v" },
