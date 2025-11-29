@@ -13,6 +13,8 @@ return {
     layout = { enabled = true },
     lazygit = { enabled = true },
     notifier = { enabled = true },
+    picker = { enabled = true },
+    terminal = { enabled = true },
     toggle = { enabled = true },
   },
   keys = {

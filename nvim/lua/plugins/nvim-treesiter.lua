@@ -189,15 +189,6 @@ return {
               ["[L"] = { query = "@loop.outer", desc = "Prev loop end" },
             },
           },
-          swap = {
-            enable = true,
-            swap_next = {
-              ["<leader>nf"] = "@function.outer",
-            },
-            swap_previous = {
-              ["<leader>pf"] = "@function.outer",
-            },
-          },
         },
       })
 
