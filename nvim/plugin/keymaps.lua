@@ -1,4 +1,3 @@
-vim.keymap.set("n", "<leader>pv", ":Ex<cr>", { desc = "Open file explorer" })
 vim.keymap.set("n", "<leader>nh", ":nohl<cr>", { desc = "Clear search highlight" })
 vim.keymap.set("n", "x", '"_x', { desc = "Delete without copying into register" })
 
@@ -65,4 +64,5 @@ vim.keymap.set("n", "<leader>du", function()
     vim.diagnostic.enable(false)
   end
 end, { desc = "Toggle diagnostics" })
+
 vim.keymap.set("n", "<leader>r", ":e!<cr>", { desc = "Reload file from disk" })
