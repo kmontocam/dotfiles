@@ -147,8 +147,6 @@ home.sessionPath = [
 
     initContent = ''
       # disable escape to skip fzf when in vi mode, replace with ctrl+p
-      bindkey -M viins -r '\ec'
-      bindkey -M vicmd -r '\ec'
       bindkey '^P' fzf-cd-widget
 
       # jupyter venv function
@@ -178,10 +176,14 @@ home.sessionPath = [
       bindkey -M vicmd ' y' vi-yank-xclip
       bindkey -M vicmd ' d' vi-yank-cut-xclip
 
-      # Source external tools
+      # source external tools
       source <(fzf --zsh)
       eval "$(zoxide init zsh)"
       eval "$(starship init zsh)"
+
+      # escape fzf commands with with esc key
+      bindkey -M viins -r '\ec'
+      bindkey -M vicmd -r '\ec'
     '';
   };
   programs.tmux = {
