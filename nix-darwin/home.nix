@@ -124,7 +124,6 @@ home.sessionPath = [
       cl = "clear";
       drs = "sudo darwin-rebuild switch --flake $HOME/git/dotfiles/nix-darwin#kmontocam --impure";
       g = "git";
-      hms = "home-manager switch --impure";
       ipy = "ipython --TerminalInteractiveShell.editing_mode=vi --TerminalInteractiveShell.emacs_bindings_in_vi_insert_mode=False";
       jvenv = "set_jupyter_venv";
       kb = "kubebuilder";
