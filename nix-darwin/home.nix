@@ -146,8 +146,6 @@ home.sessionPath = [
     ];
 
     initContent = ''
-      # disable escape to skip fzf when in vi mode, replace with ctrl+p
-      bindkey '^P' fzf-cd-widget
 
       # jupyter venv function
       set_jupyter_venv() {
@@ -181,9 +179,10 @@ home.sessionPath = [
       eval "$(zoxide init zsh)"
       eval "$(starship init zsh)"
 
-      # escape fzf commands with with esc key
+      # disable esc cd widget default keybinds in fzf, replace with ctrl+p
       bindkey -M viins -r '\ec'
       bindkey -M vicmd -r '\ec'
+      bindkey '^P' fzf-cd-widget
     '';
   };
   # using both `tmux.conf` and home-manager config
