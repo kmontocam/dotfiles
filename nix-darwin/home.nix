@@ -49,6 +49,7 @@
     ".gitignore_global".source = "${config.home.homeDirectory}/git/dotfiles/.gitignore_global";
     ".hammerspoon/init.lua".source = "${config.home.homeDirectory}/git/dotfiles/hammerspoon/init.lua";
     ".tmux.conf".source = "${config.home.homeDirectory}/git/dotfiles/tmux/.tmux.conf";
+    ".tool-versions".source = "${config.home.homeDirectory}/git/dotfiles/.tool-versions";
     "Library/Application Support/euporie".source = "${config.home.homeDirectory}/git/dotfiles/euporie";
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
