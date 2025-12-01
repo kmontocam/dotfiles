@@ -207,6 +207,9 @@ home.sessionPath = [
             sha256 = "sha256-IyYQyIONMnVBwhhcI3anOPxKpv2TfI2KZgJ5o5JtZ8I=";
           };
         };
+        extraConfig = ''
+          set -g @tmux_power_theme '#CCCCCC'
+        '';
       }
     ];
     resizeAmount = 5;
