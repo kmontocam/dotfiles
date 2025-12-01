@@ -16,6 +16,11 @@ return {
             end
           end)(),
         },
+        yq = {
+          command = "yq",
+          args = { "-P", "sort_keys(..)" },
+          stdin = true,
+        },
       },
 
       formatters_by_ft = {
@@ -37,7 +42,7 @@ return {
         tex = { "latexindent" },
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
-        yaml = { "prettier" },
+        yaml = { "prettier", "yq" },
       },
       format_on_save = {
         lsp_fallback = true,
