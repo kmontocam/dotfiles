@@ -12,7 +12,25 @@
       "environment": {
         "NODE_ENV": "development"
       },
-      "extensions": [".js", ".ts", ".jsx", ".tsx", ".md"]
+      "extensions": [
+        ".css",
+        ".html",
+        ".js",
+        ".json",
+        ".jsonc",
+        ".jsx",
+        ".md",
+        ".scss",
+        ".ts",
+        ".tsx",
+        ".yaml",
+        ".yml",
+        ".svg"
+      ]
+    },
+    "yq": {
+      "command": ["yq", "-i", "-P", "sort_keys(..)", "$FILE"],
+      "extensions": [".yaml", ".yml"]
     }
   }
 }
