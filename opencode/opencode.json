@@ -5,5 +5,14 @@
       "type": "remote",
       "url": "https://mcp.context7.com/mcp"
     }
+  },
+  "formatter": {
+    "prettier": {
+      "command": ["prettier", "--write", "$FILE"],
+      "environment": {
+        "NODE_ENV": "development"
+      },
+      "extensions": [".js", ".ts", ".jsx", ".tsx", ".md"]
+    }
   }
 }

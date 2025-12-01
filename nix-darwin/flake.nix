@@ -76,6 +76,7 @@
 	  pkgs.pandoc
 	  pkgs.pnpm
 	  pkgs.poetry
+	  pkgs.prettier
 	  pkgs.redis
 	  pkgs.ripgrep
 	  pkgs.rubocop
