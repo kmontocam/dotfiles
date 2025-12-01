@@ -1,6 +1,7 @@
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
-export EDITOR="nvim"
+export EDITOR="vim"
+export VISUAL="vim"
 
 export FZF_CTRL_T_COMMAND="fd . $HOME --type d -H -L -d 3 2> /dev/null"
 export FZF_CTRL_T_OPTS="--preview 'tree -C {} | head -128'"
