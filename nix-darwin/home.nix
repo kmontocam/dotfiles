@@ -49,7 +49,6 @@
     ".gitignore_global".source = "${config.home.homeDirectory}/git/dotfiles/.gitignore_global";
     ".hammerspoon/init.lua".source = "${config.home.homeDirectory}/git/dotfiles/hammerspoon/init.lua";
     ".tmux.conf".source = "${config.home.homeDirectory}/git/dotfiles/tmux/.tmux.conf";
-    ".zprofile".source = "${config.home.homeDirectory}/git/dotfiles/zsh/.zprofile";
     "Library/Application Support/euporie".source = "${config.home.homeDirectory}/git/dotfiles/euporie";
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
@@ -79,14 +78,35 @@
   #
   #  /etc/profiles/per-user/kmontocam/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
+home.sessionVariables = {
+    DOCKER_DEFAULT_PLATFORM = "linux/amd64";
     EDITOR = "vim";
+    FZF_CTRL_T_COMMAND = "fd . $HOME --type d -H -L -d 3 2> /dev/null";
+    FZF_CTRL_T_OPTS = "--preview 'tree -C {} | head -128'";
+    FZF_DEFAULT_COMMAND = "fd . --type d -H -L -d 3 2> /dev/null";
+    FZF_DEFAULT_OPTS = "--tmux";
+    HOMEBREW_NO_EMOJI = "1";
+    JUPYTER_CONFIG_DIR = "$HOME/.config/jupyter";
+    JUPYTER_DATA_DIR = "$HOME/.local/share/jupyter/data";
+    JUPYTER_RUNTIME_DIR = "$HOME/.local/share/jupyter/runtime";
+    K9S_CONFIG_DIR = "$HOME/.config/k9s";
+    LANG = "en_US.UTF-8";
+    PNPM_HOME = "$HOME/.pnpm";
+    TLDR_AUTO_UPDATE_DISABLED = "1";
     VISUAL = "vim";
+    WASMTIME_HOME = "$HOME/.wasmtime";
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=#666666";
   };
 
-  home.sessionPath = [
+home.sessionPath = [
     "/run/current-system/sw/bin"
     "$HOME/.nix-profile/bin"
+    "$HOME/.asdf/shims"
+    "$HOME/.krew/bin"
+    "$HOME/.local/bin"
+    "$HOME/.pnpm"
+    "$HOME/.wasmtime/bin"
+    "/opt/homebrew/opt/libpq/bin"
   ];
 
   # Let Home Manager install and manage itself.
@@ -104,7 +124,7 @@
   programs.tmux = {
     enable = true;
     escapeTime = 0;
-    historyLimit = 16384;
+    historyLimit = 65536;
     keyMode = "vi";
     mouse = true;
     plugins = [
