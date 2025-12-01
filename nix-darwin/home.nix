@@ -148,9 +148,8 @@ home.sessionPath = [
 
     initContent = ''
       # disable escape to skip fzf when in vi mode, replace with ctrl+p
-      [[ $- =~ i ]] && bindkey -M viins -r '\ec'
-      [[ $- =~ i ]] && bindkey -M vicmd -r '\ec'
-
+      bindkey -M viins -r '\ec'
+      bindkey -M vicmd -r '\ec'
       bindkey '^P' fzf-cd-widget
 
       # jupyter venv function
