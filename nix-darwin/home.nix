@@ -186,6 +186,8 @@ home.sessionPath = [
       bindkey -M vicmd -r '\ec'
     '';
   };
+  # using both `tmux.conf` and home-manager config
+  # keeping plugin management in home-manager and required configs to prevent conflicts
   programs.tmux = {
     enable = true;
     escapeTime = 0;
