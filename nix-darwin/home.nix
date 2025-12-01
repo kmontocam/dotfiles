@@ -80,7 +80,8 @@
   #  /etc/profiles/per-user/kmontocam/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "vim";
+    VISUAL = "vim";
   };
 
   home.sessionPath = [
@@ -102,6 +103,10 @@
   };
   programs.tmux = {
     enable = true;
+    escapeTime = 0;
+    historyLimit = 16384;
+    keyMode = "vi";
+    mouse = true;
     plugins = [
       pkgs.tmuxPlugins.vim-tmux-navigator
       pkgs.tmuxPlugins.resurrect
@@ -119,5 +124,6 @@
         };
       }
     ];
+    resizeAmount = 5;
   };
 }
