@@ -81,10 +81,6 @@
 home.sessionVariables = {
     DOCKER_DEFAULT_PLATFORM = "linux/amd64";
     EDITOR = "vim";
-    FZF_CTRL_T_COMMAND = "fd . $HOME --type d -H -L -d 3 2> /dev/null";
-    FZF_CTRL_T_OPTS = "--preview 'tree -C {} | head -128'";
-    FZF_DEFAULT_COMMAND = "fd . --type d -H -L -d 3 2> /dev/null";
-    FZF_DEFAULT_OPTS = "--tmux";
     HOMEBREW_NO_EMOJI = "1";
     JUPYTER_CONFIG_DIR = "$HOME/.config/jupyter";
     JUPYTER_DATA_DIR = "$HOME/.local/share/jupyter/data";
@@ -110,6 +106,15 @@ home.sessionPath = [
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs.fzf = {
+    enable = true;
+    defaultCommand = "fd . --type d -H -L -d 3 2> /dev/null";
+    fileWidgetCommand = "fd . $HOME --type d -H -L -d 3 2> /dev/null";
+    fileWidgetOptions = [
+      "--preview 'tree -C {} | head -128'"
+    ];
+    defaultOptions = [ "--tmux" ];
+  };
   programs.zsh = {
    autosuggestion = {
       enable = true;
