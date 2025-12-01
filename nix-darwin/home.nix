@@ -43,6 +43,7 @@
     ".config/k9s/config.yaml".source = "${config.home.homeDirectory}/git/dotfiles/k9s/config.yaml";
     ".config/k9s/skins/transparent.yaml".source = "${config.home.homeDirectory}/git/dotfiles/k9s/skins/transparent.yaml";
     ".config/nvim".source = "${config.home.homeDirectory}/git/dotfiles/nvim";
+    ".config/opencode/opencode.json".source = "${config.home.homeDirectory}/git/dotfiles/opencode/opencode.json";
     ".config/starship.toml".source = "${config.home.homeDirectory}/git/dotfiles/starship/starship.toml";
     ".fdignore".source = "${config.home.homeDirectory}/git/dotfiles/.fdignore";
     ".gitconfig".source = "${config.home.homeDirectory}/git/dotfiles/.gitconfig";
