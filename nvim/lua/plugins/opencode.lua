@@ -25,7 +25,7 @@ return {
     vim.keymap.set({ "n", "x" }, "<leader>oa", function()
       require("opencode").ask("@this: ", { submit = true })
     end, { desc = "Ask opencode" })
-    vim.keymap.set({ "n", "x" }, "<leader>og", function()
+    vim.keymap.set("x", "<leader>og", function()
       require("opencode").prompt("@this")
     end, { desc = "Add to opencode" })
     vim.keymap.set("n", "<leader>ob", function()
