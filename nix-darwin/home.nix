@@ -95,7 +95,6 @@ home.sessionVariables = {
     TLDR_AUTO_UPDATE_DISABLED = "1";
     VISUAL = "vim";
     WASMTIME_HOME = "$HOME/.wasmtime";
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=#666666";
   };
 
 home.sessionPath = [
@@ -112,13 +111,79 @@ home.sessionPath = [
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.zsh = {
-    enable = true;
+   autosuggestion = {
+      enable = true;
+      highlight = "fg=#666666";
+    }; enable = true;
+    autocd = true;
+    defaultKeymap = "viins";
     enableCompletion = true;
-    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    shellAliases = {
+      cd = "z";
+      cl = "clear";
+      drs = "sudo darwin-rebuild switch --flake $HOME/git/dotfiles/nix-darwin#kmontocam --impure";
+      g = "git";
+      hms = "home-manager switch --impure";
+      ipy = "ipython --TerminalInteractiveShell.editing_mode=vi --TerminalInteractiveShell.emacs_bindings_in_vi_insert_mode=False";
+      jvenv = "set_jupyter_venv";
+      kb = "kubebuilder";
+      ku = "kubectl";
+      ldo = "lazydocker";
+      lg = "lazygit";
+      lvenv = "source ./.venv/bin/activate";
+      myip = "curl http://ifconfig.io";
+      nfu = "nix flake update --flake $HOME/git/dotfiles/nix-darwin";
+      nv = "nvim";
+      tf = "terraform";
+      tg = "terragrunt";
+      vi = "nvim";
+      vim = "nvim";
+      zshsource = "source ~/.zshrc";
+    };
 
-    initExtra = ''
-      source $HOME/git/dotfiles/zsh/.zshrc # NOTE: as not defined in home.file
+    setOptions = [
+      "AUTO_CD"
+    ];
+
+    initContent = ''
+      # disable escape to skip fzf when in vi mode, replace with ctrl+p
+      [[ $- =~ i ]] && bindkey -M viins -r '\ec'
+      [[ $- =~ i ]] && bindkey -M vicmd -r '\ec'
+
+      bindkey '^P' fzf-cd-widget
+
+      # jupyter venv function
+      set_jupyter_venv() {
+          if ! uv pip install ipykernel; then
+              return 1
+          fi
+          uv run python -m ipykernel install --sys-prefix
+          export JUPYTER_PATH="$PATH:$(pwd)/.venv/share/jupyter"
+      }
+
+      # yank/cut to system clipboard
+      bindkey -v
+      function vi-yank-xclip {
+          zle vi-yank
+          echo "$CUTBUFFER" | pbcopy -i
+      }
+      function vi-yank-cut-xclip {
+          zle vi-yank
+          echo "$CUTBUFFER" | pbcopy
+          zle kill-whole-line
+      }
+
+      zle -N vi-yank-xclip
+      zle -N vi-yank-cut-xclip
+
+      bindkey -M vicmd ' y' vi-yank-xclip
+      bindkey -M vicmd ' d' vi-yank-cut-xclip
+
+      # Source external tools
+      source <(fzf --zsh)
+      eval "$(zoxide init zsh)"
+      eval "$(starship init zsh)"
     '';
   };
   programs.tmux = {
