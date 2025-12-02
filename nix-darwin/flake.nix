@@ -74,6 +74,7 @@
 	  pkgs.opentofu
 	  pkgs.overmind
 	  pkgs.pandoc
+	  pkgs.pgcli
 	  pkgs.pnpm
 	  pkgs.poetry
 	  pkgs.prettier
