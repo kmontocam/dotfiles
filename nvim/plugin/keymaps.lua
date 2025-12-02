@@ -33,21 +33,21 @@ vim.keymap.set("n", "<leader>tx", ":tabclose<cr>", { desc = "Close current tab" 
 vim.keymap.set("n", "<leader>tn", ":tabn<cr>", { desc = "Go to next tab" })
 vim.keymap.set("n", "<leader>tp", ":tabp<cr>", { desc = "Go to previous tab" })
 
-vim.keymap.set("n", "[d", function()
+vim.keymap.set("n", "[w", function()
   vim.diagnostic.jump({
     count = -1,
     float = true,
   })
 end, { desc = "Go to previous diagnostic message" })
-vim.keymap.set("n", "]d", function()
+vim.keymap.set("n", "]w", function()
   vim.diagnostic.jump({
     count = 1,
     float = true,
   })
 end, { desc = "Go to next diagnostic message" })
-vim.keymap.set("n", "<leader>m", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
-vim.keymap.set("n", "<leader>du", function()
+vim.keymap.set("n", "<leader>wm", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
+vim.keymap.set("n", "<leader>wl", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+vim.keymap.set("n", "<leader>wu", function()
   local enabled = true
 
   if vim.diagnostic.is_enabled then
