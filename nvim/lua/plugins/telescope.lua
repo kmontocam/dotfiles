@@ -7,7 +7,6 @@ return {
   },
   config = function()
     local telescope = require("telescope")
-    local actions = require("telescope.actions")
     local previewers = require("telescope.previewers")
 
     local new_maker = function(filepath, bufnr, opts)
