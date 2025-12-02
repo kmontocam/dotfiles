@@ -30,7 +30,7 @@ return {
 
       nmap("K", vim.lsp.buf.hover, "Hover documentation")
 
-      nmap("<leader>D", "<cmd>Telescope diagnostics bufnr=0<cr>", "Diagnostics")
+      nmap("<leader>wl", "<cmd>Telescope diagnostics bufnr=0<cr>", "Diagnostics")
       nmap("gro", vim.lsp.buf.declaration, "Goto declaration")
 
       -- Create a command `:Format` local to the LSP buffer

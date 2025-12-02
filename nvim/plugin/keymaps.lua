@@ -18,7 +18,7 @@ vim.keymap.set("x", "<leader>p", [["_dp]], { desc = "Paste without copying into 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
 vim.keymap.set({ "n", "v" }, "<leader>d", [["+d]], { desc = "Cut to system clipboard" })
 
-vim.keymap.set("n", "<leader>yg", function()
+vim.keymap.set("n", "<leader><C-G>", function()
   local filepath = vim.fn.expand("%")
   vim.fn.setreg("+", filepath)
 end, { desc = "Copy relative file path to system clipboard" })
@@ -46,7 +46,6 @@ vim.keymap.set("n", "]w", function()
   })
 end, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>wm", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set("n", "<leader>wl", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 vim.keymap.set("n", "<leader>wu", function()
   local enabled = true
 
