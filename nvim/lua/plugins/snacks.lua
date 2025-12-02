@@ -17,6 +17,11 @@ return {
     terminal = { enabled = true },
     toggle = { enabled = true },
   },
+  config = function(_, opts)
+    require("snacks").setup(opts)
+    -- prevent cursor from becoming thin in insert mode
+    vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20"
+  end,
   keys = {
     {
       "<leader>gb",
