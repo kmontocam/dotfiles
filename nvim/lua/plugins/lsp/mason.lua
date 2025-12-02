@@ -46,6 +46,7 @@ return {
         "npm-groovy-lint",
         "prettier",
         "shfmt",
+        "debugpy",
         "rubocop",
         "ruff",
         "rustfmt",

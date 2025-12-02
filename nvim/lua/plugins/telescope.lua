@@ -44,7 +44,6 @@ return {
 
     telescope.load_extension("fzf")
 
-    vim.keymap.set("n", "<leader>?", "<cmd>Telescope oldfiles<cr>", { desc = "Find recently opened files" })
     vim.keymap.set("n", "<leader>/", function()
       require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
         winblend = 16,
