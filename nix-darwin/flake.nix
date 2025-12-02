@@ -162,7 +162,6 @@
 	  "/System/Applications/Mail.app"
 	  "/System/Applications/Calendar.app"
 	  "/System/Applications/System Settings.app"
-	  "/Applications/Notion.app"
 	  "/Applications/Ghostty.app"
 	];
 	dock.wvous-bl-corner = 1;
