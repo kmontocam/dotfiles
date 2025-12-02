@@ -34,6 +34,8 @@ require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } }, {
   change_detection = {
     notify = false,
   },
+  -- use data directory for lockfile (writable location)
+  lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
 })
 
 vim.keymap.set("n", "<leader>la", "<cmd>Lazy<cr>", { desc = "Open Lazy" })
