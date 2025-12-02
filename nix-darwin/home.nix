@@ -83,7 +83,7 @@
   #
 home.sessionVariables = {
     DOCKER_DEFAULT_PLATFORM = "linux/amd64";
-    EDITOR = "vim";
+    EDITOR = "nvim";
     HOMEBREW_NO_EMOJI = "1";
     JUPYTER_CONFIG_DIR = "$HOME/.config/jupyter";
     JUPYTER_DATA_DIR = "$HOME/.local/share/jupyter/data";
@@ -92,7 +92,7 @@ home.sessionVariables = {
     LANG = "en_US.UTF-8";
     PNPM_HOME = "$HOME/.pnpm";
     TLDR_AUTO_UPDATE_DISABLED = "1";
-    VISUAL = "vim";
+    VISUAL = "nvim";
     WASMTIME_HOME = "$HOME/.wasmtime";
   };
 
