@@ -49,6 +49,7 @@
     ".gitconfig".source = "${config.home.homeDirectory}/git/dotfiles/.gitconfig";
     ".gitignore_global".source = "${config.home.homeDirectory}/git/dotfiles/.gitignore_global";
     ".hammerspoon/init.lua".source = "${config.home.homeDirectory}/git/dotfiles/hammerspoon/init.lua";
+    ".ipython/profile_default/ipython_config.py".source = "${config.home.homeDirectory}/git/dotfiles/ipython/profile_default/ipython_config.py";
     ".tmux.conf".source = "${config.home.homeDirectory}/git/dotfiles/tmux/.tmux.conf";
     ".tool-versions".source = "${config.home.homeDirectory}/git/dotfiles/.tool-versions";
     "Library/Application Support/euporie".source = "${config.home.homeDirectory}/git/dotfiles/euporie";
@@ -131,7 +132,7 @@ home.sessionPath = [
       cl = "clear";
       drs = "sudo darwin-rebuild switch --flake $HOME/git/dotfiles/nix-darwin#kmontocam --impure";
       g = "git";
-      ipy = "ipython --TerminalInteractiveShell.editing_mode=vi --TerminalInteractiveShell.emacs_bindings_in_vi_insert_mode=False";
+      ipy = "ipython";
       jvenv = "set_jupyter_venv";
       kb = "kubebuilder";
       ku = "kubectl";
