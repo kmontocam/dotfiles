@@ -51,6 +51,7 @@
 	  pkgs.iruby
 	  pkgs.jdk17
 	  pkgs.jq
+	  pkgs.jupyter
 	  pkgs.jwt-cli
 	  pkgs.k9s
 	  pkgs.krew
@@ -64,6 +65,7 @@
 	  pkgs.minio-client
 	  pkgs.mkalias
 	  pkgs.mongosh
+	  pkgs.mypy
 	  pkgs.neovim
 	  pkgs.nerd-fonts.jetbrains-mono
 	  pkgs.ngrok
@@ -76,6 +78,7 @@
 	  pkgs.pgcli
 	  pkgs.pnpm
 	  pkgs.poetry
+	  pkgs.pre-commit
 	  pkgs.prettier
 	  pkgs.redis
 	  pkgs.ripgrep

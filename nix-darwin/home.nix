@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -107,6 +107,24 @@ home.sessionPath = [
     "$HOME/.bun/bin"
     "/opt/homebrew/opt/libpq/bin"
   ];
+
+  # install/update tools with programming language package managers during activation
+  home.activation = {
+    installUvTools = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      export PATH="$HOME/.local/bin:$PATH"
+      $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade alembic
+      $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade euporie
+      $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade grip
+      $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade ipython
+      $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade nbconvert
+    '';
+
+    installBunTools = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      export PATH="$HOME/.bun/bin:$PATH"
+      $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @modelcontextprotocol/inspector
+      $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g opencode-ai@latest
+    '';
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
