@@ -32,6 +32,7 @@
 	  pkgs.awscli2
 	  pkgs.azure-cli
 	  pkgs.bat
+	  pkgs.bun
 	  pkgs.claude-code
 	  pkgs.cloc
 	  pkgs.cmake
