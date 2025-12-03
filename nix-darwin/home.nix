@@ -104,6 +104,7 @@ home.sessionPath = [
     "$HOME/.local/bin"
     "$HOME/.pnpm"
     "$HOME/.wasmtime/bin"
+    "$HOME/.bun/bin"
     "/opt/homebrew/opt/libpq/bin"
   ];
 

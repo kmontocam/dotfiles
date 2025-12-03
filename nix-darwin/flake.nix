@@ -33,7 +33,6 @@
 	  pkgs.azure-cli
 	  pkgs.bat
 	  pkgs.bun
-	  pkgs.claude-code
 	  pkgs.cloc
 	  pkgs.cmake
 	  pkgs.esbuild
@@ -70,7 +69,6 @@
 	  pkgs.ngrok
 	  pkgs.nmap
 	  pkgs.nodejs_22
-	  pkgs.opencode
 	  pkgs.openssl
 	  pkgs.opentofu
 	  pkgs.overmind
