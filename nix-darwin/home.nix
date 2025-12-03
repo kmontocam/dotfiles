@@ -98,14 +98,13 @@ home.sessionVariables = {
 
 home.sessionPath = [
     "/run/current-system/sw/bin"
-    "$HOME/.nix-profile/bin"
+    "/opt/homebrew/opt/libpq/bin"
     "$HOME/.asdf/shims"
+    "$HOME/.bun/bin"
     "$HOME/.krew/bin"
     "$HOME/.local/bin"
-    "$HOME/.pnpm"
+    "$HOME/.nix-profile/bin"
     "$HOME/.wasmtime/bin"
-    "$HOME/.bun/bin"
-    "/opt/homebrew/opt/libpq/bin"
   ];
 
   # install/update tools with programming language package managers during activation
