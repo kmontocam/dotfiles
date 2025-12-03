@@ -16,6 +16,26 @@ return {
       local debugpy_path = vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python"
 
       require("dap-python").setup(debugpy_path)
+
+      dap.configurations.python = {
+        {
+          type = "python",
+          request = "attach",
+          name = "Attach to debugpy container",
+          connect = {
+            host = "localhost",
+            port = 5678,
+          },
+          pathMappings = {
+            {
+              localRoot = "${workspaceFolder}",
+              remoteRoot = "/opt",
+            },
+          },
+          justMyCode = false,
+        },
+      }
+
       require("dapui").setup()
       ---@diagnostic disable-next-line: missing-parameter
       require("nvim-dap-virtual-text").setup()
