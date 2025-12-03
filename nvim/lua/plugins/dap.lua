@@ -7,6 +7,7 @@ return {
       "nvim-neotest/nvim-nio",
       "williamboman/mason.nvim",
       "mfussenegger/nvim-dap-python",
+      "nvim-telescope/telescope-dap.nvim",
     },
     config = function()
       local dap = require("dap")
@@ -25,7 +26,7 @@ return {
       vim.keymap.set("n", "<leader>b?", function()
         ---@diagnostic disable-next-line: missing-fields
         require("dapui").eval(nil, { enter = true })
-      end)
+      end, { desc = "DAP Eval Expression" })
 
       vim.keymap.set("n", "<leader>bc", dap.continue, { desc = "DAP Continue" })
       vim.keymap.set("n", "<leader>bi", dap.step_into, { desc = "DAP Step Into" })
@@ -33,6 +34,10 @@ return {
       vim.keymap.set("n", "<leader>bu", dap.step_out, { desc = "DAP Step Out" })
       vim.keymap.set("n", "<leader>bk", dap.step_back, { desc = "DAP Step Back" })
       vim.keymap.set("n", "<leader>bx", dap.restart, { desc = "DAP Restart" })
+
+      vim.keymap.set("n", "<leader>bl", function()
+        require("telescope").extensions.dap.configurations()
+      end, { desc = "DAP List Configurations" })
 
       dap.listeners.before.attach.dapui_config = function()
         ui.open()
