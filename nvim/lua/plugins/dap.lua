@@ -12,7 +12,7 @@ return {
       local dap = require("dap")
       local ui = require("dapui")
 
-      local debugpy_path = vim.fn.stdpath("data") .. "/mason/packages/debugpy/debugpy"
+      local debugpy_path = vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python"
 
       require("dap-python").setup(debugpy_path)
       require("dapui").setup()
