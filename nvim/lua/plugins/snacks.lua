@@ -59,6 +59,34 @@ return {
       desc = "Git Log File",
     },
     {
+      "<leader>gU",
+      function()
+        Snacks.gitbrowse({
+          open = function(url)
+            vim.fn.setreg("+", url)
+          end,
+          what = "branch",
+          notify = false,
+        })
+      end,
+      desc = "Git Yank Remote URL",
+    },
+    {
+      "<leader>gR",
+      function()
+        Snacks.gitbrowse()
+      end,
+      desc = "Git Remote Buffer Reference",
+      mode = { "n", "v" },
+    },
+    {
+      "<leader>lg",
+      function()
+        Snacks.lazygit()
+      end,
+      desc = "Lazygit",
+    },
+    {
       "<leader>gi",
       function()
         Snacks.picker.gh_issue()
@@ -85,34 +113,6 @@ return {
         Snacks.picker.gh_pr({ state = "all" })
       end,
       desc = "GitHub Pull Requests (all)",
-    },
-    {
-      "<leader>gB",
-      function()
-        Snacks.gitbrowse()
-      end,
-      desc = "Git Browse",
-      mode = { "n", "v" },
-    },
-    {
-      "<leader>gU",
-      function()
-        Snacks.gitbrowse({
-          open = function(url)
-            vim.fn.setreg("+", url)
-          end,
-          what = "branch",
-          notify = false,
-        })
-      end,
-      desc = "Git Copy Remote URL",
-    },
-    {
-      "<leader>lg",
-      function()
-        Snacks.lazygit()
-      end,
-      desc = "Lazygit",
     },
     {
       "<leader>cR",
