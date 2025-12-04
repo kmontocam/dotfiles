@@ -40,9 +40,44 @@ return {
         create_python_attach_config("/app"),
       }
 
-      require("dapui").setup()
+      ---@diagnostic disable-next-line: missing-fields
+      require("dapui").setup({
+        layouts = {
+          {
+            elements = {
+              {
+                id = "scopes",
+                size = 0.5,
+              },
+              { id = "breakpoints", size = 0.25 },
+              { id = "stacks", size = 0.125 },
+              { id = "watches", size = 0.125 },
+            },
+            size = 64,
+            position = "left",
+          },
+          {
+            elements = {
+              {
+                id = "repl",
+                size = 0.75,
+              },
+              {
+                id = "console",
+                size = 0.25,
+              },
+            },
+            size = 16,
+            position = "bottom",
+          },
+        },
+      })
       ---@diagnostic disable-next-line: missing-parameter
-      require("nvim-dap-virtual-text").setup()
+      require("nvim-dap-virtual-text").setup({
+        all_frames = true,
+        commented = true,
+        virt_text_pos = "eol",
+      })
 
       vim.keymap.set("n", "<leader>bb", dap.toggle_breakpoint, { desc = "DAP Toggle Breakpoint" })
       vim.keymap.set("n", "<leader>br", dap.run_to_cursor, { desc = "DAP Run to Cursor" })
@@ -58,6 +93,9 @@ return {
       vim.keymap.set("n", "<leader>bu", dap.step_out, { desc = "DAP Step Out" })
       vim.keymap.set("n", "<leader>bk", dap.step_back, { desc = "DAP Step Back" })
       vim.keymap.set("n", "<leader>bx", dap.restart, { desc = "DAP Restart" })
+      vim.keymap.set("n", "<leader>bR", function()
+        ui.open({ reset = true })
+      end, { desc = "DAP Reset Layout Sizes" })
 
       dap.listeners.before.attach.dapui_config = function()
         ui.open()
