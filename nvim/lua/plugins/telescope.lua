@@ -30,6 +30,9 @@ return {
         buffer_previewer_maker = new_maker,
         path_display = { "truncate" },
         truncate = 4,
+        file_ignore_patterns = {
+          "^.git/",
+        },
       },
       extensions = {
         undo = {
