@@ -108,6 +108,7 @@
       homebrew = {
         enable = true;
 	brews = [
+	  "fontconfig"
 	  "libpq"  # includes psql
 	  "libyaml"
 	  "poppler"
