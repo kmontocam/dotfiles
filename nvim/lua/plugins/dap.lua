@@ -16,11 +16,11 @@ return {
 
       require("dap-python").setup(debugpy_path)
 
-      dap.configurations.python = {
-        {
+      local function create_python_attach_config(remoteRoot)
+        return {
           type = "python",
           request = "attach",
-          name = "Attach to debugpy container",
+          name = "Attach to debugpy container running in `" .. remoteRoot .. "`",
           connect = {
             host = "localhost",
             port = 5678,
@@ -28,11 +28,16 @@ return {
           pathMappings = {
             {
               localRoot = "${workspaceFolder}",
-              remoteRoot = "/opt",
+              remoteRoot = remoteRoot,
             },
           },
           justMyCode = false,
-        },
+        }
+      end
+
+      dap.configurations.python = {
+        create_python_attach_config("/opt"),
+        create_python_attach_config("/app"),
       }
 
       require("dapui").setup()
