@@ -95,6 +95,19 @@ return {
       mode = { "n", "v" },
     },
     {
+      "<leader>gU",
+      function()
+        Snacks.gitbrowse({
+          open = function(url)
+            vim.fn.setreg("+", url)
+          end,
+          what = "branch",
+          notify = false,
+        })
+      end,
+      desc = "Git Copy Remote URL",
+    },
+    {
       "<leader>lg",
       function()
         Snacks.lazygit()
