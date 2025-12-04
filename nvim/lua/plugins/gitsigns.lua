@@ -5,8 +5,14 @@ return {
     on_attach = function(bufnr)
       local gs = require("gitsigns")
 
-      vim.keymap.set("n", "]g", gs.next_hunk, { buffer = bufnr, desc = "Git Next Hunk" })
-      vim.keymap.set("n", "[g", gs.prev_hunk, { buffer = bufnr, desc = "Git Previous Hunk" })
+      vim.keymap.set("n", "[g", function()
+        ---@diagnostic disable-next-line: param-type-mismatch
+        gs.nav_hunk("prev")
+      end, { buffer = bufnr, desc = "Git Previous Hunk" })
+      vim.keymap.set("n", "]g", function()
+        ---@diagnostic disable-next-line: param-type-mismatch
+        gs.nav_hunk("next")
+      end, { buffer = bufnr, desc = "Git Next Hunk" })
 
       vim.keymap.set("n", "<leader>gb", function()
         gs.blame_line({ full = true })
