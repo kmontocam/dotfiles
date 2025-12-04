@@ -5,27 +5,14 @@ return {
     on_attach = function(bufnr)
       local gs = require("gitsigns")
 
-      local function map(mode, l, r, desc)
-        vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc })
-      end
+      vim.keymap.set("n", "]g", gs.next_hunk, { buffer = bufnr, desc = "Git Next Hunk" })
+      vim.keymap.set("n", "[g", gs.prev_hunk, { buffer = bufnr, desc = "Git Previous Hunk" })
 
-      map("n", "]h", gs.next_hunk, "Next Hunk")
-      map("n", "[h", gs.prev_hunk, "Prev Hunk")
-
-      map("n", "<leader>hp", gs.preview_hunk, "Preview hunk")
-
-      map("n", "<leader>hb", function()
+      vim.keymap.set("n", "<leader>gb", function()
         gs.blame_line({ full = true })
-      end, "Blame line")
-      map("n", "<leader>hB", gs.toggle_current_line_blame, "Toggle line blame")
+      end, { buffer = bufnr, desc = "Git Blame Line" })
 
-      map("n", "<leader>hd", gs.diffthis, "Diff this")
-      map("n", "<leader>hD", function()
-        gs.diffthis("~")
-      end, "Diff this ~")
-
-      -- Text object
-      map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Gitsigns select hunk")
+      vim.keymap.set("n", "<leader>gB", gs.toggle_current_line_blame, { buffer = bufnr, desc = "Git Toggle Line Blame" })
     end,
   },
 }

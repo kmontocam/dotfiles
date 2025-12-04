@@ -24,13 +24,6 @@ return {
   end,
   keys = {
     {
-      "<leader>gb",
-      function()
-        Snacks.picker.git_branches()
-      end,
-      desc = "Git Branches",
-    },
-    {
       "<leader>gl",
       function()
         Snacks.picker.git_log()
@@ -50,13 +43,6 @@ return {
         Snacks.picker.git_status()
       end,
       desc = "Git Status",
-    },
-    {
-      "<leader>gS",
-      function()
-        Snacks.picker.git_stash()
-      end,
-      desc = "Git Stash",
     },
     {
       "<leader>gd",
@@ -101,13 +87,6 @@ return {
       desc = "GitHub Pull Requests (all)",
     },
     {
-      "<leader>cR",
-      function()
-        Snacks.rename.rename_file()
-      end,
-      desc = "Rename File",
-    },
-    {
       "<leader>gB",
       function()
         Snacks.gitbrowse()
@@ -121,6 +100,13 @@ return {
         Snacks.lazygit()
       end,
       desc = "Lazygit",
+    },
+    {
+      "<leader>cR",
+      function()
+        Snacks.rename.rename_file()
+      end,
+      desc = "Rename File",
     },
   },
 }
