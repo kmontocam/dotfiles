@@ -3,7 +3,7 @@ return {
   lazy = true,
   cmd = "Silicon",
   init = function()
-    vim.keymap.set("v", "<leader>sc", ":Silicon<cr>", { desc = "Snapshot Code" })
+    vim.keymap.set("v", "<leader>sc", "<cmd>Silicon<cr>", { desc = "Snapshot Code" })
   end,
   config = function()
     local silicon = require("silicon")
