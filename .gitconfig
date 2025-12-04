@@ -8,3 +8,5 @@
 	postBuffer = 524288000
 [init]
 	defaultbranch = main
+[pull]
+	rebase = true
