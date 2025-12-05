@@ -5,6 +5,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "b0o/SchemaStore.nvim" },
+    { "folke/snacks.nvim" },
   },
   config = function()
     local lspconfig = require("lspconfig")
@@ -21,19 +22,37 @@ return {
       nmap("<leader>lr", ":LspRestart<cr>", "Restart")
       nmap("grn", vim.lsp.buf.rename, "Rename")
       nmap("gra", vim.lsp.buf.code_action, "Code Action")
-      nmap("grd", "<cmd>Telescope lsp_definitions<cr>", "Goto definition")
-      nmap("grD", "<cmd>tab split | Telescope lsp_definitions<cr>", "Goto definition in new tab")
-      nmap("grW", "<cmd>wincmd v | Telescope lsp_definitions<cr>", "Goto definition in splitted vertical window")
-      nmap("grr", "<cmd>Telescope lsp_references<cr>", "Goto references")
-      nmap("gri", "<cmd>Telescope lsp_implementations<cr>", "Goto implementation")
-      nmap("grt", "<cmd>Telescope lsp_type_definitions<cr>", "Type definition")
+      nmap("grd", function()
+        Snacks.picker.lsp_definitions()
+      end, "Goto definition")
+      nmap("grD", function()
+        vim.cmd("tab split")
+        Snacks.picker.lsp_definitions()
+      end, "Goto definition in new tab")
+      nmap("grW", function()
+        vim.cmd("wincmd v")
+        Snacks.picker.lsp_definitions()
+      end, "Goto definition in splitted vertical window")
+      nmap("grr", function()
+        Snacks.picker.lsp_references()
+      end, "Goto references")
+      nmap("gri", function()
+        Snacks.picker.lsp_implementations()
+      end, "Goto implementation")
+      nmap("grt", function()
+        Snacks.picker.lsp_type_definitions()
+      end, "Type definition")
 
       nmap("K", vim.lsp.buf.hover, "Hover documentation")
 
-      nmap("<leader>wl", "<cmd>Telescope diagnostics bufnr=0<cr>", "Diagnostics")
-      nmap("gro", vim.lsp.buf.declaration, "Goto declaration")
+      nmap("<leader>wl", function()
+        Snacks.picker.diagnostics_buffer()
+      end, "Diagnostics")
+      nmap("gro", function()
+        Snacks.picker.lsp_declarations()
+      end, "Goto declaration")
 
-      -- Create a command `:Format` local to the LSP buffer
+      -- create a command `:Format` local to the LSP buffer
       vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
         vim.lsp.buf.format()
       end, { desc = "Format current buffer with LSP" })
