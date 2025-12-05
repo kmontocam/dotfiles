@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 return {
   "folke/todo-comments.nvim",
   event = { "BufReadPre", "BufNewFile" },
@@ -15,4 +16,13 @@ return {
 
     todo_comments.setup()
   end,
+  keys = {
+    {
+      "<leader>ft",
+      function()
+        Snacks.picker.todo_comments({ keywords = { "TODO", "FIX" } })
+      end,
+      desc = "Find TODO/FIX",
+    },
+  },
 }

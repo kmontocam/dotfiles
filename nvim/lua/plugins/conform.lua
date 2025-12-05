@@ -49,11 +49,21 @@ return {
         typescriptreact = { "prettier" },
         yaml = { "prettier", "yq" },
       },
-      format_on_save = {
-        lsp_fallback = true,
-        async = false,
-        timeout_ms = 1000,
-      },
+      format_on_save = function(bufnr)
+        local buffer_autofmt = vim.b[bufnr].autoformat
+        if buffer_autofmt ~= nil then
+          if not buffer_autofmt then
+            return nil
+          end
+        elseif vim.g.autoformat == false then
+          return nil
+        end
+        return {
+          lsp_fallback = true,
+          async = false,
+          timeout_ms = 1000,
+        }
+      end,
     })
   end,
 }
