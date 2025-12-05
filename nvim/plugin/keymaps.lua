@@ -46,22 +46,5 @@ vim.keymap.set("n", "]w", function()
   })
 end, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>wm", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set("n", "<leader>wu", function()
-  local enabled = true
-
-  if vim.diagnostic.is_enabled then
-    enabled = vim.diagnostic.is_enabled()
-  elseif not vim.diagnostic.is_enabled() then
-    enabled = vim.diagnostic.is_enabled()
-  end
-
-  enabled = not enabled
-
-  if enabled then
-    vim.diagnostic.enable()
-  else
-    vim.diagnostic.enable(false)
-  end
-end, { desc = "Toggle diagnostics" })
 
 vim.keymap.set("n", "<leader>r", ":e!<cr>", { desc = "Reload file from disk" })
