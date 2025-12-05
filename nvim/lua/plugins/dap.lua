@@ -18,20 +18,21 @@ return {
 
       local function create_python_attach_config(remoteRoot)
         return {
-          type = "python",
-          request = "attach",
-          name = "Attach to debugpy container running in `" .. remoteRoot .. "`",
           connect = {
             host = "localhost",
             port = 5678,
           },
+          justMyCode = false,
+          name = "Attach to debugpy container running in `" .. remoteRoot .. "`",
           pathMappings = {
             {
               localRoot = "${workspaceFolder}",
               remoteRoot = remoteRoot,
             },
           },
-          justMyCode = false,
+          redirectOutput = true,
+          request = "attach",
+          type = "python",
         }
       end
 
