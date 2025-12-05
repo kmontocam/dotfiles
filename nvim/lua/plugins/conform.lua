@@ -16,6 +16,11 @@ return {
             end
           end)(),
         },
+        jq = {
+          command = "jq",
+          args = { "--sort-keys" },
+          stdin = true,
+        },
         yq = {
           command = "yq",
           args = { "-P", "sort_keys(..)" },
@@ -31,7 +36,7 @@ return {
         html = { "prettier" },
         javascript = { "prettier" },
         javascriptreact = { "prettier" },
-        json = { "prettier" },
+        json = { "prettier", "jq" },
         lua = { "stylua" },
         markdown = { "prettier" },
         python = { "ruff_format" },
