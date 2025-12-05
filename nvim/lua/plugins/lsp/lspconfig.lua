@@ -102,8 +102,10 @@ return {
     })
 
     lspconfig["jsonls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
       server_capabilities = {
-        documentFormattingProvider = false,
+        documentFormattingProvider = true,
       },
       settings = {
         json = {
