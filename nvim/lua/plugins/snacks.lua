@@ -3,11 +3,11 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
-    animate = { enabled = true },
+    animate = { enabled = false },
     bigfile = { enabled = true },
     gh = { enabled = true },
     gitbrowse = { enabled = true },
-    indent = { enabled = true, animate = { enabled = false } },
+    indent = { enabled = true },
     input = { enabled = true },
     keymap = { enabled = true },
     layout = { enabled = true },
@@ -18,6 +18,7 @@ return {
     toggle = { enabled = true },
   },
   config = function(_, opts)
+    vim.g.snacks_animate = false
     require("snacks").setup(opts)
     -- prevent cursor from becoming thin in insert mode
     vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20"
