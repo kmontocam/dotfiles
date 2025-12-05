@@ -1,15 +1,24 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "system",
-  "mcp": {
-    "context7": {
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp"
-    }
-  },
   "formatter": {
+    "json": {
+      "command": [
+        "jq",
+        "--sort-keys",
+        ".",
+        "$FILE"
+      ],
+      "extensions": [
+        ".json",
+        ".jsonc"
+      ]
+    },
     "prettier": {
-      "command": ["prettier", "--write", "$FILE"],
+      "command": [
+        "prettier",
+        "--write",
+        "$FILE"
+      ],
       "environment": {
         "NODE_ENV": "development"
       },
@@ -30,12 +39,24 @@
       ]
     },
     "yq": {
-      "command": ["yq", "-i", "-P", "sort_keys(..)", "$FILE"],
-      "extensions": [".yaml", ".yml"]
-    },
-    "json": {
-      "command": ["jq", "--sort-keys", ".", "$FILE"],
-      "extensions": [".json", ".jsonc"]
+      "command": [
+        "yq",
+        "-i",
+        "-P",
+        "sort_keys(..)",
+        "$FILE"
+      ],
+      "extensions": [
+        ".yaml",
+        ".yml"
+      ]
     }
-  }
+  },
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp"
+    }
+  },
+  "theme": "system"
 }
