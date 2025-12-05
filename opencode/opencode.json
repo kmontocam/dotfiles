@@ -32,6 +32,10 @@
     "yq": {
       "command": ["yq", "-i", "-P", "sort_keys(..)", "$FILE"],
       "extensions": [".yaml", ".yml"]
+    },
+    "json": {
+      "command": ["jq", "--sort-keys", ".", "$FILE"],
+      "extensions": [".json", ".jsonc"]
     }
   }
 }
