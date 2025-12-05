@@ -19,8 +19,8 @@ return {
       end
 
       nmap("<leader>lr", ":LspRestart<cr>", "Restart")
-      nmap("<leader>grn", vim.lsp.buf.rename, "Rename")
-      nmap("<leader>gra", vim.lsp.buf.code_action, "Code Action")
+      nmap("grn", vim.lsp.buf.rename, "Rename")
+      nmap("gra", vim.lsp.buf.code_action, "Code Action")
       nmap("grd", "<cmd>Telescope lsp_definitions<cr>", "Goto definition")
       nmap("grD", "<cmd>tab split | Telescope lsp_definitions<cr>", "Goto definition in new tab")
       nmap("grW", "<cmd>wincmd v | Telescope lsp_definitions<cr>", "Goto definition in splitted vertical window")
