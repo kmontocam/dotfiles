@@ -20,10 +20,14 @@ return {
           ["local"] = true,
           filter = {
             cwd = true,
-            filter = function(item)
-              return not vim.tbl_contains(excluded_marks, item.label)
-            end,
           },
+          transform = function(item, _)
+            -- filter out default local marks
+            if vim.tbl_contains(excluded_marks, item.label) then
+              return false
+            end
+            return item -- keep marks set by user
+          end,
         })
       end,
       desc = "Find Marks",
