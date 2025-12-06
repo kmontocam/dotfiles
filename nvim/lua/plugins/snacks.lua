@@ -134,13 +134,6 @@ return {
       desc = "Find Quickfix List",
     },
     {
-      "<leader>ft",
-      function()
-        Snacks.picker.qflist()
-      end,
-      desc = "Find Quickfix List",
-    },
-    {
       "<leader>gl",
       function()
         Snacks.picker.git_log()
