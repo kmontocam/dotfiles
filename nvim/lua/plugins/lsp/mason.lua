@@ -38,6 +38,7 @@ return {
     })
     mason_tool_installer.setup({
       ensure_installed = {
+        "debugpy",
         "erb-formatter",
         "erb-lint",
         "eslint_d",
@@ -45,11 +46,9 @@ return {
         "markdownlint",
         "npm-groovy-lint",
         "prettier",
-        "shfmt",
-        "debugpy",
         "rubocop",
         "ruff",
-        "rustfmt",
+        "shfmt",
         "sql-formatter",
         "stylua",
       },

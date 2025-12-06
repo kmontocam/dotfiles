@@ -69,6 +69,7 @@
 	  pkgs.neovim
 	  pkgs.nerd-fonts.jetbrains-mono
 	  pkgs.ngrok
+	  pkgs.nixfmt
 	  pkgs.nmap
 	  pkgs.nodejs_22
 	  pkgs.openssl
@@ -83,8 +84,8 @@
 	  pkgs.redis
 	  pkgs.ripgrep
 	  pkgs.rubocop
-	  pkgs.rustup
 	  pkgs.rustfmt
+	  pkgs.rustup
 	  pkgs.silicon
 	  pkgs.starship
 	  pkgs.tcptraceroute
