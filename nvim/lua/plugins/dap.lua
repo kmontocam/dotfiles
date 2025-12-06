@@ -2,12 +2,14 @@ return {
   {
     "mfussenegger/nvim-dap",
     dependencies = {
+      "mfussenegger/nvim-dap-python",
+      "nvim-lua/plenary.nvim",
+      "nvim-neotest/nvim-nio",
       "rcarriga/nvim-dap-ui",
       "theHamsta/nvim-dap-virtual-text",
-      "nvim-neotest/nvim-nio",
       "williamboman/mason.nvim",
-      "mfussenegger/nvim-dap-python",
     },
+    event = "VeryLazy",
     config = function()
       local dap = require("dap")
       local ui = require("dapui")
