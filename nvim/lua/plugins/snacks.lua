@@ -113,7 +113,7 @@ return {
       desc = "Find Current Word",
     },
     {
-      "<leader>fh",
+      "<leader>f?",
       function()
         Snacks.picker.help()
       end,
