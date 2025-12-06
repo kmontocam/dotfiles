@@ -68,6 +68,7 @@
             pkgs.kubernetes-helm
             pkgs.lazydocker
             pkgs.lazygit
+            pkgs.lua
             pkgs.mas
             pkgs.mdbook
             pkgs.minio-client
@@ -96,6 +97,7 @@
             pkgs.rustup
             pkgs.silicon
             pkgs.starship
+            pkgs.stylua
             pkgs.tcptraceroute
             pkgs.tectonic
             pkgs.terraform
