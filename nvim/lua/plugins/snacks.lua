@@ -71,13 +71,6 @@ return {
   end,
   keys = {
     {
-      "<leader>fb",
-      function()
-        Snacks.picker.buffers()
-      end,
-      desc = "Find Buffers",
-    },
-    {
       "<leader>ff",
       function()
         Snacks.picker.files()

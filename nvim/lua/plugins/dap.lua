@@ -8,6 +8,8 @@ return {
       "rcarriga/nvim-dap-ui",
       "theHamsta/nvim-dap-virtual-text",
       "williamboman/mason.nvim",
+      "folke/snacks.nvim",
+      "nvim-tree/nvim-web-devicons",
     },
     event = "VeryLazy",
     config = function()
@@ -82,6 +84,115 @@ return {
         virt_text_pos = "eol",
       })
 
+      local function breakpoint_picker()
+        local dap_breakpoints = require("dap.breakpoints")
+        local devicons = require("nvim-web-devicons")
+
+        Snacks.picker.pick({
+          source = "dap_breakpoints",
+          title = "DAP Breakpoints",
+          finder = function()
+            local items = {}
+            local breakpoints = dap_breakpoints.get()
+
+            for bufnr, buf_bps in pairs(breakpoints) do
+              -- get buffer name and make it relative to cwd
+              local bufname = vim.api.nvim_buf_get_name(bufnr)
+              if bufname == "" then
+                bufname = "[No Name]"
+              else
+                bufname = vim.fn.fnamemodify(bufname, ":~:.")
+              end
+
+              for _, bp in ipairs(buf_bps) do
+                table.insert(items, {
+                  bufnr = bufnr,
+                  line = bp.line,
+                  text = bufname .. ":" .. bp.line,
+                  file = bufname,
+                  condition = bp.condition,
+                  logMessage = bp.logMessage,
+                  hitCondition = bp.hitCondition,
+                  preview = {
+                    file = vim.api.nvim_buf_get_name(bufnr),
+                    line = bp.line,
+                  },
+                })
+              end
+            end
+
+            return items
+          end,
+          format = function(item, _)
+            local ret = {}
+            -- add file icon
+            local icon, hl = devicons.get_icon(item.file, vim.fn.fnamemodify(item.file, ":e"), { default = true })
+            if icon then
+              table.insert(ret, { icon .. " ", hl or "DevIconDefault" })
+            end
+            -- add filename
+            local filename = vim.fn.fnamemodify(item.file, ":t")
+            local dir = vim.fn.fnamemodify(item.file, ":h")
+            if dir ~= "." then
+              table.insert(ret, { dir .. "/", "SnacksPickerDir" })
+            end
+            table.insert(ret, { filename, "SnacksPickerFile" })
+            -- add line number
+            table.insert(ret, { ":", "SnacksPickerFile" })
+            table.insert(ret, { tostring(item.line), "SnacksPickerIdx" })
+            -- add indicators
+            if item.condition then
+              table.insert(ret, { " [C]", "SnacksPickerSpecial" })
+            end
+            if item.logMessage then
+              table.insert(ret, { " [L]", "SnacksPickerSpecial" })
+            end
+            if item.hitCondition then
+              table.insert(ret, { " [H]", "SnacksPickerSpecial" })
+            end
+            return ret
+          end,
+          preview = "file",
+          confirm = function(picker, item)
+            picker:close()
+            if item then
+              vim.api.nvim_set_current_buf(item.bufnr)
+              vim.api.nvim_win_set_cursor(0, { item.line, 0 })
+              vim.cmd("normal! zz")
+            end
+          end,
+          actions = {
+            delete_breakpoint = function(picker, _)
+              local selected = picker:selected({ fallback = true })
+              for _, item in ipairs(selected) do
+                if item.bufnr and item.line then
+                  dap_breakpoints.remove(item.bufnr, item.line)
+                end
+              end
+              -- refresh picker if breakpoints remain, otherwise close
+              local remaining_breakpoints = dap_breakpoints.get()
+              if next(remaining_breakpoints) == nil then
+                picker:close()
+              else
+                picker:refresh()
+              end
+            end,
+          },
+          win = {
+            input = {
+              keys = {
+                ["<C-X>"] = { "delete_breakpoint", mode = { "i", "n" }, desc = "Delete Breakpoint" },
+              },
+            },
+            list = {
+              keys = {
+                ["<C-X>"] = { "delete_breakpoint", mode = { "n" }, desc = "Delete Breakpoint" },
+              },
+            },
+          },
+        })
+      end
+
       vim.keymap.set("n", "<leader>bb", dap.toggle_breakpoint, { desc = "DAP Toggle Breakpoint" })
       vim.keymap.set("n", "<leader>br", dap.run_to_cursor, { desc = "DAP Run to Cursor" })
 
@@ -99,6 +210,7 @@ return {
       vim.keymap.set("n", "<leader>bR", function()
         ui.open({ reset = true })
       end, { desc = "DAP Reset Layout Sizes" })
+      vim.keymap.set("n", "<leader>fb", breakpoint_picker, { desc = "Find DAP Breakpoints" })
 
       dap.listeners.before.attach.dapui_config = function()
         ui.open()
