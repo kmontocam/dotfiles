@@ -141,7 +141,6 @@ return {
             enable = true,
             set_jumps = true,
             goto_next_start = {
-              ["]m"] = { query = "@call.outer", desc = "Next function call start" },
               ["]f"] = {
                 query = "@function.outer",
                 desc = "Next method/function def start",
@@ -161,7 +160,6 @@ return {
               ["]L"] = { query = "@loop.outer", desc = "Next loop end" },
             },
             goto_previous_start = {
-              ["[m"] = { query = "@call.outer", desc = "Prev function call start" },
               ["[f"] = {
                 query = "@function.outer",
                 desc = "Prev method/function def start",
