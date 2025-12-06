@@ -38,6 +38,15 @@
         ".svg"
       ]
     },
+    "stylua": {
+      "command": [
+        "stylua",
+        "$FILE"
+      ],
+      "extensions": [
+        ".lua"
+      ]
+    },
     "yq": {
       "command": [
         "yq",
