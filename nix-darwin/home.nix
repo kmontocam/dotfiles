@@ -61,6 +61,16 @@
     ".tmux.conf".source = "${config.home.homeDirectory}/git/dotfiles/tmux/.tmux.conf";
     ".tool-versions".source = "${config.home.homeDirectory}/git/dotfiles/.tool-versions";
     "Library/Application Support/euporie".source = "${config.home.homeDirectory}/git/dotfiles/euporie";
+    ".config/fontconfig/fonts.conf".text = ''
+      <?xml version="1.0"?>
+      <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+      <fontconfig>
+        <dir>${pkgs.nerd-fonts.jetbrains-mono}/share/fonts</dir>
+        <dir>/Library/Fonts</dir>
+        <dir>~/Library/Fonts</dir>
+      </fontconfig>
+    '';
+
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -92,6 +102,8 @@
   home.sessionVariables = {
     DOCKER_DEFAULT_PLATFORM = "linux/amd64";
     EDITOR = "nvim";
+    FONTCONFIG_FILE = "$HOME/.config/fontconfig/fonts.conf";
+    FONTCONFIG_PATH = "$HOME/.config/fontconfig";
     HOMEBREW_NO_EMOJI = "1";
     JUPYTER_CONFIG_DIR = "$HOME/.config/jupyter";
     JUPYTER_DATA_DIR = "$HOME/.local/share/jupyter/data";

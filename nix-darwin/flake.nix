@@ -47,6 +47,7 @@
             pkgs.exiftool
             pkgs.fd
             pkgs.flyctl
+            pkgs.fontconfig
             pkgs.fzf
             pkgs.gh
             pkgs.gitleaks
@@ -120,7 +121,6 @@
           homebrew = {
             enable = true;
             brews = [
-              "fontconfig"
               "libpq" # includes psql
               "libyaml"
               "poppler"

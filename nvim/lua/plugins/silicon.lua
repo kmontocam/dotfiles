@@ -6,11 +6,11 @@ return {
     vim.keymap.set("v", "<leader>sc", "<cmd>Silicon<cr>", { desc = "Snapshot Code" })
   end,
   config = function()
-    local silicon = require("silicon")
+    local silicon = require("nvim-silicon")
     silicon.setup({
       font = "JetBrainsMono Nerd Font=34",
       theme = "Visual Studio Dark+",
-      background = "#FEFCF7", -- #f7f0d5
+      background = "#FEFCF7",
       window_title = function()
         return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()), ":t")
       end,
