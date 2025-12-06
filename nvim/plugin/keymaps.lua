@@ -48,3 +48,6 @@ end, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>wm", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 
 vim.keymap.set("n", "<leader>r", ":e!<cr>", { desc = "Reload file from disk" })
+
+vim.keymap.set("n", "<leader>-", "<cmd>foldclose<cr>", { desc = "Close fold" })
+vim.keymap.set("n", "<leader>+", "<cmd>foldopen<cr>", { desc = "Open fold" })
