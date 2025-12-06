@@ -110,13 +110,7 @@ home.sessionPath = [
 
   # install/update tools with programming language package managers during activation
   home.activation = {
-    installRustTools = lib.hm.dag.entryAfter ["writeBoundary"] ''
-      export PATH="$HOME/.cargo/bin:$PATH"
-      $DRY_RUN_CMD ${pkgs.cargo} install --locked cargo-edit
-      $DRY_RUN_CMD ${pkgs.cargo} install --locked cargo-watch
-      $DRY_RUN_CMD ${pkgs.cargo} install --locked sqlx-cli --no-default-features --features sqlite,rustls,postgres
-    '';
-    
+
     installBunTools = lib.hm.dag.entryAfter ["writeBoundary"] ''
       export PATH="$HOME/.bun/bin:$PATH"
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @anthropic-ai/claude-code
