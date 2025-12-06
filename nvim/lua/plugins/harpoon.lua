@@ -19,20 +19,27 @@ return {
         finder = function()
           local items = {}
           local harpoon_list = harpoon:list()
-          for idx, item in ipairs(harpoon_list.items) do
-            local file_path = item.value
-            table.insert(items, {
-              idx = idx,
-              text = file_path,
-              file = file_path,
-              preview = { file = file_path },
-            })
+          local display_num = 0
+          -- iterate up to the list length to handle sparse arrays properly
+          for idx = 1, harpoon_list:length() do
+            local item = harpoon_list.items[idx]
+            if item ~= nil then
+              display_num = display_num + 1
+              local file_path = item.value
+              table.insert(items, {
+                harpoon_idx = idx, -- actual index in harpoon's sparse array
+                display_num = display_num, -- sequential number for display
+                text = file_path,
+                file = file_path,
+                preview = { file = file_path },
+              })
+            end
           end
           return items
         end,
         format = function(item, _)
           local ret = {}
-          table.insert(ret, { item.idx .. ". ", "SnacksPickerIdx" })
+          table.insert(ret, { item.display_num .. ". ", "SnacksPickerIdx" })
           -- add icons
           local icon, hl = devicons.get_icon(item.text, vim.fn.fnamemodify(item.text, ":e"), { default = true })
           if icon then
@@ -45,18 +52,24 @@ return {
         confirm = function(picker, item)
           picker:close()
           if item then
-            harpoon:list():select(item.idx)
+            harpoon:list():select(item.harpoon_idx)
           end
         end,
         actions = {
           delete_mark = function(picker, _)
             local selected = picker:selected({ fallback = true })
+            local harpoon_list = harpoon:list()
             for _, item in ipairs(selected) do
-              if item.idx then
-                harpoon:list():remove_at(item.idx)
+              if item.harpoon_idx then
+                harpoon_list:remove_at(item.harpoon_idx)
               end
             end
-            picker:refresh()
+            -- close picker if list is now empty, otherwise refresh
+            if next(harpoon_list.items) == nil then
+              picker:close()
+            else
+              picker:refresh()
+            end
           end,
         },
         win = {
