@@ -88,7 +88,8 @@ return {
     end
 
     vim.keymap.set("n", "<leader>a", function()
-      harpoon:list():add()
+      local list = harpoon:list()
+      list:add()
     end, { desc = "Harppon Mark File" })
 
     vim.keymap.set("n", "<leader>fh", harpoon_picker, { desc = "Harpoon Marks" })
