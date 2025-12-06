@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -41,15 +46,18 @@
   home.file = {
     ".config/ghostty".source = "${config.home.homeDirectory}/git/dotfiles/ghostty";
     ".config/k9s/config.yaml".source = "${config.home.homeDirectory}/git/dotfiles/k9s/config.yaml";
-    ".config/k9s/skins/transparent.yaml".source = "${config.home.homeDirectory}/git/dotfiles/k9s/skins/transparent.yaml";
+    ".config/k9s/skins/transparent.yaml".source =
+      "${config.home.homeDirectory}/git/dotfiles/k9s/skins/transparent.yaml";
     ".config/nvim".source = "${config.home.homeDirectory}/git/dotfiles/nvim";
-    ".config/opencode/opencode.json".source = "${config.home.homeDirectory}/git/dotfiles/opencode/opencode.json";
+    ".config/opencode/opencode.json".source =
+      "${config.home.homeDirectory}/git/dotfiles/opencode/opencode.json";
     ".config/starship.toml".source = "${config.home.homeDirectory}/git/dotfiles/starship/starship.toml";
     ".fdignore".source = "${config.home.homeDirectory}/git/dotfiles/.fdignore";
     ".gitconfig".source = "${config.home.homeDirectory}/git/dotfiles/.gitconfig";
     ".gitignore_global".source = "${config.home.homeDirectory}/git/dotfiles/.gitignore_global";
     ".hammerspoon/init.lua".source = "${config.home.homeDirectory}/git/dotfiles/hammerspoon/init.lua";
-    ".ipython/profile_default/ipython_config.py".source = "${config.home.homeDirectory}/git/dotfiles/ipython/profile_default/ipython_config.py";
+    ".ipython/profile_default/ipython_config.py".source =
+      "${config.home.homeDirectory}/git/dotfiles/ipython/profile_default/ipython_config.py";
     ".tmux.conf".source = "${config.home.homeDirectory}/git/dotfiles/tmux/.tmux.conf";
     ".tool-versions".source = "${config.home.homeDirectory}/git/dotfiles/.tool-versions";
     "Library/Application Support/euporie".source = "${config.home.homeDirectory}/git/dotfiles/euporie";
@@ -81,7 +89,7 @@
   #
   #  /etc/profiles/per-user/kmontocam/etc/profile.d/hm-session-vars.sh
   #
-home.sessionVariables = {
+  home.sessionVariables = {
     DOCKER_DEFAULT_PLATFORM = "linux/amd64";
     EDITOR = "nvim";
     HOMEBREW_NO_EMOJI = "1";
@@ -96,7 +104,7 @@ home.sessionVariables = {
     WASMTIME_HOME = "$HOME/.wasmtime";
   };
 
-home.sessionPath = [
+  home.sessionPath = [
     "/run/current-system/sw/bin"
     "/opt/homebrew/opt/libpq/bin"
     "$HOME/.asdf/shims"
@@ -111,14 +119,14 @@ home.sessionPath = [
   # install/update tools with programming language package managers during activation
   home.activation = {
 
-    installBunTools = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    installBunTools = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       export PATH="$HOME/.bun/bin:$PATH"
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @anthropic-ai/claude-code
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @modelcontextprotocol/inspector
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g opencode-ai@latest
     '';
 
-    installUvTools = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    installUvTools = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       export PATH="$HOME/.local/bin:$PATH"
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade alembic
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade euporie
@@ -140,10 +148,11 @@ home.sessionPath = [
     defaultOptions = [ "--tmux" ];
   };
   programs.zsh = {
-   autosuggestion = {
+    autosuggestion = {
       enable = true;
       highlight = "fg=#666666";
-    }; enable = true;
+    };
+    enable = true;
     autocd = true;
     defaultKeymap = "viins";
     enableCompletion = true;
