@@ -105,6 +105,23 @@ return {
               end
 
               for _, bp in ipairs(buf_bps) do
+                -- get the line content to highlight the entire line in preview
+                local line_content = ""
+                if vim.api.nvim_buf_is_loaded(bufnr) then
+                  local ok, lines = pcall(vim.api.nvim_buf_get_lines, bufnr, bp.line - 1, bp.line, false)
+                  if ok and lines and lines[1] then
+                    line_content = lines[1]
+                  end
+                end
+
+                -- create positions array to highlight the entire line
+                local positions = {}
+                if line_content ~= "" then
+                  for i = 1, #line_content do
+                    table.insert(positions, i - 1) -- 0-indexed columns
+                  end
+                end
+
                 table.insert(items, {
                   bufnr = bufnr,
                   line = bp.line,
@@ -113,6 +130,8 @@ return {
                   condition = bp.condition,
                   logMessage = bp.logMessage,
                   hitCondition = bp.hitCondition,
+                  pos = { bp.line, 0 }, -- position for preview: {line, col}
+                  positions = #positions > 0 and positions or nil, -- positions to highlight
                   preview = {
                     file = vim.api.nvim_buf_get_name(bufnr),
                     line = bp.line,
