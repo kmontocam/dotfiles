@@ -84,6 +84,7 @@
 	  pkgs.ripgrep
 	  pkgs.rubocop
 	  pkgs.rustup
+	  pkgs.rustfmt
 	  pkgs.silicon
 	  pkgs.starship
 	  pkgs.tcptraceroute

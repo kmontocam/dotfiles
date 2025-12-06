@@ -101,6 +101,7 @@ home.sessionPath = [
     "/opt/homebrew/opt/libpq/bin"
     "$HOME/.asdf/shims"
     "$HOME/.bun/bin"
+    "$HOME/.cargo/bin"
     "$HOME/.krew/bin"
     "$HOME/.local/bin"
     "$HOME/.nix-profile/bin"
@@ -109,6 +110,20 @@ home.sessionPath = [
 
   # install/update tools with programming language package managers during activation
   home.activation = {
+    installRustTools = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      export PATH="$HOME/.cargo/bin:$PATH"
+      $DRY_RUN_CMD ${pkgs.cargo} install --locked cargo-edit
+      $DRY_RUN_CMD ${pkgs.cargo} install --locked cargo-watch
+      $DRY_RUN_CMD ${pkgs.cargo} install --locked sqlx-cli --no-default-features --features sqlite,rustls,postgres
+    '';
+    
+    installBunTools = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      export PATH="$HOME/.bun/bin:$PATH"
+      $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @anthropic-ai/claude-code
+      $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @modelcontextprotocol/inspector
+      $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g opencode-ai@latest
+    '';
+
     installUvTools = lib.hm.dag.entryAfter ["writeBoundary"] ''
       export PATH="$HOME/.local/bin:$PATH"
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade alembic
@@ -116,13 +131,6 @@ home.sessionPath = [
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade grip
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade ipython
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade nbconvert
-    '';
-
-    installBunTools = lib.hm.dag.entryAfter ["writeBoundary"] ''
-      export PATH="$HOME/.bun/bin:$PATH"
-      $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @anthropic-ai/claude-code
-      $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @modelcontextprotocol/inspector
-      $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g opencode-ai@latest
     '';
   };
 
