@@ -42,6 +42,12 @@ return {
       nmap("grt", function()
         Snacks.picker.lsp_type_definitions()
       end, "Type definition")
+      nmap("grh", function()
+        vim.lsp.buf.typehierarchy("subtypes")
+      end, "Type hierarchy subtypes")
+      nmap("grH", function()
+        vim.lsp.buf.typehierarchy("supertypes")
+      end, "Type hierarchy supertypes")
 
       nmap("K", vim.lsp.buf.hover, "Hover documentation")
 
