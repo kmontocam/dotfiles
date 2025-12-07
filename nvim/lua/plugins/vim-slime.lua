@@ -1,18 +1,20 @@
 return {
   "jpalardy/vim-slime",
-  event = "VeryLazy",
+  lazy = true,
+  keys = {
+    { "<leader>mc", "<Plug>SlimeConfig", mode = "n", desc = "Config vim-slime" },
+    { "<leader>mp", "<Plug>SlimeParagraphSend", mode = "n", desc = "Send paragraph to next tmux pane" },
+    { "<leader>mm", "<Plug>SlimeRegionSend", mode = "v", desc = "Send selected to next tmux pane" },
+  },
   init = function()
     vim.g.slime_no_mappings = 1
     vim.g.slime_dont_ask_default = 1
+    vim.g.slime_target = "tmux"
   end,
   config = function()
-    vim.g.slime_target = "tmux"
     vim.cmd([[
 	  let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 	  let g:slime_bracketed_paste = 1
 	]])
-    vim.keymap.set("n", "<leader>mc", "<Plug>SlimeConfig", { desc = "Config vim-slime" })
-    vim.keymap.set("n", "<leader>mp", "<Plug>SlimeParagraphSend", { desc = "Send paragraph to next tmux pane" })
-    vim.keymap.set("v", "<leader>mm", "<Plug>SlimeRegionSend", { desc = "Send selected to next tmux pane" })
   end,
 }

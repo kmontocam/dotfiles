@@ -1,5 +1,6 @@
 return {
   "michaelrommel/nvim-silicon",
+  lazy = true,
   opts = {
     font = "JetBrainsMono Nerd Font=34",
     theme = "Visual Studio Dark+",
@@ -12,15 +13,22 @@ return {
       return os.getenv("HOME") .. "/Downloads/" .. os.date("!%Y-%m-%dT%H-%M-%S") .. "_code.png"
     end,
   },
-  config = function(_, opts)
-    local silicon = require("nvim-silicon")
-    silicon.setup(opts)
-
-    vim.keymap.set("v", "<leader>sc", function()
-      silicon.clip()
-    end, { desc = "Copy code screenshot to clipboard" })
-    vim.keymap.set("v", "<leader>sf", function()
-      silicon.file()
-    end, { desc = "Save code screenshot as file" })
-  end,
+  keys = {
+    {
+      "<leader>sc",
+      function()
+        require("nvim-silicon").clip()
+      end,
+      mode = "v",
+      desc = "Copy code screenshot to clipboard",
+    },
+    {
+      "<leader>sf",
+      function()
+        require("nvim-silicon").file()
+      end,
+      mode = "v",
+      desc = "Save code screenshot as file",
+    },
+  },
 }

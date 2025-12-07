@@ -5,29 +5,33 @@ return {
   dependencies = {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
-    "L3MON4D3/LuaSnip",
+    {
+      "L3MON4D3/LuaSnip",
+      dependencies = { "rafamadriz/friendly-snippets" },
+      config = function()
+        require("luasnip.loaders.from_vscode").lazy_load()
+      end,
+    },
     "saadparwaiz1/cmp_luasnip",
-    "rafamadriz/friendly-snippets",
-    "onsails/lspkind.nvim",
-    "zbirenbaum/copilot-cmp",
+    {
+      "onsails/lspkind.nvim",
+      opts = {
+        symbol_map = {
+          Copilot = "",
+        },
+      },
+    },
+    {
+      "zbirenbaum/copilot-cmp",
+      opts = {},
+    },
   },
-  config = function()
+  opts = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
-    local copilot_cmp = require("copilot_cmp")
 
-    require("luasnip.loaders.from_vscode").lazy_load()
-
-    lspkind.init({
-      symbol_map = {
-        Copilot = "",
-      },
-    })
-
-    copilot_cmp.setup()
-
-    cmp.setup({
+    return {
       completion = {
         completeopt = "menu,menuone,preview,noselect",
       },
@@ -56,7 +60,11 @@ return {
           ellipsis_char = "...",
         }),
       },
-    })
+    }
+  end,
+  config = function(_, opts)
+    local cmp = require("cmp")
+    cmp.setup(opts)
 
     vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
   end,
