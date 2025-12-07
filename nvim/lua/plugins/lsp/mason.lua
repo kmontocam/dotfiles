@@ -8,10 +8,14 @@ return {
   keys = {
     { "<leader>ma", "<cmd>Mason<cr>", desc = "Toggle Mason" },
   },
-  opts = {},
   config = function(_, opts)
-    require("mason").setup(opts)
-    require("mason-lspconfig").setup({
+    local mason = require("mason")
+    local mason_lspconfig = require("mason-lspconfig")
+    local mason_tool_installer = require("mason-tool-installer")
+
+    mason.setup(opts)
+
+    mason_lspconfig.setup({
       ensure_installed = {
         "bashls",
         "clangd",
@@ -37,7 +41,7 @@ return {
       automatic_installation = true,
       automatic_enable = false,
     })
-    require("mason-tool-installer").setup({
+    mason_tool_installer.setup({
       ensure_installed = {
         "debugpy",
         "erb-formatter",
