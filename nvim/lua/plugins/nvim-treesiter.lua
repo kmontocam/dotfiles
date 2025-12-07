@@ -6,182 +6,192 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
-    config = function()
-      local treesitter = require("nvim-treesitter.configs")
-      vim.api.nvim_command("autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy")
+    init = function()
+      -- filetype registrations
+      vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+        pattern = "Jenkinsfile",
+        command = "set filetype=groovy",
+      })
       vim.treesitter.language.register("bash", "zsh")
       vim.treesitter.language.register("sql", "cqlang")
-
-      ---@diagnostic disable-next-line: missing-fields
-      treesitter.setup({
-        build = ":TSUpdate",
-        highlight = {
-          enable = true,
+    end,
+    keys = {
+      { "<C-space>", desc = "Increment Selection", mode = { "x" } },
+      { "<C-S>", desc = "Scope Incremental", mode = { "x" } },
+      { "<C-h>", desc = "Decrement Node", mode = { "x" } },
+    },
+    opts = {
+      highlight = {
+        enable = true,
+      },
+      indent = { enable = true },
+      auto_install = true,
+      ensure_installed = {
+        "bash",
+        "csv",
+        "css",
+        "git_config",
+        "git_rebase",
+        "gitattributes",
+        "gitcommit",
+        "gitignore",
+        "go",
+        "gosum",
+        "groovy",
+        "hcl",
+        "html",
+        "javascript",
+        "json",
+        "nix",
+        "latex",
+        "lua",
+        "proto",
+        "python",
+        "regex",
+        "rust",
+        "sql",
+        "ssh_config",
+        "terraform",
+        "toml",
+        "vim",
+        "xml",
+        "yaml",
+      },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<C-space>",
+          node_incremental = "<C-space>",
+          scope_incremental = "<C-S>",
+          node_decremental = "<C-h>",
         },
-        indent = { enable = true },
-        auto_install = true,
-        ensure_installed = {
-          "bash",
-          "csv",
-          "css",
-          "git_config",
-          "git_rebase",
-          "gitattributes",
-          "gitcommit",
-          "gitignore",
-          "go",
-          "gosum",
-          "groovy",
-          "hcl",
-          "html",
-          "javascript",
-          "json",
-          "nix",
-          "latex",
-          "lua",
-          "proto",
-          "python",
-          "regex",
-          "rust",
-          "sql",
-          "ssh_config",
-          "terraform",
-          "toml",
-          "vim",
-          "xml",
-          "yaml",
-        },
-        incremental_selection = {
+      },
+      context_commentstring = {
+        enable = true,
+        enable_autocmd = false,
+      },
+      textobjects = {
+        select = {
           enable = true,
+          lookahead = true,
           keymaps = {
-            init_selection = "<C-space>",
-            node_incremental = "<C-space>",
-            scope_incremental = "<C-S>",
-            node_decremental = "<C-h>",
+            ["a="] = {
+              query = "@assignment.outer",
+              desc = "Select outer part of an assignment",
+            },
+            ["i="] = {
+              query = "@assignment.inner",
+              desc = "Select inner part of an assignment",
+            },
+            ["a:"] = {
+              query = "@property.outer",
+              desc = "Select outer part of an object property",
+            },
+            ["i:"] = {
+              query = "@property.inner",
+              desc = "Select inner part of an object property",
+            },
+            ["l:"] = {
+              query = "@property.lhs",
+              desc = "Select left part of an object property",
+            },
+            ["r:"] = {
+              query = "@property.rhs",
+              desc = "Select right part of an object property",
+            },
+
+            ["aa"] = {
+              query = "@parameter.outer",
+              desc = "Select outer part of a parameter/argument",
+            },
+            ["ia"] = {
+              query = "@parameter.inner",
+              desc = "Select inner part of a parameter/argument",
+            },
+
+            ["ai"] = {
+              query = "@conditional.outer",
+              desc = "Select outer part of a conditional",
+            },
+            ["ii"] = {
+              query = "@conditional.inner",
+              desc = "Select inner part of a conditional",
+            },
+
+            ["al"] = { query = "@loop.outer", desc = "Select outer part of a loop" },
+            ["il"] = { query = "@loop.inner", desc = "Select inner part of a loop" },
+
+            ["am"] = {
+              query = "@call.outer",
+              desc = "Select outer part of a function call",
+            },
+            ["im"] = {
+              query = "@call.inner",
+              desc = "Select inner part of a function call",
+            },
+
+            ["af"] = {
+              query = "@function.outer",
+              desc = "Select outer part of a method/function definition",
+            },
+            ["if"] = {
+              query = "@function.inner",
+              desc = "Select inner part of a method/function definition",
+            },
+
+            ["ac"] = { query = "@class.outer", desc = "Select outer part of a class" },
+            ["ic"] = { query = "@class.inner", desc = "Select inner part of a class" },
           },
         },
-        context_commentstring = {
+        move = {
           enable = true,
-          enable_autocmd = false,
-        },
-        textobjects = {
-          select = {
-            enable = true,
-            lookahead = true,
-            keymaps = {
-              ["a="] = {
-                query = "@assignment.outer",
-                desc = "Select outer part of an assignment",
-              },
-              ["i="] = {
-                query = "@assignment.inner",
-                desc = "Select inner part of an assignment",
-              },
-              ["a:"] = {
-                query = "@property.outer",
-                desc = "Select outer part of an object property",
-              },
-              ["i:"] = {
-                query = "@property.inner",
-                desc = "Select inner part of an object property",
-              },
-              ["l:"] = {
-                query = "@property.lhs",
-                desc = "Select left part of an object property",
-              },
-              ["r:"] = {
-                query = "@property.rhs",
-                desc = "Select right part of an object property",
-              },
-
-              ["aa"] = {
-                query = "@parameter.outer",
-                desc = "Select outer part of a parameter/argument",
-              },
-              ["ia"] = {
-                query = "@parameter.inner",
-                desc = "Select inner part of a parameter/argument",
-              },
-
-              ["ai"] = {
-                query = "@conditional.outer",
-                desc = "Select outer part of a conditional",
-              },
-              ["ii"] = {
-                query = "@conditional.inner",
-                desc = "Select inner part of a conditional",
-              },
-
-              ["al"] = { query = "@loop.outer", desc = "Select outer part of a loop" },
-              ["il"] = { query = "@loop.inner", desc = "Select inner part of a loop" },
-
-              ["am"] = {
-                query = "@call.outer",
-                desc = "Select outer part of a function call",
-              },
-              ["im"] = {
-                query = "@call.inner",
-                desc = "Select inner part of a function call",
-              },
-
-              ["af"] = {
-                query = "@function.outer",
-                desc = "Select outer part of a method/function definition",
-              },
-              ["if"] = {
-                query = "@function.inner",
-                desc = "Select inner part of a method/function definition",
-              },
-
-              ["ac"] = { query = "@class.outer", desc = "Select outer part of a class" },
-              ["ic"] = { query = "@class.inner", desc = "Select inner part of a class" },
+          set_jumps = true,
+          goto_next_start = {
+            ["]f"] = {
+              query = "@function.outer",
+              desc = "Next method/function def start",
             },
+            ["]c"] = { query = "@class.outer", desc = "Next class start" },
+            ["]i"] = { query = "@conditional.outer", desc = "Next conditional start" },
+            ["]l"] = { query = "@loop.outer", desc = "Next loop start" },
           },
-          move = {
-            enable = true,
-            set_jumps = true,
-            goto_next_start = {
-              ["]f"] = {
-                query = "@function.outer",
-                desc = "Next method/function def start",
-              },
-              ["]c"] = { query = "@class.outer", desc = "Next class start" },
-              ["]i"] = { query = "@conditional.outer", desc = "Next conditional start" },
-              ["]l"] = { query = "@loop.outer", desc = "Next loop start" },
+          goto_next_end = {
+            ["]M"] = { query = "@call.outer", desc = "Next function call end" },
+            ["]F"] = {
+              query = "@function.outer",
+              desc = "Next method/function def end",
             },
-            goto_next_end = {
-              ["]M"] = { query = "@call.outer", desc = "Next function call end" },
-              ["]F"] = {
-                query = "@function.outer",
-                desc = "Next method/function def end",
-              },
-              ["]C"] = { query = "@class.outer", desc = "Next class end" },
-              ["]I"] = { query = "@conditional.outer", desc = "Next conditional end" },
-              ["]L"] = { query = "@loop.outer", desc = "Next loop end" },
+            ["]C"] = { query = "@class.outer", desc = "Next class end" },
+            ["]I"] = { query = "@conditional.outer", desc = "Next conditional end" },
+            ["]L"] = { query = "@loop.outer", desc = "Next loop end" },
+          },
+          goto_previous_start = {
+            ["[f"] = {
+              query = "@function.outer",
+              desc = "Prev method/function def start",
             },
-            goto_previous_start = {
-              ["[f"] = {
-                query = "@function.outer",
-                desc = "Prev method/function def start",
-              },
-              ["[c"] = { query = "@class.outer", desc = "Prev class start" },
-              ["[i"] = { query = "@conditional.outer", desc = "Prev conditional start" },
-              ["[l"] = { query = "@loop.outer", desc = "Prev loop start" },
+            ["[c"] = { query = "@class.outer", desc = "Prev class start" },
+            ["[i"] = { query = "@conditional.outer", desc = "Prev conditional start" },
+            ["[l"] = { query = "@loop.outer", desc = "Prev loop start" },
+          },
+          goto_previous_end = {
+            ["[M"] = { query = "@call.outer", desc = "Prev function call end" },
+            ["[F"] = {
+              query = "@function.outer",
+              desc = "Prev method/function def end",
             },
-            goto_previous_end = {
-              ["[M"] = { query = "@call.outer", desc = "Prev function call end" },
-              ["[F"] = {
-                query = "@function.outer",
-                desc = "Prev method/function def end",
-              },
-              ["[C"] = { query = "@class.outer", desc = "Prev class end" },
-              ["[I"] = { query = "@conditional.outer", desc = "Prev conditional end" },
-              ["[L"] = { query = "@loop.outer", desc = "Prev loop end" },
-            },
+            ["[C"] = { query = "@class.outer", desc = "Prev class end" },
+            ["[I"] = { query = "@conditional.outer", desc = "Prev conditional end" },
+            ["[L"] = { query = "@loop.outer", desc = "Prev loop end" },
           },
         },
-      })
+      },
+    },
+    config = function(_, opts)
+      -- setup treesitter
+      require("nvim-treesitter.configs").setup(opts)
 
+      -- setup repeatable moves
       local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
 
       vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
