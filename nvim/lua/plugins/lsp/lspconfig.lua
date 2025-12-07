@@ -159,7 +159,7 @@ return {
       },
     })
 
-    lspconfig.pyright.setup({
+    lspconfig.basedpyright.setup({
       capabilities = capabilities,
       on_new_config = function(config, root_dir)
         local venv = root_dir .. "/.venv/bin/python"
@@ -169,7 +169,7 @@ return {
         end
       end,
       settings = {
-        pyright = { disableOrganizeImports = true },
+        basedpyright = { disableOrganizeImports = true },
       },
     })
 
