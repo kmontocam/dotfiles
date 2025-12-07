@@ -4,13 +4,12 @@ return {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
-  config = function()
-    local mason = require("mason")
-    local mason_lspconfig = require("mason-lspconfig")
-    local mason_tool_installer = require("mason-tool-installer")
-
-    mason.setup()
-    mason_lspconfig.setup({
+  event = { "BufReadPre", "BufNewFile" },
+  opts = {},
+  config = function(_, opts)
+    require("mason").setup(opts)
+    -- load lspconfig once mason is ready
+    require("mason-lspconfig").setup({
       ensure_installed = {
         "bashls",
         "clangd",
@@ -36,7 +35,7 @@ return {
       automatic_installation = true,
       automatic_enable = false,
     })
-    mason_tool_installer.setup({
+    require("mason-tool-installer").setup({
       ensure_installed = {
         "debugpy",
         "erb-formatter",
@@ -53,6 +52,8 @@ return {
         "stylua",
       },
     })
-    vim.keymap.set("n", "<leader>ma", "<cmd>Mason<cr>", { desc = "Toggle Mason" })
   end,
+  keys = {
+    { "<leader>ma", "<cmd>Mason<cr>", desc = "Open Mason" },
+  },
 }
