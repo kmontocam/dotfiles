@@ -4,17 +4,12 @@ return {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
-  opts = {},
-  keys = {
-    { "<leader>ma", "<cmd>Mason<cr>", desc = "Toggle Mason" },
-  },
-  config = function(_, opts)
+  config = function()
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
     local mason_tool_installer = require("mason-tool-installer")
 
-    mason.setup(opts)
-
+    mason.setup()
     mason_lspconfig.setup({
       ensure_installed = {
         "bashls",
@@ -58,5 +53,6 @@ return {
         "stylua",
       },
     })
+    vim.keymap.set("n", "<leader>ma", "<cmd>Mason<cr>", { desc = "Toggle Mason" })
   end,
 }
