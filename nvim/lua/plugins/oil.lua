@@ -22,6 +22,11 @@ return {
   },
   opts = {
     delete_to_trash = true,
+    lsp_file_methods = {
+      enabled = true,
+      timeout_ms = 8000,
+      autosave_changes = "unmodified",
+    },
     keymaps = {
       ["<leader>e"] = { "actions.close", mode = "n" },
       ["<leader>b"] = { "actions.select", opts = { horizontal = true } },
