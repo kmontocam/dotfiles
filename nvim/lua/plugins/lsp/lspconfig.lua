@@ -157,6 +157,13 @@ return {
 
     lspconfig.pyright.setup({
       capabilities = capabilities,
+      on_new_config = function(config, root_dir)
+        local venv = root_dir .. "/.venv/bin/python"
+        -- if project has a .venv, use python interpreter
+        if vim.fn.executable(venv) == 1 then
+          config.settings.python.pythonPath = venv
+        end
+      end,
       settings = {
         pyright = { disableOrganizeImports = true },
       },
