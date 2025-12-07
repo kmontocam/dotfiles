@@ -102,7 +102,11 @@ return {
   end,
   config = function()
     local lspconfig = require("lspconfig")
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    local capabilities = vim.tbl_deep_extend(
+      "force",
+      require("cmp_nvim_lsp").default_capabilities(),
+      require("lsp-file-operations").default_capabilities()
+    )
 
     -- servers with default config
     local default_servers = {
