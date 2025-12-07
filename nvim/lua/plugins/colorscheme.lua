@@ -1,10 +1,11 @@
 return {
   "Mofiqul/vscode.nvim",
   priority = 1000,
-  config = function()
-    local vscode = require("vscode")
+  opts = function()
     local c = require("vscode.colors").get_colors()
-    vscode.setup({
+    return {
+      style = "dark",
+
       -- Alternatively set style in setup
       -- style = 'light'
 
@@ -25,7 +26,10 @@ return {
         -- use colors from this colorscheme by requiring vscode.colors!
         Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
       },
-    })
+    }
+  end,
+  config = function(_, opts)
+    require("vscode").setup(opts)
     vim.cmd([[colorscheme vscode]])
   end,
 }
