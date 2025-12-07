@@ -1,24 +1,36 @@
 return {
   "lewis6991/gitsigns.nvim",
   event = { "BufReadPre", "BufNewFile" },
-  opts = {
-    on_attach = function(bufnr)
-      local gs = require("gitsigns")
-
-      vim.keymap.set("n", "[g", function()
+  keys = {
+    {
+      "[g",
+      function()
         ---@diagnostic disable-next-line: param-type-mismatch
-        gs.nav_hunk("prev")
-      end, { buffer = bufnr, desc = "Git Previous Hunk" })
-      vim.keymap.set("n", "]g", function()
+        require("gitsigns").nav_hunk("prev")
+      end,
+      desc = "Git Previous Hunk",
+    },
+    {
+      "]g",
+      function()
         ---@diagnostic disable-next-line: param-type-mismatch
-        gs.nav_hunk("next")
-      end, { buffer = bufnr, desc = "Git Next Hunk" })
-
-      vim.keymap.set("n", "<leader>gb", function()
-        gs.blame_line({ full = true })
-      end, { buffer = bufnr, desc = "Git Blame Line" })
-
-      vim.keymap.set("n", "<leader>gB", gs.toggle_current_line_blame, { buffer = bufnr, desc = "Git Toggle Line Blame" })
-    end,
+        require("gitsigns").nav_hunk("next")
+      end,
+      desc = "Git Next Hunk",
+    },
+    {
+      "<leader>gb",
+      function()
+        require("gitsigns").blame_line({ full = true })
+      end,
+      desc = "Git Blame Line",
+    },
+    {
+      "<leader>gB",
+      function()
+        require("gitsigns").toggle_current_line_blame()
+      end,
+      desc = "Git Toggle Line Blame",
+    },
   },
 }
