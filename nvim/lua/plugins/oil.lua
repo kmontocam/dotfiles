@@ -6,7 +6,7 @@ return {
     {
       mode = "n",
       "<leader>e",
-      "<cmd>Oil<CR>",
+      "<cmd>Oil<cr>",
       desc = "Open the Oil file viewer",
     },
   },
