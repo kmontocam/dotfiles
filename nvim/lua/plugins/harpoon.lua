@@ -93,7 +93,7 @@ return {
           },
         })
       end,
-      desc = "Harpoon Marks",
+      desc = "Find Harpoon Marks",
     },
     {
       "<C-B>",
