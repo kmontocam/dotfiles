@@ -7,131 +7,137 @@ return {
     { "b0o/SchemaStore.nvim" },
     { "folke/snacks.nvim" },
   },
-  config = function()
-    local lspconfig = require("lspconfig")
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
-    local on_attach = function(_, bufnr)
-      local nmap = function(keys, func, desc)
-        if desc then
-          desc = "LSP: " .. desc
-        end
-        vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
-      end
-
-      nmap("<leader>lr", ":LspRestart<cr>", "Restart")
-      nmap("grn", vim.lsp.buf.rename, "Rename")
-      nmap("gra", vim.lsp.buf.code_action, "Code Action")
-      nmap("grd", function()
+  keys = {
+    { "<leader>lr", "<cmd>LspRestart<cr>", desc = "LSP: Restart" },
+    { "grn", vim.lsp.buf.rename, desc = "LSP: Rename" },
+    { "gra", vim.lsp.buf.code_action, desc = "LSP: Code Action" },
+    {
+      "grd",
+      function()
         Snacks.picker.lsp_definitions()
-      end, "Goto definition")
-      nmap("grD", function()
+      end,
+      desc = "LSP: Goto definition",
+    },
+    {
+      "grD",
+      function()
         vim.cmd("tab split")
         Snacks.picker.lsp_definitions()
-      end, "Goto definition in new tab")
-      nmap("grW", function()
+      end,
+      desc = "LSP: Goto definition in new tab",
+    },
+    {
+      "grW",
+      function()
         vim.cmd("wincmd v")
         Snacks.picker.lsp_definitions()
-      end, "Goto definition in splitted vertical window")
-      nmap("grr", function()
+      end,
+      desc = "LSP: Goto definition in split",
+    },
+    {
+      "grr",
+      function()
         Snacks.picker.lsp_references()
-      end, "Goto references")
-      nmap("gri", function()
+      end,
+      desc = "LSP: Goto references",
+    },
+    {
+      "gri",
+      function()
         Snacks.picker.lsp_implementations()
-      end, "Goto implementation")
-      nmap("grt", function()
+      end,
+      desc = "LSP: Goto implementation",
+    },
+    {
+      "grt",
+      function()
         Snacks.picker.lsp_type_definitions()
-      end, "Type definition")
-      nmap("grh", function()
+      end,
+      desc = "LSP: Type definition",
+    },
+    {
+      "grh",
+      function()
         vim.lsp.buf.typehierarchy("subtypes")
-      end, "Type hierarchy subtypes")
-      nmap("grH", function()
+      end,
+      desc = "LSP: Type hierarchy subtypes",
+    },
+    {
+      "grH",
+      function()
         vim.lsp.buf.typehierarchy("supertypes")
-      end, "Type hierarchy supertypes")
-
-      nmap("K", vim.lsp.buf.hover, "Hover documentation")
-
-      nmap("<leader>wl", function()
+      end,
+      desc = "LSP: Type hierarchy supertypes",
+    },
+    { "K", vim.lsp.buf.hover, desc = "LSP: Hover documentation" },
+    {
+      "<leader>wl",
+      function()
         Snacks.picker.diagnostics_buffer()
-      end, "Diagnostics")
-      nmap("gro", function()
+      end,
+      desc = "LSP: Diagnostics",
+    },
+    {
+      "gro",
+      function()
         Snacks.picker.lsp_declarations()
-      end, "Goto declaration")
-
-      -- create a command `:Format` local to the LSP buffer
-      vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
-        vim.lsp.buf.format()
-      end, { desc = "Format current buffer with LSP" })
-    end
-
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
-
-    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+      end,
+      desc = "LSP: Goto declaration",
+    },
+  },
+  init = function()
+    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
+    vim.api.nvim_create_autocmd("LspAttach", {
+      group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
+      callback = function(ev)
+        vim.api.nvim_buf_create_user_command(ev.buf, "Format", function()
+          vim.lsp.buf.format()
+        end, { desc = "Format current buffer with LSP" })
+      end,
+    })
+  end,
+  config = function()
+    local lspconfig = require("lspconfig")
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    lspconfig["bashls"].setup({
+    -- servers with default config
+    local default_servers = {
+      "clangd",
+      "cssls",
+      "dockerls",
+      "docker_compose_language_service",
+      "html",
+      "ruby_lsp",
+      "gopls",
+      "nil_ls",
+      "rust_analyzer",
+      "tailwindcss",
+      "terraformls",
+      "ts_ls",
+    }
+
+    for _, server in ipairs(default_servers) do
+      lspconfig[server].setup({ capabilities = capabilities })
+    end
+
+    -- servers with custom config
+    lspconfig.bashls.setup({
       capabilities = capabilities,
-      on_attach = on_attach,
       filetypes = { "sh", "zsh" },
     })
 
-    lspconfig["clangd"].setup({
+    lspconfig.groovyls.setup({
       capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["cssls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["dockerls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["html"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["docker_compose_language_service"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["ruby_lsp"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["gopls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["groovyls"].setup({
       filetypes = { "groovy" },
-      capabilities = capabilities,
       cmd = { vim.fn.stdpath("data") .. "/mason/bin/groovy-language-server" },
-      on_attach = on_attach,
     })
 
-    lspconfig["nil_ls"].setup({
+    lspconfig.jsonls.setup({
       capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["jsonls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      server_capabilities = {
-        documentFormattingProvider = true,
-      },
       settings = {
         json = {
           schemas = require("schemastore").json.schemas(),
@@ -140,53 +146,28 @@ return {
       },
     })
 
-    lspconfig["lua_ls"].setup({
+    lspconfig.lua_ls.setup({
       capabilities = capabilities,
-      on_attach = on_attach,
       settings = {
         Lua = {
-          diagnostics = {
-            globals = { "vim" },
-          },
+          diagnostics = { globals = { "vim" } },
         },
       },
     })
 
-    lspconfig["pyright"].setup({
+    lspconfig.pyright.setup({
       capabilities = capabilities,
-      on_attach = on_attach,
       settings = {
-        pyright = {
-          disableOrganizeImports = true,
-        },
+        pyright = { disableOrganizeImports = true },
       },
     })
 
-    lspconfig["ruff"].setup({
+    lspconfig.ruff.setup({
       capabilities = capabilities,
     })
 
-    lspconfig["rust_analyzer"].setup({
+    lspconfig.yamlls.setup({
       capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["tailwindcss"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["terraformls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["ts_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["yamlls"].setup({
       settings = {
         yaml = {
           schemas = {
