@@ -18,6 +18,8 @@ return {
             return { text = refactor }
           end, refactors),
           format = "text",
+          preview = "none",
+          layout = { preset = "vscode" },
           confirm = function(picker, item)
             picker:close()
             if item then
