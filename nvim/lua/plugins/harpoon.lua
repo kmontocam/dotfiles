@@ -66,11 +66,38 @@ return {
             delete_mark = function(picker, _)
               local selected = picker:selected({ fallback = true })
               local harpoon_list = harpoon:list()
+
+              -- collect indices to remove (in descending order to avoid index shifting issues)
+              local indices_to_remove = {}
               for _, item in ipairs(selected) do
                 if item.harpoon_idx then
-                  harpoon_list:remove_at(item.harpoon_idx)
+                  table.insert(indices_to_remove, item.harpoon_idx)
                 end
               end
+              table.sort(indices_to_remove, function(a, b)
+                return a > b
+              end)
+
+              -- collect all items except the ones to remove, preserving order
+              local new_items = {}
+              local remove_set = {}
+              for _, idx in ipairs(indices_to_remove) do
+                remove_set[idx] = true
+              end
+
+              for idx = 1, harpoon_list:length() do
+                local item = harpoon_list.items[idx]
+                if item ~= nil and not remove_set[idx] then
+                  table.insert(new_items, item)
+                end
+              end
+
+              -- clear and re-add all items to get a compact list
+              harpoon_list:clear()
+              for _, item in ipairs(new_items) do
+                harpoon_list:add(item)
+              end
+
               -- close picker if list is now empty, otherwise refresh
               if next(harpoon_list.items) == nil then
                 picker:close()
