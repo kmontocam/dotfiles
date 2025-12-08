@@ -119,6 +119,7 @@ return {
       "gopls",
       "nil_ls",
       "rust_analyzer",
+      "ruff",
       "tailwindcss",
       "terraformls",
       "ts_ls",
@@ -171,10 +172,6 @@ return {
       settings = {
         basedpyright = { disableOrganizeImports = true },
       },
-    })
-
-    lspconfig.ruff.setup({
-      capabilities = capabilities,
     })
 
     lspconfig.taplo.setup({
