@@ -179,8 +179,12 @@ return {
       settings = {
         evenBetterToml = {
           formatter = {
-            reorderKeys = true,
+            alignEntries = true,
+            allowedBlankLines = 1,
+            indentString = "  ",
+            indentTables = true,
             reorderArrays = true,
+            reorderKeys = true,
           },
         },
       },
