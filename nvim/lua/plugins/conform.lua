@@ -24,7 +24,6 @@ return {
         stdin = true,
       },
     },
-
     formatters_by_ft = {
       css = { "prettier" },
       eruby = { "erb_format" },

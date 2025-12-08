@@ -99,6 +99,7 @@
             pkgs.silicon
             pkgs.starship
             pkgs.stylua
+            pkgs.taplo
             pkgs.tcptraceroute
             pkgs.tectonic
             pkgs.terraform

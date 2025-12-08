@@ -177,6 +177,18 @@ return {
       capabilities = capabilities,
     })
 
+    lspconfig.taplo.setup({
+      capabilities = capabilities,
+      settings = {
+        evenBetterToml = {
+          formatter = {
+            reorderKeys = true,
+            reorderArrays = true,
+          },
+        },
+      },
+    })
+
     lspconfig.yamlls.setup({
       capabilities = capabilities,
       settings = {

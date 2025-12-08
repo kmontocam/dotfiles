@@ -29,6 +29,7 @@ return {
         "rust_analyzer",
         "sqls",
         "terraformls",
+        "taplo",
         "ts_ls",
         "yamlls",
       },
@@ -50,6 +51,7 @@ return {
         "shfmt",
         "sql-formatter",
         "stylua",
+        "taplo",
       },
     })
   end,
