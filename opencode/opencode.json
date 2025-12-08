@@ -48,6 +48,16 @@
         ".lua"
       ]
     },
+    "taplo": {
+      "command": [
+        "taplo",
+        "format",
+        "$FILE"
+      ],
+      "extensions": [
+        ".toml"
+      ]
+    },
     "yq": {
       "command": [
         "yq",

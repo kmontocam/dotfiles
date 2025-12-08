@@ -58,6 +58,7 @@
     ".hammerspoon/init.lua".source = "${config.home.homeDirectory}/git/dotfiles/hammerspoon/init.lua";
     ".ipython/profile_default/ipython_config.py".source =
       "${config.home.homeDirectory}/git/dotfiles/ipython/profile_default/ipython_config.py";
+    ".taplo.toml".source = "${config.home.homeDirectory}/git/dotfiles/.taplo.toml";
     ".tmux.conf".source = "${config.home.homeDirectory}/git/dotfiles/tmux/.tmux.conf";
     ".tool-versions".source = "${config.home.homeDirectory}/git/dotfiles/.tool-versions";
     "Library/Application Support/euporie".source = "${config.home.homeDirectory}/git/dotfiles/euporie";

@@ -121,6 +121,7 @@ return {
       "rust_analyzer",
       "ruff",
       "tailwindcss",
+      "taplo",
       "terraformls",
       "ts_ls",
     }
@@ -171,22 +172,6 @@ return {
       end,
       settings = {
         basedpyright = { disableOrganizeImports = true },
-      },
-    })
-
-    lspconfig.taplo.setup({
-      capabilities = capabilities,
-      settings = {
-        evenBetterToml = {
-          formatter = {
-            alignEntries = true,
-            allowedBlankLines = 1,
-            indentString = "  ",
-            indentTables = true,
-            reorderArrays = true,
-            reorderKeys = true,
-          },
-        },
       },
     })
 
