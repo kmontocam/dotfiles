@@ -3,7 +3,12 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
-    { "antosha417/nvim-lsp-file-operations", config = true },
+    {
+      "antosha417/nvim-lsp-file-operations",
+      opts = {
+        timeout_ms = 16000,
+      },
+    },
     { "b0o/SchemaStore.nvim" },
     { "folke/snacks.nvim" },
   },

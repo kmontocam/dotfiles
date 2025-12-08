@@ -2,16 +2,6 @@ return {
   "stevearc/oil.nvim",
   event = { "VimEnter */*,.*", "BufNew */*,.*" },
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  init = function()
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "OilActionsPost",
-      callback = function(event)
-        if event.data.actions[1].type == "move" then
-          Snacks.rename.on_rename_file(event.data.actions[1].src_url, event.data.actions[1].dest_url)
-        end
-      end,
-    })
-  end,
   keys = {
     {
       mode = "n",
@@ -24,7 +14,7 @@ return {
     delete_to_trash = true,
     lsp_file_methods = {
       enabled = true,
-      timeout_ms = 8000,
+      timeout_ms = 16000,
       autosave_changes = "unmodified",
     },
     keymaps = {
