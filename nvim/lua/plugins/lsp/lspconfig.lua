@@ -71,7 +71,7 @@ return {
     },
     { "K", vim.lsp.buf.hover, desc = "LSP: Hover documentation" },
     {
-      "<leader>wl",
+      "<leader>dl",
       function()
         Snacks.picker.diagnostics_buffer()
       end,

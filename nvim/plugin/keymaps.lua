@@ -16,7 +16,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dp]], { desc = "Paste without copying into register" })
 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
-vim.keymap.set({ "n", "v" }, "<leader>d", [["+d]], { desc = "Cut to system clipboard" })
 
 vim.keymap.set("n", "<leader><C-G>", function()
   local filepath = vim.fn.expand("%")
@@ -33,19 +32,19 @@ vim.keymap.set("n", "<leader>tx", ":tabclose<cr>", { desc = "Close current tab" 
 vim.keymap.set("n", "<leader>tn", ":tabn<cr>", { desc = "Go to next tab" })
 vim.keymap.set("n", "<leader>tp", ":tabp<cr>", { desc = "Go to previous tab" })
 
-vim.keymap.set("n", "[w", function()
+vim.keymap.set("n", "[d", function()
   vim.diagnostic.jump({
     count = -1,
     float = true,
   })
 end, { desc = "Go to previous diagnostic message" })
-vim.keymap.set("n", "]w", function()
+vim.keymap.set("n", "]d", function()
   vim.diagnostic.jump({
     count = 1,
     float = true,
   })
 end, { desc = "Go to next diagnostic message" })
-vim.keymap.set("n", "<leader>wm", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
+vim.keymap.set("n", "<leader>dm", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 
 vim.keymap.set("x", "<leader>ss", ":sort<cr>", { desc = "Sort selected lines" })
 vim.keymap.set("n", "<leader><C-R>", ":e!<cr>", { desc = "Reload file from disk" })
