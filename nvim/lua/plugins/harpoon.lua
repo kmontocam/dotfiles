@@ -105,16 +105,108 @@ return {
                 picker:refresh()
               end
             end,
+            move_up = function(picker, _)
+              local current = picker:current()
+              if not current or not current.harpoon_idx then
+                return
+              end
+
+              local harpoon_list = harpoon:list()
+
+              -- collect all non-nil items into a compact array
+              local items = {}
+              for idx = 1, harpoon_list:length() do
+                local item = harpoon_list.items[idx]
+                if item ~= nil then
+                  table.insert(items, item)
+                end
+              end
+
+              -- find current position in compact array
+              local current_pos = nil
+              for i, item in ipairs(items) do
+                if item.value == current.text then
+                  current_pos = i
+                  break
+                end
+              end
+
+              if not current_pos or #items < 2 then
+                return
+              end
+
+              -- calculate new position (move up = decrease index, wrap to end if at first)
+              local new_pos = current_pos == 1 and #items or current_pos - 1
+
+              -- swap items
+              items[current_pos], items[new_pos] = items[new_pos], items[current_pos]
+
+              -- rebuild harpoon list
+              harpoon_list:clear()
+              for _, item in ipairs(items) do
+                harpoon_list:add(item)
+              end
+
+              picker:refresh()
+            end,
+            move_down = function(picker, _)
+              local current = picker:current()
+              if not current or not current.harpoon_idx then
+                return
+              end
+
+              local harpoon_list = harpoon:list()
+
+              -- collect all non-nil items into a compact array
+              local items = {}
+              for idx = 1, harpoon_list:length() do
+                local item = harpoon_list.items[idx]
+                if item ~= nil then
+                  table.insert(items, item)
+                end
+              end
+
+              -- find current position in compact array
+              local current_pos = nil
+              for i, item in ipairs(items) do
+                if item.value == current.text then
+                  current_pos = i
+                  break
+                end
+              end
+
+              if not current_pos or #items < 2 then
+                return
+              end
+
+              -- calculate new position (move down = increase index, wrap to first if at last)
+              local new_pos = current_pos == #items and 1 or current_pos + 1
+
+              -- swap items
+              items[current_pos], items[new_pos] = items[new_pos], items[current_pos]
+
+              -- rebuild harpoon list
+              harpoon_list:clear()
+              for _, item in ipairs(items) do
+                harpoon_list:add(item)
+              end
+
+              picker:refresh()
+            end,
           },
           win = {
             input = {
               keys = {
                 ["<C-X>"] = { "delete_mark", mode = { "i", "n" }, desc = "Delete Harpoon Mark" },
+                ["<C-U>"] = { "move_up", mode = { "i", "n" }, desc = "Move Mark Up" },
+                ["<C-D>"] = { "move_down", mode = { "i", "n" }, desc = "Move Mark Down" },
               },
             },
             list = {
               keys = {
                 ["<C-X>"] = { "delete_mark", mode = { "n" }, desc = "Delete Harpoon Mark" },
+                ["<C-U>"] = { "move_up", mode = { "n" }, desc = "Move Mark Up" },
+                ["<C-D>"] = { "move_down", mode = { "n" }, desc = "Move Mark Down" },
               },
             },
           },
