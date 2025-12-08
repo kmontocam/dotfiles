@@ -26,7 +26,6 @@ return {
     },
 
     formatters_by_ft = {
-      ["*"] = { "injected" },
       css = { "prettier" },
       eruby = { "erb_format" },
       groovy = { "npm-groovy-lint" },
