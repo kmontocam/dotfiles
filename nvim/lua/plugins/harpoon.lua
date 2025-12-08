@@ -148,6 +148,13 @@ return {
               end
 
               picker:refresh()
+
+              -- move cursor to follow the item
+              if current_pos == 1 then
+                Snacks.picker.actions.list_bottom(picker)
+              else
+                Snacks.picker.actions.list_up(picker)
+              end
             end,
             move_down = function(picker, _)
               local current = picker:current()
@@ -192,6 +199,13 @@ return {
               end
 
               picker:refresh()
+
+              -- move cursor to follow the item
+              if current_pos == #items then
+                Snacks.picker.actions.list_top(picker)
+              else
+                Snacks.picker.actions.list_down(picker)
+              end
             end,
           },
           win = {
