@@ -97,17 +97,16 @@ $character"""
 
 [aws]
 format = 'on [$symbol($profile )(\($region\) )]($style)'
-style = 'bold yellow'
+style  = 'bold yellow'
 symbol = '🅰 '
-
-[aws.region_aliases]
-us-east-1 = 'va'
+  [aws.region_aliases]
+  us-east-1 = 'va'
 
 [azure]
 disabled = false
-format = 'on [$symbol($subscription)]($style) '
-symbol = ' '
-style = 'blue bold'
+format   = 'on [$symbol($subscription)]($style) '
+style    = 'blue bold'
+symbol   = ' '
 
 [directory]
 read_only = ''
@@ -126,17 +125,17 @@ disabled = true
 
 [python]
 format = 'via [${symbol}(${version} )(\($virtualenv\) )]($style)'
+style  = 'green bold'
 symbol = ' '
-style = 'green bold'
 
 [kubernetes]
 disabled = false
-style = 'cyan bold'	
-format = '[$symbol$context( \($namespace\))]($style) '
+format   = '[$symbol$context( \($namespace\))]($style) '
+style    = 'cyan bold'
 
 [gcloud]
-symbol = " "
 disabled = true
+symbol   = " "
 
 [buf]
 symbol = " "
@@ -238,52 +237,52 @@ symbol = " "
 symbol = " "
 
 [os.symbols]
-Alpaquita = " "
-Alpine = " "
-AlmaLinux = " "
-Amazon = " "
-Android = " "
-AOSC = " "
-Arch = " "
-Artix = " "
-CachyOS = " "
-CentOS = " "
-Debian = " "
-DragonFly = " "
-Emscripten = " "
-EndeavourOS = " "
-Fedora = " "
-FreeBSD = " "
-Garuda = "󰛓 "
-Gentoo = " "
-HardenedBSD = "󰞌 "
-Illumos = "󰈸 "
-Kali = " "
-Linux = " "
-Mabox = " "
-Macos = " "
-Manjaro = " "
-Mariner = " "
-MidnightBSD = " "
-Mint = " "
-NetBSD = " "
-NixOS = " "
-Nobara = " "
-OpenBSD = "󰈺 "
-openSUSE = " "
-OracleLinux = "󰌷 "
-Pop = " "
-Raspbian = " "
-Redhat = " "
+AOSC             = " "
+AlmaLinux        = " "
+Alpaquita        = " "
+Alpine           = " "
+Amazon           = " "
+Android          = " "
+Arch             = " "
+Artix            = " "
+CachyOS          = " "
+CentOS           = " "
+Debian           = " "
+DragonFly        = " "
+Emscripten       = " "
+EndeavourOS      = " "
+Fedora           = " "
+FreeBSD          = " "
+Garuda           = "󰛓 "
+Gentoo           = " "
+HardenedBSD      = "󰞌 "
+Illumos          = "󰈸 "
+Kali             = " "
+Linux            = " "
+Mabox            = " "
+Macos            = " "
+Manjaro          = " "
+Mariner          = " "
+MidnightBSD      = " "
+Mint             = " "
+NetBSD           = " "
+NixOS            = " "
+Nobara           = " "
+OpenBSD          = "󰈺 "
+OracleLinux      = "󰌷 "
+Pop              = " "
+Raspbian         = " "
 RedHatEnterprise = " "
-RockyLinux = " "
-Redox = "󰀘 "
-Solus = "󰠳 "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Void = " "
-Windows = "󰍲 "
+Redhat           = " "
+Redox            = "󰀘 "
+RockyLinux       = " "
+SUSE             = " "
+Solus            = "󰠳 "
+Ubuntu           = " "
+Unknown          = " "
+Void             = " "
+Windows          = "󰍲 "
+openSUSE         = " "
 
 [perl]
 symbol = " "
@@ -320,4 +319,3 @@ symbol = " "
 
 [zig]
 symbol = " "
-
