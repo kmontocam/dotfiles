@@ -114,6 +114,13 @@ return {
         desc = "DAP Reset Layout Sizes",
       },
       {
+        "<leader>bt",
+        function()
+          require("dapui").toggle()
+        end,
+        desc = "DAP Toggle UI",
+      },
+      {
         "<leader>fb",
         function()
           local dap_breakpoints = require("dap.breakpoints")
