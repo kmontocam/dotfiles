@@ -98,7 +98,7 @@ $character"""
 [aws]
 format = 'on [$symbol($profile )(\($region\) )]($style)'
 style  = 'bold yellow'
-symbol = '🅰 '
+symbol = " "
   [aws.region_aliases]
   us-east-1 = 'va'
 
