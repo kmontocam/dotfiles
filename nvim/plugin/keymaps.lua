@@ -1,8 +1,8 @@
 vim.keymap.set("n", "<leader>nh", ":nohl<cr>", { desc = "Clear search highlight" })
 vim.keymap.set("n", "x", '"_x', { desc = "Delete without copying into register" })
 
-vim.keymap.set("n", "<leader>+", "<C-A>", { desc = "Increment number under cursor" })
-vim.keymap.set("n", "<leader>-", "<C-X>", { desc = "Decrement number under cursor" })
+vim.keymap.set("n", "<leader>ni", "<C-A>", { desc = "Increment number under cursor" })
+vim.keymap.set("n", "<leader>nd", "<C-X>", { desc = "Decrement number under cursor" })
 
 vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv")
