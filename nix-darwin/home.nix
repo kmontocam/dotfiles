@@ -136,6 +136,7 @@
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @anthropic-ai/claude-code
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @modelcontextprotocol/inspector
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g opencode-ai@latest
+      $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g elasticdump
     '';
 
     installUvTools = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
@@ -144,6 +145,7 @@
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade euporie
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade grip
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade ipython
+      $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade makelive
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade nbconvert
     '';
   };
