@@ -101,7 +101,6 @@
   #  /etc/profiles/per-user/kmontocam/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    DOCKER_DEFAULT_PLATFORM = "linux/amd64";
     EDITOR = "nvim";
     FONTCONFIG_FILE = "$HOME/.config/fontconfig/fonts.conf";
     FONTCONFIG_PATH = "$HOME/.config/fontconfig";
