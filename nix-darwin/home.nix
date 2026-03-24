@@ -135,8 +135,10 @@
       export PATH="$HOME/.bun/bin:$PATH"
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @anthropic-ai/claude-code
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @modelcontextprotocol/inspector
-      $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g opencode-ai@latest
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g elasticdump
+      $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @mryhryki/markdown-preview
+      $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g opencode-ai@latest
+      $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g playwright
     '';
 
     installUvTools = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
