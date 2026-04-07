@@ -2,7 +2,7 @@ return {
   "ThePrimeagen/refactoring.nvim",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    "nvim-treesitter/nvim-treesitter",
+    { "nvim-treesitter/nvim-treesitter", branch = "master" },
   },
   keys = {
     { "<leader>r", "", desc = "+refactor", mode = { "n", "x" } },

@@ -2,7 +2,7 @@ return {
   "chentoast/marks.nvim",
   event = "VeryLazy",
   dependencies = {
-    "nvim-treesitter/nvim-treesitter-textobjects",
+    { "nvim-treesitter/nvim-treesitter-textobjects", branch = "master" },
   },
   keys = {
     { "mm", desc = "Set next mark" },
