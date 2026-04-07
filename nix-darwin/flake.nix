@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    # pinned nixpkgs for Neovim 0.11.6 (before 0.12.0 upgrade)
+    nixpkgs-neovim.url = "github:NixOS/nixpkgs/d86da6ff1a3db2d1e667684c6f34c21896767b3e";
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,10 +23,12 @@
       self,
       nix-darwin,
       nixpkgs,
+      nixpkgs-neovim,
       nix-homebrew,
       home-manager,
     }:
     let
+      pkgs-neovim = import nixpkgs-neovim { system = "aarch64-darwin"; };
       configuration =
         { pkgs, config, ... }:
         {
@@ -76,7 +80,7 @@
             pkgs.mkalias
             pkgs.mongosh
             pkgs.mypy
-            pkgs.neovim
+            pkgs-neovim.neovim
             pkgs.nerd-fonts.jetbrains-mono
             pkgs.ngrok
             pkgs.nixfmt
