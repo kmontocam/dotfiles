@@ -32,6 +32,7 @@ return {
       javascript = { "prettier" },
       javascriptreact = { "prettier" },
       json = { "prettier", "jq" },
+      jsonc = { "prettier" },
       lua = { "stylua" },
       markdown = { "prettier" },
       nix = { "nixfmt" },
