@@ -71,6 +71,7 @@
             pkgs.krew
             pkgs.kubebuilder
             pkgs.kubectl
+            pkgs.kubelogin
             pkgs.kubernetes-helm
             pkgs.lazydocker
             pkgs.lazygit
