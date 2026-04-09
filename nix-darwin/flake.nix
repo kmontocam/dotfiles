@@ -38,6 +38,7 @@
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
           environment.systemPackages = [
+            pkgs-neovim.neovim
             pkgs.act
             pkgs.amass
             pkgs.asdf-vm
@@ -80,7 +81,6 @@
             pkgs.mkalias
             pkgs.mongosh
             pkgs.mypy
-            pkgs-neovim.neovim
             pkgs.nerd-fonts.jetbrains-mono
             pkgs.ngrok
             pkgs.nixfmt
@@ -108,6 +108,7 @@
             pkgs.tectonic
             pkgs.terraform
             pkgs.terragrunt
+            pkgs.tflint
             pkgs.tldr
             pkgs.tmux
             pkgs.tmuxinator
