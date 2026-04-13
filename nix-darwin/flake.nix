@@ -135,6 +135,7 @@
             casks = [
               "balenaetcher"
               "chatgpt"
+              "cloudflare-warp"
               "discord"
               "docker-desktop"
               "ghostty"
