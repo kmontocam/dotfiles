@@ -43,7 +43,10 @@
             pkgs.amass
             pkgs.asdf-vm
             pkgs.awscli2
-            (pkgs.azure-cli.withExtensions [ pkgs.azure-cli-extensions.aks-preview ])
+            (pkgs.azure-cli.withExtensions [
+              pkgs.azure-cli-extensions.aks-preview
+              pkgs.azure-cli-extensions.quota
+            ])
             pkgs.bat
             pkgs.bun
             pkgs.cloc
