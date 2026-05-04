@@ -79,7 +79,6 @@
             pkgs.lazydocker
             pkgs.lazygit
             pkgs.lua
-            pkgs.mas
             pkgs.mdbook
             pkgs.minio-client
             pkgs.mkalias
@@ -159,11 +158,6 @@
               "zen"
               "zoom"
             ];
-            masApps = {
-              "Final Cut Pro" = 424389933;
-              "Pixelmator Pro" = 1289583905;
-              "WhatsApp" = 310633997;
-            };
             onActivation.cleanup = "zap";
             onActivation.autoUpdate = true;
             onActivation.upgrade = true;
