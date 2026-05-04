@@ -143,7 +143,7 @@
               "ghostty"
               "google-chrome"
               "hammerspoon"
-              "linear-linear"
+              "linear"
               "logi-options+"
               "microsoft-azure-storage-explorer"
               "mongodb-compass"
