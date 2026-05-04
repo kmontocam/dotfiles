@@ -62,6 +62,8 @@
     ".tmux.conf".source = "${config.home.homeDirectory}/git/dotfiles/tmux/.tmux.conf";
     ".tool-versions".source = "${config.home.homeDirectory}/git/dotfiles/.tool-versions";
     "Library/Application Support/euporie".source = "${config.home.homeDirectory}/git/dotfiles/euporie";
+    "Library/Application Support/lazygit/config.yml".source =
+      "${config.home.homeDirectory}/git/dotfiles/lazygit/config.yml";
     ".config/fontconfig/fonts.conf".text = ''
       <?xml version="1.0"?>
       <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
