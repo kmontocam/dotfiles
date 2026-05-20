@@ -117,6 +117,8 @@
     WASMTIME_HOME = "$HOME/.wasmtime";
   };
 
+  home.extraActivationPath = [ pkgs.coreutils ];
+
   home.sessionPath = [
     "/run/current-system/sw/bin"
     "/opt/homebrew/opt/libpq/bin"
