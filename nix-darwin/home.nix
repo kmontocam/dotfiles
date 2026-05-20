@@ -145,7 +145,7 @@
     '';
 
     installUvTools = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      export PATH="$HOME/.local/bin:/usr/bin:$PATH"
+      export PATH="$HOME/.local/bin:$PATH"
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade --python 3.13 postgres-mcp
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade alembic
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade euporie
