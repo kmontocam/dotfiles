@@ -46,6 +46,8 @@ return {
         "nix",
         "latex",
         "lua",
+        "markdown",
+        "markdown_inline",
         "proto",
         "python",
         "regex",
