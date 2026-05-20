@@ -152,7 +152,6 @@
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade euporie
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade grip
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade ipython
-      $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade langsmith
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade makelive
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade nbconvert
     '';
