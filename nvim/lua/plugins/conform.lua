@@ -36,7 +36,7 @@ return {
       lua = { "stylua" },
       markdown = { "prettier" },
       nix = { "nixfmt" },
-      python = { "ruff_format" },
+      python = { "ruff_format", "injected" },
       ruby = { "rubocop" },
       rust = { "rustfmt" },
       sh = { "shfmt" },
