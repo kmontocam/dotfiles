@@ -20,7 +20,7 @@ return {
       },
       yq = {
         command = "yq",
-        args = { "-P", "sort_keys(..)" },
+        args = { "-P", "--yaml-compact-seq-indent", "sort_keys(..)" },
         stdin = true,
       },
     },
@@ -44,7 +44,7 @@ return {
       tex = { "latexindent" },
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
-      yaml = { "prettier", "yq" },
+      yaml = { "yq" },
     },
     format_on_save = function(bufnr)
       local buffer_autofmt = vim.b[bufnr].autoformat
