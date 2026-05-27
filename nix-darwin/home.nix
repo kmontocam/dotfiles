@@ -51,6 +51,7 @@
     ".config/nvim".source = "${config.home.homeDirectory}/git/dotfiles/nvim";
     ".config/opencode/opencode.json".source =
       "${config.home.homeDirectory}/git/dotfiles/opencode/opencode.json";
+    ".config/opencode/tui.json".source = "${config.home.homeDirectory}/git/dotfiles/opencode/tui.json";
     ".config/starship.toml".source = "${config.home.homeDirectory}/git/dotfiles/starship/starship.toml";
     ".fdignore".source = "${config.home.homeDirectory}/git/dotfiles/.fdignore";
     ".gitconfig".source = "${config.home.homeDirectory}/git/dotfiles/.gitconfig";
