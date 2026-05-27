@@ -9,6 +9,7 @@
     (assignment
       right: (string
         (string_content) @injection.content)))
+  (#lua-match? @injection.language "^#%s*%a+%s*$")
   (#gsub! @injection.language "#%s*(.+)" "%1"))
 
 (_ (comment) @injection.language
@@ -16,6 +17,7 @@
   (expression_statement
     (string
       (string_content) @injection.content))
+  (#lua-match? @injection.language "^#%s*%a+%s*$")
   (#gsub! @injection.language "#%s*(.+)" "%1"))
 
 ; first statement in body: (function, class, for, while, with, try, else)
@@ -26,6 +28,7 @@
       (assignment
         right: (string
           (string_content) @injection.content))))
+  (#lua-match? @injection.language "^#%s*%a+%s*$")
   (#gsub! @injection.language "#%s*(.+)" "%1"))
 
 (_ (comment) @injection.language
@@ -34,6 +37,7 @@
     (expression_statement
       (string
         (string_content) @injection.content)))
+  (#lua-match? @injection.language "^#%s*%a+%s*$")
   (#gsub! @injection.language "#%s*(.+)" "%1"))
 
 ; first statement in consequence: (if, elif)
@@ -44,6 +48,7 @@
       (assignment
         right: (string
           (string_content) @injection.content))))
+  (#lua-match? @injection.language "^#%s*%a+%s*$")
   (#gsub! @injection.language "#%s*(.+)" "%1"))
 
 (_ (comment) @injection.language
@@ -52,4 +57,5 @@
     (expression_statement
       (string
         (string_content) @injection.content)))
+  (#lua-match? @injection.language "^#%s*%a+%s*$")
   (#gsub! @injection.language "#%s*(.+)" "%1"))
