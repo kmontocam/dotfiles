@@ -34,8 +34,6 @@
         ".scss",
         ".ts",
         ".tsx",
-        ".yaml",
-        ".yml",
         ".svg"
       ]
     },
