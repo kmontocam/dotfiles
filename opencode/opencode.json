@@ -76,4 +76,12 @@
       "url": "https://mcp.context7.com/mcp"
     }
   },
+  "permission": {
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    }
+  }
 }
