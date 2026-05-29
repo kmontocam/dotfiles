@@ -154,6 +154,7 @@
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade ipython
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade makelive
       $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade nbconvert
+      $DRY_RUN_CMD ${pkgs.uv}/bin/uv tool install --upgrade datamodel-code-generator[http]
     '';
   };
 
