@@ -34,7 +34,7 @@ return {
       json = { "prettier", "jq" },
       jsonc = { "prettier" },
       lua = { "stylua" },
-      markdown = { "prettier" },
+      markdown = { "prettier", "injected" },
       nix = { "nixfmt" },
       python = { "ruff_format" },
       ruby = { "rubocop" },
