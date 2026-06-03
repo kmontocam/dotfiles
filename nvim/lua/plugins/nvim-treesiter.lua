@@ -44,6 +44,7 @@ return {
         "javascript",
         "json",
         "nix",
+        "mermaid",
         "latex",
         "lua",
         "markdown",
