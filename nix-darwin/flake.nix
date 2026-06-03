@@ -42,6 +42,7 @@
             pkgs.act
             pkgs.amass
             pkgs.asdf-vm
+            pkgs.atlas
             pkgs.awscli2
             (pkgs.azure-cli.withExtensions [
               pkgs.azure-cli-extensions.aks-preview
