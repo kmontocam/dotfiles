@@ -44,6 +44,7 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+    ".agents/skills".source = "${config.home.homeDirectory}/git/dotfiles/.agents/skills";
     ".config/ghostty".source = "${config.home.homeDirectory}/git/dotfiles/ghostty";
     ".config/k9s/config.yaml".source = "${config.home.homeDirectory}/git/dotfiles/k9s/config.yaml";
     ".config/k9s/skins/transparent.yaml".source =
