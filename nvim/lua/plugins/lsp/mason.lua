@@ -25,6 +25,7 @@ return {
         "lua_ls",
         "nil_ls",
         "tailwindcss",
+        "ty",
         "basedpyright",
         "rust_analyzer",
         "sqls",

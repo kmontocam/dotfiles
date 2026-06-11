@@ -166,18 +166,39 @@ return {
       },
     })
 
-    lspconfig.basedpyright.setup({
-      capabilities = capabilities,
-      on_new_config = function(config, root_dir)
-        local venv = root_dir .. "/.venv/bin/python"
-        -- if project has a .venv, use python interpreter
-        if vim.fn.executable(venv) == 1 then
-          config.settings.python.pythonPath = venv
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "python",
+      group = vim.api.nvim_create_augroup("PythonLspSelect", { clear = true }),
+      callback = function(ev)
+        local root = vim.fs.root(ev.buf, { "pyproject.toml", "setup.py", "setup.cfg", ".git" }) or vim.fn.getcwd()
+        local mason_bin = vim.fn.stdpath("data") .. "/mason/bin"
+        local venv_ty = root .. "/.venv/bin/ty"
+        local venv_python = root .. "/.venv/bin/python"
+
+        local config
+        if vim.fn.executable(venv_ty) == 1 then
+          config = {
+            name = "ty",
+            cmd = { mason_bin .. "/ty", "server" },
+            settings = { ty = {} },
+          }
+        else
+          config = {
+            name = "basedpyright",
+            cmd = { mason_bin .. "/basedpyright-langserver", "--stdio" },
+            settings = {
+              basedpyright = { disableOrganizeImports = true },
+              python = {
+                pythonPath = vim.fn.executable(venv_python) == 1 and venv_python or "python3",
+              },
+            },
+          }
         end
+
+        config.root_dir = root
+        config.capabilities = capabilities
+        vim.lsp.start(config, { bufnr = ev.buf })
       end,
-      settings = {
-        basedpyright = { disableOrganizeImports = true },
-      },
     })
 
     lspconfig.yamlls.setup({
