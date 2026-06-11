@@ -149,6 +149,7 @@
               "microsoft-azure-storage-explorer"
               "mongodb-compass"
               "notion"
+              "postman"
               "raspberry-pi-imager"
               "rectangle"
               "setapp"
