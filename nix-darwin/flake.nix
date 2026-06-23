@@ -107,6 +107,7 @@
             pkgs.silicon
             pkgs.starship
             pkgs.stylua
+            pkgs.supabase-cli
             pkgs.taplo
             pkgs.tcptraceroute
             pkgs.tectonic
