@@ -61,6 +61,7 @@
         "yq",
         "-i",
         "-P",
+        "--yaml-compact-seq-indent",
         "sort_keys(..)",
         "$FILE"
       ],
