@@ -276,6 +276,13 @@ return {
       dap.configurations.python = {
         create_python_attach_config("/opt"),
         create_python_attach_config("/app"),
+        {
+          justMyCode = false,
+          name = "Python: Current File",
+          program = "${file}",
+          request = "launch",
+          type = "debugpy",
+        },
       }
 
       -- auto-open/close dap ui
