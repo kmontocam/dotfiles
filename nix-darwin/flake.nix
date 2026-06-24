@@ -105,6 +105,7 @@
             pkgs.rustfmt
             pkgs.rustup
             pkgs.silicon
+            pkgs.sqlc
             pkgs.starship
             pkgs.stylua
             pkgs.supabase-cli
