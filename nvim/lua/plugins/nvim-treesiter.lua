@@ -1,3 +1,4 @@
+---@diagnostic disable: invisible
 return {
   {
     "nvim-treesitter/nvim-treesitter",
@@ -194,6 +195,24 @@ return {
     config = function(_, opts)
       -- setup treesitter
       require("nvim-treesitter.configs").setup(opts)
+
+      -- workaround for https://github.com/neovim/neovim/issues/3177
+      -- injected highlights  tie with the parent @string capture at priority 100 and
+      -- lose on the grid. Bump priority per highlight state, mirroring the subpriority
+      -- approach of the unmerged fix PR #31812. Remove once that PR lands in a release.
+      local TSHighlighter = vim.treesitter.highlighter
+      local for_each_orig = TSHighlighter.for_each_highlight_state
+      ---@diagnostic disable-next-line: duplicate-set-field
+      function TSHighlighter:for_each_highlight_state(win, fn)
+        local base = vim.hl.priorities.treesitter
+        local i = 0
+        for_each_orig(self, win, function(state)
+          vim.hl.priorities.treesitter = base + i
+          i = i + 1
+          fn(state)
+        end)
+        vim.hl.priorities.treesitter = base
+      end
 
       -- setup repeatable moves
       local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")

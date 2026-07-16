@@ -34,3 +34,6 @@ vim.opt.undodir = os.getenv("HOME") .. "/.cache/nvim/undodir/"
 vim.opt.undofile = true
 
 vim.opt.iskeyword:append("-")
+
+-- LSP semantic tokens paint below treesitter so injected highlights are not overwritten
+vim.hl.priorities.semantic_tokens = 95
