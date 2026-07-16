@@ -11,8 +11,14 @@ return {
       config = function()
         local luasnip = require("luasnip")
         luasnip.setup({
-          -- resolve snippet filetype from the treesitter language at cursor
-          ft_func = require("luasnip.extras.filetype_functions").from_pos_or_filetype,
+          ft_func = function()
+            local ok, parser = pcall(vim.treesitter.get_parser)
+            if ok and parser then
+              local row = vim.api.nvim_win_get_cursor(0)[1] - 1
+              parser:parse({ row, row })
+            end
+            return require("luasnip.extras.filetype_functions").from_pos_or_filetype()
+          end,
         })
         -- inline markdown text parses as markdown_inline; serve markdown snippets there too
         -- markdown must load eagerly: lazy_load only fires on FileType events,
