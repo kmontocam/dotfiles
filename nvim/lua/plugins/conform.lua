@@ -3,6 +3,9 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   opts = {
     formatters = {
+      sqlfluff = {
+        exit_codes = { 0, 1 },
+      },
       injected = {
         -- skip embedded regions the formatter chokes on (e.g. f-string/${} interpolations)
         options = { ignore_errors = true },
