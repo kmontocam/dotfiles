@@ -3,15 +3,9 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   opts = {
     formatters = {
-      sql_formatter = {
-        args = (function()
-          local config_path = vim.fn.getcwd() .. "/.sql-formatter.json"
-          if vim.fn.filereadable(config_path) == 1 then
-            return { "--config", config_path }
-          else
-            return {}
-          end
-        end)(),
+      injected = {
+        -- skip embedded regions the formatter chokes on (e.g. f-string/${} interpolations)
+        options = { ignore_errors = true },
       },
       jq = {
         command = "jq",
@@ -29,21 +23,21 @@ return {
       eruby = { "erb_format" },
       groovy = { "npm-groovy-lint" },
       html = { "prettier" },
-      javascript = { "prettier" },
-      javascriptreact = { "prettier" },
+      javascript = { "prettier", "injected" },
+      javascriptreact = { "prettier", "injected" },
       json = { "prettier", "jq" },
       jsonc = { "prettier" },
       lua = { "stylua" },
       markdown = { "prettier", "injected" },
       nix = { "nixfmt" },
-      python = { "ruff_format" },
+      python = { "ruff_format", "injected" },
       ruby = { "rubocop" },
       rust = { "rustfmt" },
       sh = { "shfmt" },
-      sql = { "sql_formatter" },
+      sql = { "sqlfluff" },
       tex = { "latexindent" },
-      typescript = { "prettier" },
-      typescriptreact = { "prettier" },
+      typescript = { "prettier", "injected" },
+      typescriptreact = { "prettier", "injected" },
       yaml = { "yq" },
     },
     format_on_save = function(bufnr)

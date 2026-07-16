@@ -50,7 +50,7 @@ return {
         "rubocop",
         "ruff",
         "shfmt",
-        "sql-formatter",
+        "sqlfluff",
         "stylua",
         "taplo",
       },
