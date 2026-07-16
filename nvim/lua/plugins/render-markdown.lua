@@ -6,5 +6,7 @@ return {
   },
   opts = {
     completions = { lsp = { enabled = true } },
+    -- also attach to python: renders + completes markdown injected via `# md` strings
+    file_types = { "markdown", "python" },
   },
 }

@@ -9,7 +9,17 @@ return {
       "L3MON4D3/LuaSnip",
       dependencies = { "rafamadriz/friendly-snippets" },
       config = function()
-        require("luasnip.loaders.from_vscode").lazy_load()
+        local luasnip = require("luasnip")
+        luasnip.setup({
+          -- resolve snippet filetype from the treesitter language at cursor
+          ft_func = require("luasnip.extras.filetype_functions").from_pos_or_filetype,
+        })
+        -- inline markdown text parses as markdown_inline; serve markdown snippets there too
+        -- markdown must load eagerly: lazy_load only fires on FileType events,
+        -- which never happen for filetypes that only exist as injections
+        luasnip.filetype_extend("markdown_inline", { "markdown" })
+        require("luasnip.loaders.from_vscode").load({ include = { "markdown" } })
+        require("luasnip.loaders.from_vscode").lazy_load({ exclude = { "markdown" } })
       end,
     },
     "saadparwaiz1/cmp_luasnip",
