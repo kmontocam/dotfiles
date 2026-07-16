@@ -23,3 +23,12 @@
         (string_fragment) @injection.content)))
   (#lua-match? @_sql "^//%s*sql%s*$")
   (#set! injection.language "sql"))
+
+; // sql
+; fn(`...`)
+((comment) @_sql
+  .
+  (template_string
+    (string_fragment) @injection.content)
+  (#lua-match? @_sql "^//%s*sql%s*$")
+  (#set! injection.language "sql"))
