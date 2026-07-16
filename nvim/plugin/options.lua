@@ -35,5 +35,7 @@ vim.opt.undofile = true
 
 vim.opt.iskeyword:append("-")
 
+vim.opt.isfname:append("@-@")
+
 -- LSP semantic tokens paint below treesitter so injected highlights are not overwritten
 vim.hl.priorities.semantic_tokens = 95
