@@ -43,7 +43,7 @@
   (#set! injection.language "sql")
   (#set! injection.include-children))
 
-; # markdown
+; # md
 ; same shapes as above, injected as markdown
 ((comment) @_markdown
   .
@@ -80,6 +80,6 @@
             (interpolation)
           ]+ @injection.content)))
   ]
-  (#lua-match? @_markdown "^#%s*markdown%s*$")
+  (#lua-match? @_markdown "^#%s*md%s*$")
   (#set! injection.language "markdown")
   (#set! injection.include-children))
