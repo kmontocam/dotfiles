@@ -42,3 +42,44 @@
   (#lua-match? @_sql "^#%s*sql%s*$")
   (#set! injection.language "sql")
   (#set! injection.include-children))
+
+; # markdown
+; same shapes as above, injected as markdown
+((comment) @_markdown
+  .
+  [
+    (expression_statement
+      (assignment
+        right: (string
+          [
+            (string_content)
+            (interpolation)
+          ]+ @injection.content)))
+    (expression_statement
+      (string
+        [
+          (string_content)
+          (interpolation)
+        ]+ @injection.content))
+    (keyword_argument
+      value: (string
+        [
+          (string_content)
+          (interpolation)
+        ]+ @injection.content))
+    (string
+      [
+        (string_content)
+        (interpolation)
+      ]+ @injection.content)
+    (call
+      function: (attribute
+        object: (string
+          [
+            (string_content)
+            (interpolation)
+          ]+ @injection.content)))
+  ]
+  (#lua-match? @_markdown "^#%s*markdown%s*$")
+  (#set! injection.language "markdown")
+  (#set! injection.include-children))
