@@ -172,8 +172,13 @@ return {
       callback = function(ev)
         local root = vim.fs.root(ev.buf, { "pyproject.toml", "setup.py", "setup.cfg", ".git" }) or vim.fn.getcwd()
         local mason_bin = vim.fn.stdpath("data") .. "/mason/bin"
-        local venv_ty = root .. "/.venv/bin/ty"
-        local venv_python = root .. "/.venv/bin/python"
+        local venv_dir = vim.fs.find(".venv", {
+          path = vim.api.nvim_buf_get_name(ev.buf),
+          upward = true,
+          type = "directory",
+        })[1]
+        local venv_ty = venv_dir and (venv_dir .. "/bin/ty") or ""
+        local venv_python = venv_dir and (venv_dir .. "/bin/python") or ""
 
         local config
         if vim.fn.executable(venv_ty) == 1 then
