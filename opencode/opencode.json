@@ -71,9 +71,6 @@
       ]
     }
   },
-  "plugin": [
-    "@dietrichgebert/ponytail"
-  ],
   "mcp": {
     "context7": {
       "type": "remote",
@@ -87,6 +84,11 @@
       "oauth": false,
       "type": "remote",
       "url": "https://api.githubcopilot.com/mcp/x/actions"
+    },
+    "linear": {
+      "enabled": false,
+      "type": "remote",
+      "url": "https://mcp.linear.app/mcp"
     }
   },
   "permission": {
@@ -96,5 +98,8 @@
       "*.env.*": "deny",
       "*.env.example": "allow"
     }
-  }
+  },
+  "plugin": [
+    "@dietrichgebert/ponytail"
+  ]
 }
