@@ -1,6 +1,6 @@
 ; extends
 ; note: tagged templates like sql`...` are already injected by nvim-treesitter's
-; builtin ecma queries; these only cover untagged strings marked with a // sql comment
+; builtin ecma queries; these only cover untagged backtick strings marked with // sql
 
 ; // sql
 ; const q = `...`;
