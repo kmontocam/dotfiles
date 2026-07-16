@@ -1,0 +1,33 @@
+[sqlfluff]
+dialect   = postgres
+templater = placeholder
+
+[sqlfluff:indentation]
+indent_unit     = space
+max_line_length = 100
+tab_space_size  = 2
+
+[sqlfluff:rules:capitalisation.keywords]
+capitalisation_policy = upper
+
+[sqlfluff:rules:capitalisation.functions]
+extended_capitalisation_policy = upper
+
+[sqlfluff:rules:capitalisation.identifiers]
+extended_capitalisation_policy = lower
+
+[sqlfluff:rules:capitalisation.literals]
+capitalisation_policy = upper
+
+[sqlfluff:rules:capitalisation.types]
+extended_capitalisation_policy = upper
+
+[sqlfluff:layout:type:binary_operator]
+line_position = leading
+
+[sqlfluff:layout:type:statement_terminator]
+line_position  = trailing
+spacing_before = touch
+
+[sqlfluff:templater:placeholder]
+param_regex = (\$)?\{(?P<param_name>[^}]*)\}

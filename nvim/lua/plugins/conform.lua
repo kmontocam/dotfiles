@@ -5,6 +5,7 @@ return {
     formatters = {
       sqlfluff = {
         exit_codes = { 0, 1 },
+        require_cwd = false,
       },
       injected = {
         -- skip embedded regions the formatter chokes on (e.g. f-string/${} interpolations)

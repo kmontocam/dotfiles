@@ -50,6 +50,7 @@
     ".config/k9s/skins/transparent.yaml".source =
       "${config.home.homeDirectory}/git/dotfiles/k9s/skins/transparent.yaml";
     ".config/nvim".source = "${config.home.homeDirectory}/git/dotfiles/nvim";
+    ".config/sqlfluff".source = "${config.home.homeDirectory}/git/dotfiles/sqlfluff";
     ".config/opencode/opencode.json".source =
       "${config.home.homeDirectory}/git/dotfiles/opencode/opencode.json";
     ".config/opencode/tui.json".source = "${config.home.homeDirectory}/git/dotfiles/opencode/tui.json";
