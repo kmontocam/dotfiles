@@ -1,5 +1,15 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "raw": {
+      "description": "Raw model, no tools",
+      "mode": "primary",
+      "prompt": " ",
+      "tools": {
+        "*": false
+      }
+    }
+  },
   "formatter": {
     "json": {
       "command": [
