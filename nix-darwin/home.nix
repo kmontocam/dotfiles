@@ -53,7 +53,7 @@
     ".config/sqlfluff".source = "${config.home.homeDirectory}/git/dotfiles/sqlfluff";
     ".config/opencode/opencode.json".source =
       "${config.home.homeDirectory}/git/dotfiles/opencode/opencode.json";
-    ".config/opencode/tui.json".source = "${config.home.homeDirectory}/git/dotfiles/opencode/tui.json";
+    ".config/opencode/cli.json".source = "${config.home.homeDirectory}/git/dotfiles/opencode/cli.json";
     ".config/starship.toml".source = "${config.home.homeDirectory}/git/dotfiles/starship/starship.toml";
     ".fdignore".source = "${config.home.homeDirectory}/git/dotfiles/.fdignore";
     ".gitconfig".source = "${config.home.homeDirectory}/git/dotfiles/.gitconfig";
@@ -143,7 +143,7 @@
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @modelcontextprotocol/inspector
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g elasticdump
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @mryhryki/markdown-preview
-      $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g opencode-ai@latest
+      $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g --trust @opencode-ai/cli@next
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g playwright
     '';
 

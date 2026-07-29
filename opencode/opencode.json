@@ -1,13 +1,42 @@
 {
-  "$schema": "https://opencode.ai/config.json",
-  "agent": {
+  "$schema": "https://opencode.ai/v2/config.json",
+  "agents": {
     "raw": {
-      "description": "Raw model, no tools",
+      "description": "Raw model, MCP tools only",
       "mode": "primary",
-      "prompt": " ",
-      "tools": {
-        "*": false
-      }
+      "permissions": [
+        {
+          "action": "*",
+          "effect": "deny",
+          "resource": "*"
+        },
+        {
+          "action": "execute",
+          "effect": "allow",
+          "resource": "*"
+        },
+        {
+          "action": "*_*",
+          "effect": "allow",
+          "resource": "*"
+        },
+        {
+          "action": "external_directory",
+          "effect": "deny",
+          "resource": "*"
+        },
+        {
+          "action": "plan_enter",
+          "effect": "deny",
+          "resource": "*"
+        },
+        {
+          "action": "plan_exit",
+          "effect": "deny",
+          "resource": "*"
+        }
+      ],
+      "system": " "
     }
   },
   "formatter": {
@@ -82,31 +111,47 @@
     }
   },
   "mcp": {
-    "context7": {
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp"
-    },
-    "gh-actions": {
-      "enabled": false,
-      "headers": {
-        "Authorization": "Bearer {env:GITHUB_TOKEN}"
+    "servers": {
+      "context7": {
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp"
       },
-      "oauth": false,
-      "type": "remote",
-      "url": "https://api.githubcopilot.com/mcp/x/actions"
-    },
-    "linear": {
-      "enabled": false,
-      "type": "remote",
-      "url": "https://mcp.linear.app/mcp"
+      "gh-actions": {
+        "disabled": true,
+        "headers": {
+          "Authorization": "Bearer {env:GITHUB_TOKEN}"
+        },
+        "oauth": false,
+        "type": "remote",
+        "url": "https://api.githubcopilot.com/mcp/x/actions"
+      },
+      "linear": {
+        "disabled": true,
+        "type": "remote",
+        "url": "https://mcp.linear.app/mcp"
+      }
     }
   },
-  "permission": {
-    "read": {
-      "*": "allow",
-      "*.env": "deny",
-      "*.env.*": "deny",
-      "*.env.example": "allow"
+  "permissions": [
+    {
+      "action": "read",
+      "effect": "allow",
+      "resource": "*"
+    },
+    {
+      "action": "read",
+      "effect": "deny",
+      "resource": "*.env"
+    },
+    {
+      "action": "read",
+      "effect": "deny",
+      "resource": "*.env.*"
+    },
+    {
+      "action": "read",
+      "effect": "allow",
+      "resource": "*.env.example"
     }
-  }
+  ]
 }
