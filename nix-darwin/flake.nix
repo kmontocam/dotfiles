@@ -52,6 +52,7 @@
             pkgs.bun
             pkgs.cloc
             pkgs.cmake
+            pkgs.codex
             pkgs.esbuild
             pkgs.exiftool
             pkgs.fd
