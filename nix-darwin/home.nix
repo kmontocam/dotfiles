@@ -166,10 +166,12 @@
   programs.fzf = {
     enable = true;
     defaultCommand = "fd . --type d -H -L -d 3 2> /dev/null";
-    fileWidgetCommand = "fd . $HOME --type d -H -L -d 3 2> /dev/null";
-    fileWidgetOptions = [
-      "--preview 'tree -C {} | head -128'"
-    ];
+    fileWidget = {
+      options = [
+        "--preview 'tree -C {} | head -128'"
+      ];
+      command = "fd . $HOME --type d -H -L -d 3 2> /dev/null";
+    };
     defaultOptions = [ "--tmux" ];
   };
   programs.zsh = {
