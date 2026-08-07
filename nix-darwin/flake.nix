@@ -59,6 +59,7 @@
             pkgs.fontconfig
             pkgs.fzf
             pkgs.gh
+            pkgs.gh-stack
             pkgs.gitleaks
             pkgs.go
             pkgs.google-cloud-sdk
