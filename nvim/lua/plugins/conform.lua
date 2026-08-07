@@ -4,7 +4,8 @@ return {
   opts = {
     formatters = {
       sqlfluff = {
-        exit_codes = { 0, 1 },
+        -- do not accept exit code 1: a crashed sqlfluff returns 1 with empty stdout,
+        -- which would wipe injected regions (e.g. `# sql` strings)
         require_cwd = false,
       },
       injected = {
