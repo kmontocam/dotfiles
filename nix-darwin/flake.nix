@@ -48,6 +48,7 @@
               pkgs.azure-cli-extensions.aks-preview
               pkgs.azure-cli-extensions.quota
             ])
+            pkgs.azure-storage-azcopy
             pkgs.bat
             pkgs.bun
             pkgs.cloc
