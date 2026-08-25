@@ -53,7 +53,6 @@
     ".config/sqlfluff".source = "${config.home.homeDirectory}/git/dotfiles/sqlfluff";
     ".config/opencode/opencode.json".source =
       "${config.home.homeDirectory}/git/dotfiles/opencode/opencode.json";
-    ".config/opencode/cli.json".source = "${config.home.homeDirectory}/git/dotfiles/opencode/cli.json";
     ".config/starship.toml".source = "${config.home.homeDirectory}/git/dotfiles/starship/starship.toml";
     ".fdignore".source = "${config.home.homeDirectory}/git/dotfiles/.fdignore";
     ".gitconfig".source = "${config.home.homeDirectory}/git/dotfiles/.gitconfig";

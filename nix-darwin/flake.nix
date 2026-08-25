@@ -235,6 +235,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
             home-manager.users.kmontocam = import ./home.nix;
           }
           nix-homebrew.darwinModules.nix-homebrew
