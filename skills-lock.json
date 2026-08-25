@@ -1,11 +1,26 @@
 {
   "version": 1,
   "skills": {
-    "caveman": {
-      "source": "juliusbrussee/caveman",
+    "code-review": {
+      "source": "mattpocock/skills",
+      "ref": "main",
       "sourceType": "github",
-      "skillPath": "skills/caveman/SKILL.md",
-      "computedHash": "dfbf85749fd474feeb0bbe60c779795ecd5dbec0083299b56e68916bc3ddd8c9"
+      "skillPath": "skills/engineering/code-review/SKILL.md",
+      "computedHash": "caa9a086baaf9e0f7cd71f64edfa83da6821c05e826b083221f3d02e3d6a1905"
+    },
+    "grill-with-docs": {
+      "source": "mattpocock/skills",
+      "ref": "main",
+      "sourceType": "github",
+      "skillPath": "skills/engineering/grill-with-docs/SKILL.md",
+      "computedHash": "35e62aa423aaeab6a414bcac273f56dfb17802ef2334b41b6a3b00f28196c8cf"
+    },
+    "implement": {
+      "source": "mattpocock/skills",
+      "ref": "main",
+      "sourceType": "github",
+      "skillPath": "skills/engineering/implement/SKILL.md",
+      "computedHash": "2139cfedf24791adbc839aaab6019cff158af1e28bfead020ec6e0ce01b3e74d"
     },
     "ponytail": {
       "source": "DietrichGebert/ponytail",
@@ -13,35 +28,39 @@
       "skillPath": "skills/ponytail/SKILL.md",
       "computedHash": "210fa0831f649ce9f8a305f7b7c8cf2a0dd09ac4dd53067109941b96e7811d4e"
     },
-    "ponytail-audit": {
-      "source": "DietrichGebert/ponytail",
+    "to-spec": {
+      "source": "mattpocock/skills",
+      "ref": "main",
       "sourceType": "github",
-      "skillPath": "skills/ponytail-audit/SKILL.md",
-      "computedHash": "8b8d72e6ff70b65b6c9518d470fcf29dc696eea93d28f3efa10fdcc60cbd696d"
+      "skillPath": "skills/engineering/to-spec/SKILL.md",
+      "computedHash": "3fa1a0695d4ea242fae9e569e4d22aa1788623197abb33bfadafae7315789bbf"
     },
-    "ponytail-debt": {
-      "source": "DietrichGebert/ponytail",
+    "to-tickets": {
+      "source": "mattpocock/skills",
+      "ref": "main",
       "sourceType": "github",
-      "skillPath": "skills/ponytail-debt/SKILL.md",
-      "computedHash": "0099b82174e3a4261828b4ec04d2c068b1b294fdab14f76701c2acd1f7c99539"
+      "skillPath": "skills/engineering/to-tickets/SKILL.md",
+      "computedHash": "bf5e6ebcb4f1272de0c188d5b3901f265a03d1fa9935a21a7a56938e21e2e761"
     },
-    "ponytail-gain": {
-      "source": "DietrichGebert/ponytail",
+    "triage": {
+      "source": "mattpocock/skills",
+      "ref": "main",
       "sourceType": "github",
-      "skillPath": "skills/ponytail-gain/SKILL.md",
-      "computedHash": "c45ecba7906960eea904218b623abf097ebff84ecbacca6d68da1d0687435f75"
+      "skillPath": "skills/engineering/triage/SKILL.md",
+      "computedHash": "b954d74c219c805bf353d6642251a713c9b2e9cfdb11babfe588bcfe7dfd16d5"
     },
-    "ponytail-help": {
-      "source": "DietrichGebert/ponytail",
+    "unslop": {
+      "source": "cursor/plugins",
       "sourceType": "github",
-      "skillPath": "skills/ponytail-help/SKILL.md",
-      "computedHash": "10e8382b1033c9a0fec0073de6d3de3846b4f5dca7d78b6df2d476a1f4cd43c6"
+      "skillPath": "pstack/skills/unslop/SKILL.md",
+      "computedHash": "3dfc2afeda677e12c6065497a40df7d895859de1c7d1cffb899b1559d129fe4f"
     },
-    "ponytail-review": {
-      "source": "DietrichGebert/ponytail",
+    "wizard": {
+      "source": "mattpocock/skills",
+      "ref": "main",
       "sourceType": "github",
-      "skillPath": "skills/ponytail-review/SKILL.md",
-      "computedHash": "4646594fcd75455533f7ff1425f4f1c5ba0fa65f88241bf262b1c4fc275f049a"
+      "skillPath": "skills/engineering/wizard/SKILL.md",
+      "computedHash": "dee7f1a523994a1e063c69fe09c2f5b4da97a41ad68107722664e6e472cb2423"
     }
   }
 }
