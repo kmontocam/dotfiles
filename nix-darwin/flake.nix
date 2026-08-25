@@ -56,6 +56,7 @@
             pkgs.esbuild
             pkgs.exiftool
             pkgs.fd
+            pkgs.ffmpeg
             pkgs.flyctl
             pkgs.fontconfig
             pkgs.fzf
