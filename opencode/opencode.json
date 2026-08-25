@@ -105,15 +105,6 @@
       "type": "remote",
       "url": "https://mcp.context7.com/mcp"
     },
-    "gh-actions": {
-      "enabled": false,
-      "headers": {
-        "Authorization": "Bearer {env:GITHUB_TOKEN}"
-      },
-      "oauth": false,
-      "type": "remote",
-      "url": "https://api.githubcopilot.com/mcp/x/actions"
-    },
     "linear": {
       "enabled": false,
       "type": "remote",
