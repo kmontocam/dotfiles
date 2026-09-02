@@ -165,7 +165,6 @@
               "rectangle"
               "setapp"
               "slack"
-              "soundsource"
               "spotify"
               "utm"
               "zen"
