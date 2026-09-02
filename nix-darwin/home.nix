@@ -64,6 +64,9 @@
     ".tmux.conf".source = "${config.home.homeDirectory}/git/dotfiles/tmux/.tmux.conf";
     ".tool-versions".source = "${config.home.homeDirectory}/git/dotfiles/.tool-versions";
     "Library/Application Support/euporie".source = "${config.home.homeDirectory}/git/dotfiles/euporie";
+    # signInUsing must be systemBrowser: the default auth broker is Windows-only.
+    "Library/Application Support/StorageExplorer/settings.json".source =
+      "${config.home.homeDirectory}/git/dotfiles/storage-explorer/settings.json";
 
     ".config/fontconfig/fonts.conf".text = ''
       <?xml version="1.0"?>
