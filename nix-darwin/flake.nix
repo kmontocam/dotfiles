@@ -142,6 +142,7 @@
           homebrew = {
             enable = true;
             brews = [
+              "langchain-ai/tap/langsmith-cli"
               "libpq" # includes psql
               "libyaml"
               "poppler"
