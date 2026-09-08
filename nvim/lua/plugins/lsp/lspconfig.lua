@@ -125,7 +125,6 @@ return {
       "nil_ls",
       "rust_analyzer",
       "ruff",
-      "tailwindcss",
       "taplo",
       "terraformls",
       "ts_ls",
@@ -136,6 +135,15 @@ return {
     end
 
     -- servers with custom config
+    lspconfig.tailwindcss.setup({
+      capabilities = capabilities,
+      settings = {
+        tailwindCSS = {
+          lint = { cssConflict = "ignore" },
+        },
+      },
+    })
+
     lspconfig.bashls.setup({
       capabilities = capabilities,
       filetypes = { "sh", "zsh" },
