@@ -143,7 +143,6 @@
       export PATH="$HOME/.bun/bin:$PATH"
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g --trust @opencode-ai/cli@next
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g --trust opencode-ai@latest
-      $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @anthropic-ai/claude-code
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @modelcontextprotocol/inspector
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @mryhryki/markdown-preview
       $DRY_RUN_CMD ${pkgs.bun}/bin/bun install -g @openai/codex
