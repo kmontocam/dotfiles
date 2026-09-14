@@ -148,6 +148,7 @@
               "poppler"
             ];
             casks = [
+              "aside"
               "balenaetcher"
               "chatgpt"
               "cloudflare-warp"
