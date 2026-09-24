@@ -29,6 +29,7 @@ return {
         "basedpyright",
         "rust_analyzer",
         "sqls",
+        "svelte",
         "terraformls",
         "taplo",
         "ts_ls",

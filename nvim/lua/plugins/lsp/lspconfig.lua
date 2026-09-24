@@ -125,6 +125,7 @@ return {
       "nil_ls",
       "rust_analyzer",
       "ruff",
+      "svelte",
       "taplo",
       "terraformls",
       "ts_ls",
