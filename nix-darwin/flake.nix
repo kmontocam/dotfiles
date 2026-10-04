@@ -160,6 +160,7 @@
               "linear"
               "logi-options+"
               "microsoft-azure-storage-explorer"
+              "minecraft"
               "mongodb-compass"
               "notion"
               "postman"
