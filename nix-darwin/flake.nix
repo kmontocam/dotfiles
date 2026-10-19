@@ -204,6 +204,7 @@
             dock.wvous-bl-corner = 1;
             dock.wvous-br-corner = 1;
             dock.autohide = true;
+            dock.mineffect = "scale";
             finder.AppleShowAllExtensions = true;
             # minimum, decrease in UI
             NSGlobalDomain.InitialKeyRepeat = 15;
