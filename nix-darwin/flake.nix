@@ -109,7 +109,6 @@
             pkgs.rustfmt
             pkgs.rustup
             pkgs.silicon
-            pkgs.slack-cli
             pkgs.sqlc
             pkgs.starship
             pkgs.stylua
@@ -169,6 +168,7 @@
               "rectangle"
               "setapp"
               "slack"
+              "slack-cli"
               "spotify"
               "utm"
               "zen"
