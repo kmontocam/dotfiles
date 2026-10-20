@@ -146,6 +146,7 @@
               "libpq" # includes psql
               "libyaml"
               "poppler"
+              "twilio/brew/twilio"
             ];
             casks = [
               "aside"
