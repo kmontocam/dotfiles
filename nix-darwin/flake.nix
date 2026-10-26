@@ -134,6 +134,8 @@
             pkgs.zoxide
           ];
 
+          environment.etc."codex/config.toml".source = ../codex/config.toml;
+
           # Azure Storage Explorer's sign-in needs .NET and only reads this file.
           environment.etc."dotnet/install_location_arm64".text = ''
             ${pkgs.dotnet-runtime_10}/share/dotnet

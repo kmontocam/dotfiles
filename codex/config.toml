@@ -1,0 +1,11 @@
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+
+[mcp_servers.linear]
+url = "https://mcp.linear.app/mcp"
+
+[mcp_servers.context7]
+url = "https://mcp.context7.com/mcp"
+
+[mcp_servers.svelte]
+url = "https://mcp.svelte.dev/mcp"
