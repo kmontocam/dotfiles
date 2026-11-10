@@ -151,6 +151,7 @@
               "twilio/brew/twilio"
             ];
             casks = [
+              "android-studio"
               "aside"
               "balenaetcher"
               "chatgpt"
