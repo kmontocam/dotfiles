@@ -71,6 +71,7 @@
             pkgs.grpcurl
             pkgs.home-manager
             pkgs.iruby
+            pkgs.jadx
             pkgs.jdk17
             pkgs.jq
             pkgs.jupyter
