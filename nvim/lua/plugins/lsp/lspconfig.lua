@@ -136,6 +136,12 @@ return {
     end
 
     -- servers with custom config
+    lspconfig.sourcekit.setup({
+      capabilities = capabilities,
+      filetypes = { "swift" },
+      single_file_support = true,
+    })
+
     lspconfig.tailwindcss.setup({
       capabilities = capabilities,
       settings = {

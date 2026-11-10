@@ -123,7 +123,7 @@
             pkgs.tmux
             pkgs.tmuxinator
             pkgs.tree
-            pkgs.tree-sitter
+            pkgs-neovim.tree-sitter # 0.25.x for nvim-treesitter's legacy master branch
             pkgs.tshark
             pkgs.typescript
             pkgs.uv
