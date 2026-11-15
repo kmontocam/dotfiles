@@ -109,6 +109,12 @@
       "enabled": false,
       "type": "remote",
       "url": "https://mcp.linear.app/mcp"
+    },
+    "servers": {
+      "mobbin": {
+        "type": "remote",
+        "url": "https://api.mobbin.com/mcp"
+      }
     }
   },
   "permission": {
