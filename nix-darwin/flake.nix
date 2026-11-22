@@ -156,6 +156,7 @@
               "aside"
               "balenaetcher"
               "chatgpt"
+              "claude-code"
               "cloudflare-warp"
               "discord"
               "docker-desktop"
